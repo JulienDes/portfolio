@@ -20,12 +20,12 @@ jobs:
         run: bun install
 
       - name: Build
-        run: bun run build -- --base-href "/${{ github.event.repository.name }}/"
+        run: bun run build -- --base-href "${{ vars.BASE_HREF || format('/{0}/', github.event.repository.name) }}"
 
       - name: Add 404 redirect for SPA routing
-        run: cp dist/angular-21-standalone-template/browser/index.html dist/angular-21-standalone-template/browser/404.html
+        run: cp dist/${{ github.event.repository.name }}/browser/index.html dist/${{ github.event.repository.name }}/browser/404.html
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/angular-21-standalone-template/browser
+          folder: dist/${{ github.event.repository.name }}/browser

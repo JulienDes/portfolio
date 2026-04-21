@@ -131,14 +131,13 @@ See [ADR-0010](./docs/adr/0010-file-naming-conventions.md) for the full reasonin
 
 Order class members as follows (enforced by `@typescript-eslint/member-ordering`):
 
-1. **Injected dependencies** — `private readonly api = inject(ApiService)`
-2. **Inputs / outputs / queries** — `@Input()`, `@Output()`, `viewChild()`
-3. **Signals and computed values** — `readonly items = signal([])`
-4. **Other fields**
-5. **Constructor** (only when DI via constructor is needed)
-6. **Lifecycle hooks** — `ngOnInit`, `ngOnDestroy`
-7. **Public methods**
-8. **Private methods**
+1. **Private fields** — `private readonly api = inject(ApiService)`
+2. **Protected fields**
+3. **Public fields** — `@Input()`, `@Output()`, `viewChild()`, `readonly count = signal(0)`
+4. **Constructor** (only when DI via constructor is needed)
+5. **Public methods** (includes lifecycle hooks — `ngOnInit`, `ngOnDestroy`)
+6. **Protected methods**
+7. **Private methods**
 
 ---
 
