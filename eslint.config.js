@@ -24,9 +24,9 @@ export default tseslint.config(
     plugins: { boundaries },
     settings: {
       'boundaries/elements': [
-        { type: 'core',     pattern: 'src/app/core/**' },
-        { type: 'shared',   pattern: 'src/app/shared/**' },
-        { type: 'features', pattern: 'src/app/features/**' },
+        { type: 'core',     pattern: ['src/app/core/**'] },
+        { type: 'shared',   pattern: ['src/app/shared/**'] },
+        { type: 'features', pattern: ['src/app/features/**'] },
       ],
     },
     rules: {
@@ -35,13 +35,13 @@ export default tseslint.config(
       // Attribute directives use no prefix — names are descriptive enough
       '@angular-eslint/directive-selector': ['error', { type: 'attribute', prefix: '', style: 'camelCase' }],
 
-      // Enforce Angular style guide member ordering:
-      // inject() calls → inputs/outputs/queries → fields → lifecycle → methods
+      // Enforce Angular member ordering: inject() fields (private) first, then
+      // public signals/inputs, then constructor, then methods
       '@typescript-eslint/member-ordering': ['warn', {
         default: [
-          'public-field',
-          'protected-field',
           'private-field',
+          'protected-field',
+          'public-field',
           'constructor',
           'public-method',
           'protected-method',
@@ -50,7 +50,7 @@ export default tseslint.config(
       }],
 
       // Enforce import rules from ADR-0001
-      'boundaries/element-types': ['error', {
+      'boundaries/dependencies': ['error', {
         default: 'disallow',
         rules: [
           { from: 'features', allow: ['core', 'shared'] },
@@ -58,6 +58,17 @@ export default tseslint.config(
           { from: 'core',     allow: ['shared'] },
         ],
       }],
+    },
+  },
+
+  // Node globals for CLI scripts
+  {
+    files: ['scripts/**/*.js'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+      },
     },
   },
 

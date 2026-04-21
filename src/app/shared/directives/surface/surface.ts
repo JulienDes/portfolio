@@ -29,9 +29,9 @@ const ON_COLOR: Record<SurfaceRole, string> = {
 
 @Directive({ selector: '[surface]' })
 export class SurfaceDirective implements OnChanges {
-  readonly surface = input.required<SurfaceRole>();
-
   private readonly el = inject(ElementRef);
+
+  readonly surface = input.required<SurfaceRole>();
 
   ngOnChanges(): void {
     const role = this.surface();

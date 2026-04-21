@@ -15,9 +15,9 @@ type TextColorRole =
 
 @Directive({ selector: '[textColor]' })
 export class TextColorDirective implements OnChanges {
-  readonly textColor = input.required<TextColorRole>();
-
   private readonly el = inject(ElementRef);
+
+  readonly textColor = input.required<TextColorRole>();
 
   ngOnChanges(): void {
     this.el.nativeElement.style.color = `var(--mat-sys-${this.textColor()})`;
