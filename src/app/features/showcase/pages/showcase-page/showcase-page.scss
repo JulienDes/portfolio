@@ -1,0 +1,119 @@
+@use 'styles/sys' as sys;
+
+:host {
+  display: block;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (max-width: 599px) {
+    padding: 1.25rem 1rem;
+    gap: 1.5rem;
+  }
+}
+
+.section-title {
+  margin: 0 0 1.25rem;
+  font: sys.$title-large;
+  color: sys.$on-surface-variant;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.button-group-label {
+  font: sys.$label-small;
+  color: sys.$on-surface-variant;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+code {
+  font-family: monospace;
+  font-size: 0.85em;
+  background: sys.$surface-container;
+  padding: 0.1em 0.35em;
+  border-radius: sys.$corner-extra-small;
+}
+
+.hint {
+  font: sys.$body-small;
+  color: sys.$on-surface-variant;
+}
+
+// Text color pills
+.color-pill {
+  font: sys.$label-large;
+  padding: 0.375rem 0.875rem;
+  border-radius: sys.$corner-full;
+  border: 1px solid sys.$outline-variant;
+}
+
+// Surface swatches
+.surface-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: sys.$corner-medium;
+  padding: 1rem 1.25rem;
+  min-width: 140px;
+  flex: 1;
+}
+
+.swatch-label {
+  font: sys.$label-medium;
+}
+
+// Elevation swatches
+.elevation-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: sys.$corner-medium;
+  background: sys.$surface-container;
+  color: sys.$on-surface;
+  padding: 1rem 1.25rem;
+  font: sys.$label-medium;
+  min-width: 80px;
+  transition: box-shadow 200ms ease;
+}
+
+// httpResource post cards
+.post-card {
+  border-radius: sys.$corner-medium;
+  padding: 1rem 1.25rem;
+  flex: 1;
+  min-width: 200px;
+  max-width: 260px;
+}
+
+.post-title {
+  margin: 0 0 0.5rem;
+  font: sys.$label-large;
+  text-transform: capitalize;
+}
+
+.post-body {
+  margin: 0;
+  font: sys.$body-small;
+  color: sys.$on-surface-variant;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,0 +1,182 @@
+<div class="page">
+  <!-- ── Buttons ─────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Buttons</h2>
+    <p class="hint" style="margin-bottom: 1rem">
+      M3 uses variants for emphasis — not a <code>color</code> attribute.
+    </p>
+
+    <div class="button-group-label">Variants — high → low emphasis</div>
+    <div class="row wrap" style="margin-bottom: 0.5rem">
+      <button mat-flat-button>Filled</button>
+      <button mat-raised-button>Elevated</button>
+      <button mat-stroked-button>Outlined</button>
+      <button mat-button>Text</button>
+      <button mat-button disabled>Disabled</button>
+    </div>
+    <p class="hint" style="margin-bottom: 1.25rem">
+      <strong>Elevated</strong> adds a shadow to lift the button off a colored or image surface —
+      use it when a filled button would blend into the background. Avoid using it as the sole
+      primary action.
+    </p>
+
+    <div class="button-group-label">With icon</div>
+    <div class="row wrap" style="margin-bottom: 1.25rem">
+      <button mat-flat-button><mat-icon>save</mat-icon> Save</button>
+      <button mat-stroked-button><mat-icon>edit</mat-icon> Edit</button>
+      <button mat-button><mat-icon>delete</mat-icon> Delete</button>
+    </div>
+
+    <div class="button-group-label">Icon &amp; FAB</div>
+    <div class="row wrap">
+      <button mat-icon-button><mat-icon>favorite</mat-icon></button>
+      <button mat-icon-button><mat-icon>share</mat-icon></button>
+      <button mat-mini-fab><mat-icon>add</mat-icon></button>
+      <button mat-fab><mat-icon>edit</mat-icon></button>
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Semantic actions ─────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Semantic actions</h2>
+    <p class="hint" style="margin-bottom: 1rem">
+      M3 expresses emphasis through <strong>variant</strong>, not color. Primary = filled,
+      cancel/secondary = outlined or text, destructive = error role.
+    </p>
+
+    <div class="button-group-label">Primary action — filled</div>
+    <div class="row wrap" style="margin-bottom: 1.25rem">
+      <button mat-flat-button><mat-icon>check_circle</mat-icon> Confirm</button>
+    </div>
+
+    <div class="button-group-label">Secondary / cancel — outlined or text</div>
+    <div class="row wrap" style="margin-bottom: 1.25rem">
+      <button mat-stroked-button>Cancel</button>
+      <button mat-button>Dismiss</button>
+    </div>
+
+    <div class="button-group-label">Destructive — text or outlined, label carries the meaning</div>
+    <div class="row wrap">
+      <button mat-stroked-button><mat-icon>delete</mat-icon> Delete</button>
+      <button mat-button><mat-icon>delete</mat-icon> Delete</button>
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Loading button ─────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Loading button</h2>
+    <div class="row">
+      <button mat-flat-button [loading]="isSubmitting()" (click)="simulateSubmit()">
+        {{ isSubmitting() ? 'Saving…' : 'Save' }}
+      </button>
+      <span class="hint">Click to simulate a 2 s submit</span>
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Text color ─────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Text color directive</h2>
+    <div class="row wrap">
+      @for (role of textRoles; track role) {
+        <span class="color-pill" [textColor]="role">{{ role }}</span>
+      }
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Surfaces ───────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Surface directive</h2>
+    <div class="row wrap">
+      @for (role of surfaceRoles; track role) {
+        <div class="surface-swatch" [surface]="role" [elevation]="1">
+          <span class="swatch-label">{{ role }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Elevation ──────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Elevation directive</h2>
+    <div class="row wrap">
+      @for (level of elevationLevels; track level) {
+        <div class="elevation-swatch" [elevation]="level">Level {{ level }}</div>
+      }
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Spinner ────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Spinner</h2>
+    <div class="row">
+      <ui-spinner [diameter]="32" />
+      <ui-spinner [diameter]="48" />
+      <ui-spinner [diameter]="64" />
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Empty state ────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Empty state</h2>
+    <ui-empty title="No results found" description="Try adjusting your search or filters.">
+      <button mat-stroked-button>Clear filters</button>
+    </ui-empty>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Error state ────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Error state</h2>
+    <ui-error message="Could not load data." [retryable]="true" />
+  </section>
+
+  <mat-divider />
+
+  <!-- ── Confirm dialog ─────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">Confirm dialog</h2>
+    <div class="row">
+      <button mat-flat-button (click)="openConfirm()">
+        <mat-icon>delete</mat-icon>
+        Delete item
+      </button>
+      <span class="hint">Opens a confirmation dialog</span>
+    </div>
+  </section>
+
+  <mat-divider />
+
+  <!-- ── httpResource ───────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-title">httpResource</h2>
+    @if (posts.isLoading()) {
+      <ui-spinner />
+    } @else if (posts.error()) {
+      <ui-error (retry)="posts.reload()" />
+    } @else {
+      <div class="row wrap">
+        @for (post of posts.value(); track post.id) {
+          <div class="post-card" [surface]="'surface-container'" [elevation]="1">
+            <p class="post-title" [textColor]="'primary'">{{ post.title }}</p>
+            <p class="post-body">{{ post.body }}</p>
+          </div>
+        }
+      </div>
+    }
+  </section>
+</div>

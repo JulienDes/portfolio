@@ -1,0 +1,15 @@
+<div class="page">
+  @if (items.isLoading()) {
+    <ui-spinner />
+  } @else if (items.error()) {
+    <ui-error message="Could not load items." [retryable]="true" (retry)="items.reload()" />
+  } @else if (!items.value()?.length) {
+    <ui-empty title="No items found" description="There are no items to display." />
+  } @else {
+    <div class="grid">
+      @for (item of items.value(); track item.id) {
+        <app-example-card [item]="item" />
+      }
+    </div>
+  }
+</div>
