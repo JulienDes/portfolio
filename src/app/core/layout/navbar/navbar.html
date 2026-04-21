@@ -1,0 +1,48 @@
+<mat-toolbar class="navbar">
+  <span class="brand" routerLink="/">AppName</span>
+
+  <nav class="nav-links">
+    <a mat-button routerLink="/showcase" routerLinkActive="active">Showcase</a>
+    <a mat-button routerLink="/example" routerLinkActive="active">Example</a>
+  </nav>
+
+  <span class="spacer"></span>
+
+  <!-- Palette picker -->
+  <button mat-icon-button [matMenuTriggerFor]="paletteMenu" matTooltip="Change palette">
+    <mat-icon>palette</mat-icon>
+  </button>
+
+  <!-- Theme toggle -->
+  <button
+    mat-icon-button
+    [matTooltip]="theme.isDark() ? 'Switch to light' : 'Switch to dark'"
+    (click)="theme.toggle()"
+  >
+    <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger" mat-icon-button [matMenuTriggerFor]="mobileMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #paletteMenu="matMenu">
+  <div class="palette-grid" (click)="$event.stopPropagation()">
+    @for (name of palettes; track name) {
+      <button
+        [class]="'swatch palette-' + name"
+        [class.active]="theme.palette() === name"
+        [matTooltip]="paletteName(name)"
+        matTooltipPosition="above"
+        (click)="theme.setPalette(name)"
+      ></button>
+    }
+  </div>
+</mat-menu>
+
+<mat-menu #mobileMenu="matMenu">
+  <a mat-menu-item routerLink="/showcase"> <mat-icon>grid_view</mat-icon> Showcase </a>
+  <a mat-menu-item routerLink="/example"> <mat-icon>view_list</mat-icon> Example </a>
+</mat-menu>
