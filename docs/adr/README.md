@@ -15,17 +15,18 @@ ADRs are **immutable once accepted**. If a decision is revisited, write a new AD
 
 ## Index
 
-| #    | Title                                                                                       | Status   |
-|:-----|:--------------------------------------------------------------------------------------------|:---------|
-| 0001 | [Feature-First Architecture](./0001-feature-first-architecture.md)                         | Accepted |
-| 0002 | [Standalone Components Only](./0002-standalone-components-only.md)                         | Accepted |
-| 0003 | [Signals as State Primitive](./0003-signals-as-state-primitive.md)                         | Accepted |
-| 0004 | [ApiService + httpResource for Data Fetching](./0004-http-wrapper-and-resource-state.md)   | Accepted |
-| 0005 | [Dark/Light Theme Strategy](./0005-dark-light-theme-strategy.md)                           | Accepted |
-| 0006 | [Angular Material with Design Tokens](./0006-angular-material-design-tokens.md)            | Accepted |
-| 0007 | [Vitest over Karma](./0007-vitest-over-karma.md)                                           | Accepted |
-| 0008 | [Playwright for E2E Testing](./0008-playwright-for-e2e.md)                                 | Accepted |
-| 0009 | [Husky and lint-staged as Quality Gate](./0009-husky-lint-staged.md)                       | Accepted |
+| #    | Title                                                                                    | Status   |
+| :--- | :--------------------------------------------------------------------------------------- | :------- |
+| 0001 | [Feature-First Architecture](./0001-feature-first-architecture.md)                       | Accepted |
+| 0002 | [Standalone Components Only](./0002-standalone-components-only.md)                       | Accepted |
+| 0003 | [Signals as State Primitive](./0003-signals-as-state-primitive.md)                       | Accepted |
+| 0004 | [ApiService + httpResource for Data Fetching](./0004-http-wrapper-and-resource-state.md) | Accepted |
+| 0005 | [Dark/Light Theme Strategy](./0005-dark-light-theme-strategy.md)                         | Accepted |
+| 0006 | [Angular Material with Design Tokens](./0006-angular-material-design-tokens.md)          | Accepted |
+| 0007 | [Vitest over Karma](./0007-vitest-over-karma.md)                                         | Accepted |
+| 0008 | [Playwright for E2E Testing](./0008-playwright-for-e2e.md)                               | Accepted |
+| 0009 | [Husky and lint-staged as Quality Gate](./0009-husky-lint-staged.md)                     | Accepted |
+| 0010 | [File Naming Conventions — Angular 21 Style Guide](./0010-file-naming-conventions.md)    | Accepted |
 
 ---
 

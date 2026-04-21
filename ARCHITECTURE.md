@@ -66,12 +66,12 @@ features/
 
 ### Pages vs Components
 
-| | Pages (Smart) | Components (Dumb) |
-|:--|:--|:--|
-| Calls services | Yes | No |
-| Reads route params | Yes | No |
-| Receives data | From services | Via `@Input()` |
-| Emits events | Navigates | Via `@Output()` |
+|                    | Pages (Smart) | Components (Dumb) |
+| :----------------- | :------------ | :---------------- |
+| Calls services     | Yes           | No                |
+| Reads route params | Yes           | No                |
+| Receives data      | From services | Via `@Input()`    |
+| Emits events       | Navigates     | Via `@Output()`   |
 
 ---
 
@@ -109,16 +109,49 @@ See [ADR-0005](./docs/adr/0005-dark-light-theme-strategy.md) for the full reason
 
 ---
 
+## Conventions
+
+### File naming
+
+Follow Angular 21's style guide — no type suffixes in filenames. The class name and the folder provide enough context.
+
+| Artifact          | File                   | Class                      |
+| :---------------- | :--------------------- | :------------------------- |
+| Component         | `user-profile.ts`      | `UserProfileComponent`     |
+| Service           | `auth.ts`              | `AuthService`              |
+| Directive         | `text-color.ts`        | `TextColorDirective`       |
+| Guard             | `auth.ts`              | `authGuard`                |
+| Interceptor       | `auth.ts`              | `authInterceptor`          |
+| Model / interface | `auth.ts`              | `AuthUser`, `AuthResponse` |
+| Test              | `user-profile.spec.ts` | —                          |
+
+See [ADR-0010](./docs/adr/0010-file-naming-conventions.md) for the full reasoning.
+
+### Class member ordering
+
+Order class members as follows (enforced by `@typescript-eslint/member-ordering`):
+
+1. **Injected dependencies** — `private readonly api = inject(ApiService)`
+2. **Inputs / outputs / queries** — `@Input()`, `@Output()`, `viewChild()`
+3. **Signals and computed values** — `readonly items = signal([])`
+4. **Other fields**
+5. **Constructor** (only when DI via constructor is needed)
+6. **Lifecycle hooks** — `ngOnInit`, `ngOnDestroy`
+7. **Public methods**
+8. **Private methods**
+
+---
+
 ## FAQ
 
-| Question | Answer | Example |
-|:--|:--|:--|
-| New full page | `features/{name}/pages/` | Profile page |
-| Small UI piece for one feature | `features/{name}/components/` | Avatar card |
-| UI piece used everywhere | `shared/components/` | Loading spinner |
-| Data type used by multiple features | `shared/models/` | `User` interface |
-| Data type scoped to one feature | `features/{name}/models/` | `AnnonceDetails` |
-| Global navigation | `core/layout/` | Header |
-| HTTP call + state | `features/{name}/services/` via `ApiService` | `getProfile()` |
-| Guard for a specific feature route | `features/{name}/guards/` | `PostOwnerGuard` |
-| Global auth guard | `core/guards/` | `AuthGuard` |
+| Question                            | Answer                                       | Example          |
+| :---------------------------------- | :------------------------------------------- | :--------------- |
+| New full page                       | `features/{name}/pages/`                     | Profile page     |
+| Small UI piece for one feature      | `features/{name}/components/`                | Avatar card      |
+| UI piece used everywhere            | `shared/components/`                         | Loading spinner  |
+| Data type used by multiple features | `shared/models/`                             | `User` interface |
+| Data type scoped to one feature     | `features/{name}/models/`                    | `AnnonceDetails` |
+| Global navigation                   | `core/layout/`                               | Header           |
+| HTTP call + state                   | `features/{name}/services/` via `ApiService` | `getProfile()`   |
+| Guard for a specific feature route  | `features/{name}/guards/`                    | `PostOwnerGuard` |
+| Global auth guard                   | `core/guards/`                               | `AuthGuard`      |
