@@ -1,0 +1,89 @@
+// =============================================================================
+// Material system token aliases — import this in component styles for
+// autocomplete instead of typing --mat-sys-* strings by hand.
+//
+// Usage:
+//   @use 'src/styles/sys' as sys;
+//   color: sys.$primary;
+//   background: sys.$surface-container;
+// =============================================================================
+
+// --- Color roles ---
+$primary: var(--mat-sys-primary);
+$on-primary: var(--mat-sys-on-primary);
+$primary-container: var(--mat-sys-primary-container);
+$on-primary-container: var(--mat-sys-on-primary-container);
+
+$secondary: var(--mat-sys-secondary);
+$on-secondary: var(--mat-sys-on-secondary);
+$secondary-container: var(--mat-sys-secondary-container);
+$on-secondary-container: var(--mat-sys-on-secondary-container);
+
+$tertiary: var(--mat-sys-tertiary);
+$on-tertiary: var(--mat-sys-on-tertiary);
+$tertiary-container: var(--mat-sys-tertiary-container);
+$on-tertiary-container: var(--mat-sys-on-tertiary-container);
+
+$error: var(--mat-sys-error);
+$on-error: var(--mat-sys-on-error);
+$error-container: var(--mat-sys-error-container);
+$on-error-container: var(--mat-sys-on-error-container);
+
+// --- Surface roles ---
+$background: var(--mat-sys-background);
+$on-background: var(--mat-sys-on-background);
+
+$surface: var(--mat-sys-surface);
+$on-surface: var(--mat-sys-on-surface);
+$surface-variant: var(--mat-sys-surface-variant);
+$on-surface-variant: var(--mat-sys-on-surface-variant);
+
+$surface-container-lowest: var(--mat-sys-surface-container-lowest);
+$surface-container-low: var(--mat-sys-surface-container-low);
+$surface-container: var(--mat-sys-surface-container);
+$surface-container-high: var(--mat-sys-surface-container-high);
+$surface-container-highest: var(--mat-sys-surface-container-highest);
+
+$inverse-surface: var(--mat-sys-inverse-surface);
+$inverse-on-surface: var(--mat-sys-inverse-on-surface);
+$inverse-primary: var(--mat-sys-inverse-primary);
+
+// --- Utility ---
+$outline: var(--mat-sys-outline);
+$outline-variant: var(--mat-sys-outline-variant);
+$shadow: var(--mat-sys-shadow);
+$scrim: var(--mat-sys-scrim);
+
+// --- Elevation levels (box-shadow) ---
+$level0: var(--mat-sys-level0);
+$level1: var(--mat-sys-level1);
+$level2: var(--mat-sys-level2);
+$level3: var(--mat-sys-level3);
+$level4: var(--mat-sys-level4);
+$level5: var(--mat-sys-level5);
+
+// --- Shape ---
+$corner-none: var(--mat-sys-corner-none);
+$corner-extra-small: var(--mat-sys-corner-extra-small);
+$corner-small: var(--mat-sys-corner-small);
+$corner-medium: var(--mat-sys-corner-medium);
+$corner-large: var(--mat-sys-corner-large);
+$corner-extra-large: var(--mat-sys-corner-extra-large);
+$corner-full: var(--mat-sys-corner-full);
+
+// --- Typography roles ---
+$display-large: var(--mat-sys-display-large);
+$display-medium: var(--mat-sys-display-medium);
+$display-small: var(--mat-sys-display-small);
+$headline-large: var(--mat-sys-headline-large);
+$headline-medium: var(--mat-sys-headline-medium);
+$headline-small: var(--mat-sys-headline-small);
+$title-large: var(--mat-sys-title-large);
+$title-medium: var(--mat-sys-title-medium);
+$title-small: var(--mat-sys-title-small);
+$body-large: var(--mat-sys-body-large);
+$body-medium: var(--mat-sys-body-medium);
+$body-small: var(--mat-sys-body-small);
+$label-large: var(--mat-sys-label-large);
+$label-medium: var(--mat-sys-label-medium);
+$label-small: var(--mat-sys-label-small);

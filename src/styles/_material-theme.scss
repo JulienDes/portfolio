@@ -1,0 +1,85 @@
+@use '@angular/material' as mat;
+@use './tokens' as t;
+@use 'sass:map';
+
+// Light theme
+html {
+  color-scheme: light;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: t.$primary-palette,
+        tertiary: t.$tertiary-palette,
+        theme-type: light,
+      ),
+      typography: (
+        brand-family: t.$font-family,
+        plain-family: t.$font-family,
+      ),
+      density: 0,
+    )
+  );
+}
+
+// Dark theme — only override color, typography and density are inherited
+html.dark {
+  color-scheme: dark;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: t.$primary-palette,
+        tertiary: t.$tertiary-palette,
+        theme-type: dark,
+      ),
+    )
+  );
+}
+
+// ── Runtime palette overrides ─────────────────────────────────────────────────
+// ThemeService.setPalette() toggles a .palette-{name} class on <html>.
+// Only color tokens are re-emitted — typography and density inherit from above.
+$_palettes: (
+  'red': mat.$red-palette,
+  'green': mat.$green-palette,
+  'blue': mat.$blue-palette,
+  'yellow': mat.$yellow-palette,
+  'cyan': mat.$cyan-palette,
+  'magenta': mat.$magenta-palette,
+  'orange': mat.$orange-palette,
+  'chartreuse': mat.$chartreuse-palette,
+  'spring-green': mat.$spring-green-palette,
+  'azure': mat.$azure-palette,
+  'violet': mat.$violet-palette,
+  'rose': mat.$rose-palette,
+);
+
+@each $name, $palette in $_palettes {
+  html.palette-#{$name} {
+    @include mat.theme(
+      (
+        color: (
+          primary: $palette,
+          theme-type: light,
+        ),
+      )
+    );
+  }
+  html.dark.palette-#{$name} {
+    @include mat.theme(
+      (
+        color: (
+          primary: $palette,
+          theme-type: dark,
+        ),
+      )
+    );
+  }
+
+  // Element-scoped preview token — used by palette swatches in the navbar.
+  // Tone 40 = primary in light mode, sourced directly from the palette map.
+  .palette-#{$name} {
+    --palette-preview: #{map.get($palette, 40)};
+  }
+}

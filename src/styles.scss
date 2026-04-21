@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/tokens' as t;
+@use './styles/material-theme';
+
+// Custom property aliases for non-Material tokens used in component styles
+:root {
+  --font-family: #{t.$font-family};
+  --font-size-base: #{t.$font-size-base};
+
+  --border-radius-xs: #{t.$border-radius-xs};
+  --border-radius-sm: #{t.$border-radius-sm};
+  --border-radius-md: #{t.$border-radius-md};
+  --border-radius-lg: #{t.$border-radius-lg};
+  --border-radius-xl: #{t.$border-radius-xl};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
+  overflow-x: hidden;
+}
