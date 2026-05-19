@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(withFetch(), withInterceptors([authInterceptor, errorInterceptor])),
-    { provide: APP_CONFIG, useValue: { apiBaseUrl: environment.apiBaseUrl } },
+    { provide: APP_CONFIG, useValue: { apiUrl: environment.apiUrl } },
   ],
 };

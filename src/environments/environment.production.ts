@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: '/api',
+  apiUrl: 'https://api.devdash.app', // placeholder — will be replaced at build time
 };

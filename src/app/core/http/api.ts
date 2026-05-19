@@ -6,7 +6,7 @@ import { APP_CONFIG } from './app-config';
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = inject(APP_CONFIG).apiBaseUrl;
+  private readonly baseUrl = inject(APP_CONFIG).apiUrl;
 
   url(path: string): string {
     return `${this.baseUrl}${path}`;
