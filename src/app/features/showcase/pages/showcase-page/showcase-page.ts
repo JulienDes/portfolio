@@ -5,10 +5,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { httpResource } from '@angular/common/http';
 
-import { TextColorDirective } from '../../../../shared/directives/text-color/text-color';
-import { SurfaceDirective } from '../../../../shared/directives/surface/surface';
-import { ElevationDirective } from '../../../../shared/directives/elevation/elevation';
-import { LoadingButtonDirective } from '../../../../shared/directives/loading-button/loading-button';
+import { TextColorDirective } from '../../../../shared/directives/showcase/text-color/text-color';
+import { SurfaceDirective } from '../../../../shared/directives/showcase/surface/surface';
+import { ElevationDirective } from '../../../../shared/directives/showcase/elevation/elevation';
+import { LoadingButtonDirective } from '../../../../shared/directives/showcase/loading-button/loading-button';
 import { SpinnerComponent } from '../../../../shared/components/spinner/spinner';
 import { ErrorStateComponent } from '../../../../shared/components/error-state/error-state';
 import { EmptyStateComponent } from '../../../../shared/components/empty-state/empty-state';
