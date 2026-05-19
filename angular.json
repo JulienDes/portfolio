@@ -82,7 +82,29 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "tsconfig.spec.json"
+            "tsConfig": "tsconfig.spec.json",
+            "coverage": true,
+            "coverageReporters": ["text", "lcov", "html"],
+            "coverageThreshold": {
+              "global": {
+                "lines": 80,
+                "branches": 70,
+                "functions": 80,
+                "statements": 80
+              }
+            },
+            "coverageExclude": [
+              "src/main.ts",
+              "src/app/app.config.ts",
+              "src/app/app.routes.ts",
+              "**/*.model.ts",
+              "**/*.routes.ts",
+              "**/*.config.ts",
+              "**/*.mock.ts",
+              "**/*.spec.ts",
+              "src/environments/**"
+            ],
+            "provider": "istanbul"
           }
         }
       }
