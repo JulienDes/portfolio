@@ -1,0 +1,330 @@
+<!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+<section id="hero" class="hero-section">
+  <div class="hero-inner">
+    <p class="hero-eyebrow mono">
+      <span class="col-label-comment">// </span>
+      <span class="col-label-tag">BONJOUR, JE SUIS</span>
+    </p>
+    <h1 class="hero-name">Julien<br /><em class="hero-accent">Desrosiers</em></h1>
+    <p class="hero-subtitle">
+      {{
+        lang.t(
+          'Full-stack developer · Angular · Spring Boot',
+          'Développeur full-stack · Angular · Spring Boot'
+        )
+      }}
+    </p>
+    <button class="hero-cta" (click)="(null)">
+      {{ lang.t('See my projects', 'Voir mes projets') }} →
+    </button>
+  </div>
+</section>
+
+<!-- ── Education ──────────────────────────────────────────────────────────────── -->
+<section id="education" class="page-section page-section--alt">
+  <div class="section-inner">
+    <p class="section-eyebrow mono">
+      <span class="col-label-comment">// </span>
+      <span class="section-eyebrow-num">01.</span>
+      <span class="col-label-tag">{{ lang.t('EDUCATION', 'FORMATION') }}</span>
+    </p>
+    <h2 class="section-title">{{ lang.t('Academic background', 'Parcours académique') }}</h2>
+    <div class="placeholder-grid">
+      <div class="placeholder-card">
+        <p class="card-date mono">2021 — 2025</p>
+        <h3 class="card-title">{{ lang.t('B.Sc. Computer Science', 'B.Sc. Informatique') }}</h3>
+        <p class="card-sub">Université du Québec à Trois-Rivières</p>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Specialization in software engineering and distributed systems.',
+              'Spécialisation en génie logiciel et systèmes distribués.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-date mono">2019 — 2021</p>
+        <h3 class="card-title">{{ lang.t('D.E.C. Computer Science', 'D.E.C. Informatique') }}</h3>
+        <p class="card-sub">Cégep de Trois-Rivières</p>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Focus on object-oriented programming and database design.',
+              'Programmation orientée objet et conception de bases de données.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-date mono">2018 — 2019</p>
+        <h3 class="card-title">
+          {{ lang.t('Web Development Certificate', 'Certificat Développement Web') }}
+        </h3>
+        <p class="card-sub">Formation continue</p>
+        <p class="card-body">
+          {{
+            lang.t(
+              'HTML, CSS, JavaScript fundamentals and responsive design.',
+              'Fondamentaux HTML, CSS, JavaScript et design adaptatif.'
+            )
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ──────────────────────────────────────────────────────────────── -->
+<section id="projects" class="page-section">
+  <div class="section-inner">
+    <p class="section-eyebrow mono">
+      <span class="col-label-comment">// </span>
+      <span class="section-eyebrow-num">02.</span>
+      <span class="col-label-tag">{{ lang.t('PROJECTS', 'PROJETS') }}</span>
+    </p>
+    <h2 class="section-title">{{ lang.t('Selected work', 'Travaux sélectionnés') }}</h2>
+    <div class="placeholder-grid">
+      <div class="placeholder-card">
+        <p class="card-tags mono">Angular · Spring Boot · PostgreSQL</p>
+        <h3 class="card-title">Portfolio</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Personal portfolio built with Angular 21 standalone, Material 3, and GitHub Pages.',
+              'Portfolio personnel construit avec Angular 21 standalone, Material 3 et GitHub Pages.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">React · Node.js · MongoDB</p>
+        <h3 class="card-title">{{ lang.t('E-Commerce Platform', 'Plateforme E-Commerce') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Full-stack marketplace with real-time inventory and Stripe payments.',
+              'Marketplace full-stack avec inventaire temps réel et paiements Stripe.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Python · FastAPI · Docker</p>
+        <h3 class="card-title">{{ lang.t('Data Pipeline', 'Pipeline de données') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'ETL pipeline for processing 1M+ records daily with automated reporting.',
+              'Pipeline ETL pour traiter 1M+ enregistrements par jour avec rapports automatisés.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Flutter · Firebase</p>
+        <h3 class="card-title">
+          {{ lang.t('Task Manager App', 'Application de gestion de tâches') }}
+        </h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Cross-platform mobile app with offline-first sync and push notifications.',
+              'Application mobile multiplateforme avec synchronisation hors ligne et notifications push.'
+            )
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Atelier ──────────────────────────────────────────────────────────────── -->
+<section id="skills" class="page-section page-section--alt">
+  <div class="section-inner">
+    <p class="section-eyebrow mono">
+      <span class="col-label-comment">// </span>
+      <span class="section-eyebrow-num">03.</span>
+      <span class="col-label-tag">ATELIER</span>
+    </p>
+    <h2 class="section-title">
+      {{ lang.t('Experiments & side projects', 'Expériences & projets parallèles') }}
+    </h2>
+    <div class="placeholder-grid">
+      <div class="placeholder-card">
+        <p class="card-tags mono">Angular · SCSS</p>
+        <h3 class="card-title">{{ lang.t('Design system', 'Système de design') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Component library built on Material 3 tokens with theming support.',
+              'Bibliothèque de composants basée sur les tokens Material 3 avec support de thèmes.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Three.js · WebGL</p>
+        <h3 class="card-title">{{ lang.t('3D Scene Explorer', 'Explorateur de scènes 3D') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Interactive 3D viewer with custom shaders and procedural terrain generation.',
+              'Visualiseur 3D interactif avec shaders personnalisés et génération de terrain procédurale.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Rust · WASM</p>
+        <h3 class="card-title">{{ lang.t('Game of Life', 'Jeu de la vie') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              "Conway's Game of Life compiled to WebAssembly for near-native performance in the browser.",
+              'Jeu de la vie de Conway compilé en WebAssembly pour des performances quasi-natives dans le navigateur.'
+            )
+          }}
+        </p>
+      </div>
+      <!-- ── Sup ───────────────────────────────────────────────────────────── -->
+      <div class="placeholder-card">
+        <p class="card-tags mono">Three.js · WebGL</p>
+        <h3 class="card-title">{{ lang.t('3D Scene Explorer', 'Explorateur de scènes 3D') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Interactive 3D viewer with custom shaders and procedural terrain generation.',
+              'Visualiseur 3D interactif avec shaders personnalisés et génération de terrain procédurale.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Rust · WASM</p>
+        <h3 class="card-title">{{ lang.t('Game of Life', 'Jeu de la vie') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              "Conway's Game of Life compiled to WebAssembly for near-native performance in the browser.",
+              'Jeu de la vie de Conway compilé en WebAssembly pour des performances quasi-natives dans le navigateur.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Three.js · WebGL</p>
+        <h3 class="card-title">{{ lang.t('3D Scene Explorer', 'Explorateur de scènes 3D') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Interactive 3D viewer with custom shaders and procedural terrain generation.',
+              'Visualiseur 3D interactif avec shaders personnalisés et génération de terrain procédurale.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Rust · WASM</p>
+        <h3 class="card-title">{{ lang.t('Game of Life', 'Jeu de la vie') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              "Conway's Game of Life compiled to WebAssembly for near-native performance in the browser.",
+              'Jeu de la vie de Conway compilé en WebAssembly pour des performances quasi-natives dans le navigateur.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Three.js · WebGL</p>
+        <h3 class="card-title">{{ lang.t('3D Scene Explorer', 'Explorateur de scènes 3D') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Interactive 3D viewer with custom shaders and procedural terrain generation.',
+              'Visualiseur 3D interactif avec shaders personnalisés et génération de terrain procédurale.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Rust · WASM</p>
+        <h3 class="card-title">{{ lang.t('Game of Life', 'Jeu de la vie') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              "Conway's Game of Life compiled to WebAssembly for near-native performance in the browser.",
+              'Jeu de la vie de Conway compilé en WebAssembly pour des performances quasi-natives dans le navigateur.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Three.js · WebGL</p>
+        <h3 class="card-title">{{ lang.t('3D Scene Explorer', 'Explorateur de scènes 3D') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              'Interactive 3D viewer with custom shaders and procedural terrain generation.',
+              'Visualiseur 3D interactif avec shaders personnalisés et génération de terrain procédurale.'
+            )
+          }}
+        </p>
+      </div>
+      <div class="placeholder-card">
+        <p class="card-tags mono">Rust · WASM</p>
+        <h3 class="card-title">{{ lang.t('Game of Life', 'Jeu de la vie') }}</h3>
+        <p class="card-body">
+          {{
+            lang.t(
+              "Conway's Game of Life compiled to WebAssembly for near-native performance in the browser.",
+              'Jeu de la vie de Conway compilé en WebAssembly pour des performances quasi-natives dans le navigateur.'
+            )
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ───────────────────────────────────────────────────────────── -->
+<section id="contact" class="page-section contact-section">
+  <div class="section-inner">
+    <!-- Eyebrow -->
+    <p class="contact-eyebrow mono">
+      <span class="col-label-comment">// </span>
+      <span class="contact-eyebrow-num">04.</span>
+      <span class="col-label-tag">CONTACT</span>
+    </p>
+
+    <!-- CTA heading -->
+    <h2 class="contact-cta">
+      {{ lang.t('Feel free to', "N'hésitez pas") }}<br />
+      <em class="contact-accent">{{ lang.t('reach out', 'à me contacter') }}</em
+      ><span class="contact-dot">.</span>
+    </h2>
+
+    <!-- Email link -->
+    <div class="contact-email-wrap">
+      <a
+        class="contact-email"
+        href="mailto:julien.desrosiers+portfolio@uqtr.ca"
+        (click)="copyEmail()"
+        [attr.data-copied]="emailCopied"
+        [attr.aria-label]="
+          lang.t(
+            'Send email to julien.desrosiers@uqtr.ca',
+            'Envoyer un courriel à julien.desrosiers@uqtr.ca'
+          )
+        "
+      >
+        <span class="contact-email-arrow" aria-hidden="true">→</span>
+        julien.desrosiers&#64;uqtr.ca
+      </a>
+      <span #copyToast class="copy-toast" role="status" aria-live="polite"
+        >✓ {{ lang.t('Address copied!', 'Adresse copiée !') }}</span
+      >
+    </div>
+  </div>
+</section>

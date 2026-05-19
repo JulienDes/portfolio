@@ -21,11 +21,18 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   background-color: var(--mat-sys-background);
   color: var(--mat-sys-on-background);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
   overflow-x: hidden;
 }

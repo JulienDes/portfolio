@@ -87,3 +87,8 @@ $body-small: var(--mat-sys-body-small);
 $label-large: var(--mat-sys-label-large);
 $label-medium: var(--mat-sys-label-medium);
 $label-small: var(--mat-sys-label-small);
+
+// --- Non-M3 brand token (the only one) ---
+// Exposed as a CSS var in styles.scss. Use var(--font-mono) in templates,
+// or this alias in component SCSS files.
+$font-mono: var(--font-mono);

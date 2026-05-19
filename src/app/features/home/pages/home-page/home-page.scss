@@ -1,0 +1,297 @@
+@use 'styles/sys' as sys;
+@use 'styles/spacing' as sp;
+
+// ── Page sections ─────────────────────────────────────────────────────────────
+
+.page-section {
+  padding: sp.$xl-2 sp.$lg;
+  scroll-margin-top: 72px; // sticky navbar height + breathing room
+
+  &--alt {
+    background: sys.$surface-container-low;
+  }
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
+.mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+.col-label-comment {
+  color: sys.$on-surface-variant;
+  opacity: 0.5;
+}
+
+.col-label-tag {
+  color: sys.$on-surface-variant;
+  letter-spacing: 0.08em;
+}
+
+// ── Hero section ──────────────────────────────────────────────────────────────
+
+.hero-section {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-margin-top: 72px;
+}
+
+.hero-inner {
+  max-width: 800px;
+  padding: sp.$xl-2 sp.$lg;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: sp.$xs;
+  margin: 0 0 sp.$lg;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.hero-name {
+  margin: 0 0 sp.$lg;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: sys.$on-surface;
+}
+
+.hero-accent {
+  color: sys.$primary;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  margin: 0 0 sp.$xl-2;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: sys.$on-surface-variant;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: sp.$sm;
+  padding: sp.$sm sp.$lg;
+  border: 1px solid sys.$outline;
+  border-radius: sys.$corner-full;
+  background: transparent;
+  color: sys.$on-surface;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    color 200ms ease;
+
+  &:hover {
+    background: sys.$surface-container-high;
+  }
+}
+
+// ── Generic section header ─────────────────────────────────────────────────────
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: sp.$xs;
+  margin: 0 0 sp.$md;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.section-eyebrow-num {
+  color: sys.$primary;
+  font-weight: 600;
+}
+
+.section-title {
+  margin: 0 0 sp.$xl-2;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: sys.$on-surface;
+}
+
+// ── Placeholder cards ──────────────────────────────────────────────────────────
+
+.placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: sp.$lg;
+}
+
+.placeholder-card {
+  background: sys.$surface-container;
+  border-radius: sys.$corner-medium;
+  padding: sp.$lg;
+  display: flex;
+  flex-direction: column;
+  gap: sp.$sm;
+}
+
+.card-date,
+.card-tags {
+  font-size: 0.75rem;
+  color: sys.$primary;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: sys.$on-surface;
+}
+
+.card-sub {
+  margin: 0;
+  font-size: 0.875rem;
+  color: sys.$primary;
+  font-weight: 500;
+}
+
+.card-body {
+  margin: 0;
+  font-size: 0.875rem;
+  color: sys.$on-surface-variant;
+  line-height: 1.6;
+}
+
+// ── Contact section ───────────────────────────────────────────────────────────
+
+.contact-section {
+  text-align: center;
+  padding-bottom: sp.$xl-2;
+}
+
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: sp.$xs;
+  margin: 0 0 sp.$lg;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.contact-eyebrow-num {
+  color: sys.$primary;
+  font-weight: 600;
+}
+
+.contact-cta {
+  margin: 0 0 sp.$xl-2;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: sys.$on-surface;
+}
+
+.contact-accent {
+  color: sys.$primary;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.contact-dot {
+  color: sys.$primary;
+}
+
+.contact-email-wrap {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: sp.$sm;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 400;
+  color: sys.$on-surface;
+  text-decoration: none;
+  transition: color 200ms ease;
+
+  &:hover {
+    color: sys.$primary;
+
+    .contact-email-arrow {
+      transform: translateX(6px);
+    }
+  }
+
+  &[data-copied='true'] {
+    color: sys.$primary;
+  }
+}
+
+.contact-email-arrow {
+  color: sys.$primary;
+  display: inline-block;
+  transition: transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.copy-toast {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  white-space: nowrap;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: sys.$on-primary;
+  background: sys.$primary;
+  border-radius: sys.$corner-extra-small;
+  padding: 4px 10px;
+  pointer-events: none;
+  opacity: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: sys.$primary;
+  }
+
+  &--visible {
+    animation: toast-lifecycle 2000ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+}
+
+@keyframes toast-lifecycle {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(6px);
+  }
+  8% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+  }
+}

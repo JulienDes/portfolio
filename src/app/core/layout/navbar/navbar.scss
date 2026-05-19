@@ -8,25 +8,134 @@
   background: sys.$surface-container;
   color: sys.$on-surface;
   border-bottom: 1px solid sys.$outline-variant;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
+// ── Brand ─────────────────────────────────────────────────────────────────────
 .brand {
-  font: sys.$title-medium;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: sp.$xs;
+  padding: sp.$xs sp.$sm;
+  border: none;
+  border-radius: sys.$corner-small;
+  background: transparent;
   cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: sys.$label-medium;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: sys.$on-surface;
   flex-shrink: 0;
+  transition:
+    color 200ms ease,
+    background 200ms ease;
+
+  &:hover {
+    color: sys.$primary;
+    background: color-mix(in srgb, sys.$primary 8%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid sys.$primary;
+    outline-offset: 2px;
+  }
 }
+
+// ── Desktop nav links ─────────────────────────────────────────────────────────
 
 .nav-links {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
-  gap: 0.25rem;
+  margin-left: sp.$sm;
+  gap: 0;
+}
 
-  a.active {
+.nav-link {
+  // Plain button — no MDC machinery fighting baseline alignment
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  padding: sp.$xs sp.$sm;
+  border: none;
+  border-radius: sys.$corner-small;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.65;
+  font-family: var(--font-mono);
+  font-size: sys.$label-medium;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition:
+    opacity 120ms ease,
+    background 120ms ease;
+
+  &:focus-visible {
+    outline: 2px solid sys.$primary;
+    outline-offset: 2px;
+  }
+
+  .nav-index {
+    font-size: sys.$label-medium;
+    font-weight: 700;
     color: sys.$primary;
-    background: sys.$primary-container;
-    border-radius: sys.$corner-full;
+  }
+
+  .nav-sep {
+    color: sys.$on-surface-variant;
+    font-weight: 400;
+    font-size: sys.$label-medium;
+    opacity: 0.4;
+  }
+
+  .nav-label {
+    color: sys.$on-surface;
+    transition: color 120ms ease;
+  }
+
+  .nav-cursor {
+    color: transparent;
+    font-size: sys.$label-medium;
+    transition: color 120ms ease;
+  }
+
+  &:hover {
+    opacity: 1;
+    background: color-mix(in srgb, sys.$primary 8%, transparent);
+
+    .nav-label {
+      color: sys.$primary;
+    }
+
+    .nav-cursor {
+      color: sys.$primary;
+      animation: cursor-blink 1s step-end infinite;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    background: color-mix(in srgb, sys.$primary 12%, transparent);
+
+    .nav-label {
+      color: sys.$primary;
+    }
+
+    .nav-cursor {
+      color: sys.$primary;
+      animation: cursor-blink 1s step-end infinite;
+    }
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }
 
@@ -47,7 +156,7 @@
   background: transparent;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: sys.$label-medium;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
