@@ -6,6 +6,26 @@ import { LangService } from '../../lang/lang';
   template: `
     <footer class="site-footer">
       <div class="footer-inner">
+        <!-- LEFT: copyright -->
+        <p class="footer-meta mono footer-copyright">© {{ year }} - Julien Desrosiers</p>
+
+        <!-- CENTER: ASCII AI agent + source code text -->
+        <p class="footer-meta mono footer-source">
+          <a
+            href="https://github.com/JulienDes/portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{
+              lang.t(
+                'The source code is available on GitHub',
+                'Le code source est disponible sur GitHub'
+              )
+            }}<span class="footer-arr">↗</span>
+          </a>
+        </p>
+
+        <!-- RIGHT: links -->
         <div class="footer-links mono">
           <a href="https://github.com/JulienDes" target="_blank" rel="noopener noreferrer">
             GitHub <span class="footer-arr">↗</span>
@@ -18,13 +38,6 @@ import { LangService } from '../../lang/lang';
             LinkedIn <span class="footer-arr">↗</span>
           </a>
         </div>
-        <p class="footer-meta mono footer-center">
-          {{ lang.t('Built with', 'Conçu avec') }}
-          <strong>Angular</strong>
-          {{ lang.t('· deployed on', '· déployé sur') }}
-          <span class="footer-accent">GitHub Pages</span>.
-        </p>
-        <p class="footer-meta mono footer-copyright">© {{ year }} — Julien Desrosiers</p>
       </div>
     </footer>
   `,
@@ -57,14 +70,59 @@ import { LangService } from '../../lang/lang';
         }
       }
 
+      /* LEFT */
+      .footer-copyright {
+        text-align: left;
+        margin: 0;
+        opacity: 0.65;
+        letter-spacing: 0.02em;
+        font-family: sys.$font-mono;
+
+        @media (max-width: 800px) {
+          text-align: center;
+          order: 3;
+        }
+      }
+
+      .footer-source {
+        margin: 0;
+        opacity: 0.55;
+        letter-spacing: 0.02em;
+        font-family: sys.$font-mono;
+        white-space: nowrap;
+        font-size: sys.$label-small;
+
+        a {
+          color: sys.$on-surface-variant;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          transition:
+            color 150ms ease,
+            opacity 150ms ease;
+
+          &:hover {
+            color: sys.$primary;
+            opacity: 1;
+          }
+        }
+
+        @media (max-width: 800px) {
+          white-space: normal;
+          text-align: center;
+        }
+      }
+
+      /* RIGHT */
       .footer-links {
         display: flex;
         gap: sp.$lg;
-        justify-content: flex-start;
+        justify-content: flex-end;
 
         @media (max-width: 800px) {
           justify-content: center;
-          order: 1;
+          order: 2;
         }
 
         a {
@@ -92,27 +150,6 @@ import { LangService } from '../../lang/lang';
 
         a:hover & {
           transform: translate(2px, -2px);
-        }
-      }
-
-      .footer-center {
-        text-align: center;
-        white-space: nowrap;
-        padding: 0 sp.$lg;
-
-        @media (max-width: 800px) {
-          white-space: normal;
-          padding: 0;
-          order: 2;
-        }
-      }
-
-      .footer-copyright {
-        text-align: right;
-
-        @media (max-width: 800px) {
-          text-align: center;
-          order: 3;
         }
       }
 

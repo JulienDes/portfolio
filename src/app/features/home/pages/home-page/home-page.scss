@@ -174,23 +174,28 @@
 // ── Contact section ───────────────────────────────────────────────────────────
 
 .contact-section {
-  text-align: center;
   padding-bottom: sp.$xl-2;
 }
 
 .contact-eyebrow {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
   gap: sp.$xs;
   margin: 0 0 sp.$lg;
-  font-size: 0.75rem;
+  font-size: sys.$label-medium;
   letter-spacing: 0.08em;
 }
 
 .contact-eyebrow-num {
   color: sys.$primary;
   font-weight: 600;
+}
+
+.contact-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .contact-cta {

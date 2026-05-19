@@ -299,32 +299,34 @@
     </p>
 
     <!-- CTA heading -->
-    <h2 class="contact-cta">
-      {{ lang.t('Feel free to', "N'hésitez pas") }}<br />
-      <em class="contact-accent">{{ lang.t('reach out', 'à me contacter') }}</em
-      ><span class="contact-dot">.</span>
-    </h2>
+    <div class="contact-center">
+      <h2 class="contact-cta">
+        {{ lang.t('Feel free to', "N'hésitez pas") }}<br />
+        <em class="contact-accent">{{ lang.t('reach out', 'à me contacter') }}</em
+        ><span class="contact-dot">.</span>
+      </h2>
 
-    <!-- Email link -->
-    <div class="contact-email-wrap">
-      <a
-        class="contact-email"
-        href="mailto:julien.desrosiers+portfolio@uqtr.ca"
-        (click)="copyEmail()"
-        [attr.data-copied]="emailCopied"
-        [attr.aria-label]="
-          lang.t(
-            'Send email to julien.desrosiers@uqtr.ca',
-            'Envoyer un courriel à julien.desrosiers@uqtr.ca'
-          )
-        "
-      >
-        <span class="contact-email-arrow" aria-hidden="true">→</span>
-        julien.desrosiers&#64;uqtr.ca
-      </a>
-      <span #copyToast class="copy-toast" role="status" aria-live="polite"
-        >✓ {{ lang.t('Address copied!', 'Adresse copiée !') }}</span
-      >
+      <!-- Email link -->
+      <div class="contact-email-wrap">
+        <a
+          class="contact-email"
+          href="mailto:julien.desrosiers+portfolio@uqtr.ca"
+          (click)="copyEmail()"
+          [attr.data-copied]="emailCopied"
+          [attr.aria-label]="
+            lang.t(
+              'Send email to julien.desrosiers@uqtr.ca',
+              'Envoyer un courriel à julien.desrosiers@uqtr.ca'
+            )
+          "
+        >
+          <span class="contact-email-arrow" aria-hidden="true">→</span>
+          julien.desrosiers&#64;uqtr.ca
+        </a>
+        <span #copyToast class="copy-toast" role="status" aria-live="polite"
+          >✓ {{ lang.t('Address copied!', 'Adresse copiée !') }}</span
+        >
+      </div>
     </div>
   </div>
 </section>
