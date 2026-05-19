@@ -7,6 +7,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { ThemeService, PALETTES } from '../../theme/theme';
+import { LangService } from '../../lang/lang';
 
 @Component({
   selector: 'app-navbar',
@@ -23,7 +24,9 @@ import { ThemeService, PALETTES } from '../../theme/theme';
   styleUrl: './navbar.scss',
 })
 export class NavbarComponent {
+  // ── Public injectables ────────────────────────────────────────────────────
   readonly theme = inject(ThemeService);
+  readonly lang = inject(LangService);
   readonly palettes = PALETTES;
 
   paletteName(name: string): string {

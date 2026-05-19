@@ -1,4 +1,5 @@
 @use 'styles/sys' as sys;
+@use 'styles/spacing' as sp;
 
 .navbar {
   position: sticky;
@@ -31,6 +32,40 @@
 
 .spacer {
   flex: 1;
+}
+
+// ── Right-side controls ───────────────────────────────────────────────────────
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  padding: 0 sp.$xs;
+  border: none;
+  border-radius: sys.$corner-small;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: sys.$on-surface-variant;
+  opacity: 0.65;
+  transition:
+    color 120ms ease,
+    opacity 120ms ease;
+
+  &:hover {
+    color: sys.$primary;
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid sys.$primary;
+    outline-offset: 2px;
+  }
 }
 
 .hamburger {

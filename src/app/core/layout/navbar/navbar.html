@@ -1,12 +1,20 @@
 <mat-toolbar class="navbar">
-  <span class="brand" routerLink="/">AppName</span>
+  <span class="brand" routerLink="/">Julien Desrosiers</span>
 
   <nav class="nav-links">
     <a mat-button routerLink="/showcase" routerLinkActive="active">Showcase</a>
-    <a mat-button routerLink="/example" routerLinkActive="active">Example</a>
   </nav>
 
   <span class="spacer"></span>
+
+  <!-- Lang toggle -->
+  <button
+    class="lang-btn"
+    [matTooltip]="lang.t('Switch to French', 'Switch to English')"
+    (click)="lang.toggle()"
+  >
+    <span class="lang-label">{{ lang.t('FR', 'EN') }}</span>
+  </button>
 
   <!-- Palette picker -->
   <button mat-icon-button [matMenuTriggerFor]="paletteMenu" matTooltip="Change palette">
