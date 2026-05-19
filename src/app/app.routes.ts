@@ -8,12 +8,5 @@ export const routes: Routes = [
         (m) => m.ShowcasePageComponent,
       ),
   },
-  {
-    path: 'example',
-    loadComponent: () =>
-      import('./features/example/pages/example-page/example-page').then(
-        (m) => m.ExamplePageComponent,
-      ),
-  },
   { path: '', redirectTo: 'showcase', pathMatch: 'full' },
 ];
