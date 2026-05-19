@@ -39,6 +39,11 @@ export class AuthService {
     return this.api.post<void>('/auth/reset-password', dto);
   }
 
+  /** Returns the stored bearer token, or null if the user is not authenticated. */
+  getToken(): string | null {
+    return localStorage.getItem(AUTH_TOKEN_KEY);
+  }
+
   /** Clears the session — removes token, user, and resets the signal. */
   logout(): void {
     localStorage.removeItem(AUTH_TOKEN_KEY);

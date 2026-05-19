@@ -1,8 +1,17 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { AUTH_TOKEN_KEY } from '../auth/auth';
+import { inject } from '@angular/core';
+import { AuthService } from '../auth/auth';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = localStorage.getItem(AUTH_TOKEN_KEY);
+  if (
+    req.url.startsWith('/assets') ||
+    req.url.startsWith('http://') ||
+    req.url.startsWith('https://')
+  ) {
+    return next(req);
+  }
+
+  const token = inject(AuthService).getToken();
   if (!token) return next(req);
 
   return next(

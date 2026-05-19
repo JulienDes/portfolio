@@ -1,7 +1,7 @@
 import { InjectionToken } from '@angular/core';
 
 export interface AppConfig {
-  apiBaseUrl: string;
+  apiUrl: string;
 }
 
 export const APP_CONFIG = new InjectionToken<AppConfig>('APP_CONFIG');
