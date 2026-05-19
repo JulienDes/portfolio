@@ -1,44 +1,44 @@
-name: Deploy to GitHub Pages
+# name: Deploy to GitHub Pages
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+# on:
+#   push:
+#     branches: [main]
+#   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: true
+# concurrency:
+#   group: pages
+#   cancel-in-progress: true
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - uses: oven-sh/setup-bun@v2
+#       - uses: oven-sh/setup-bun@v2
 
-      - name: Install dependencies
-        run: bun install
+#       - name: Install dependencies
+#         run: bun install
 
-      - name: Build
-        run: bun run build -- --base-href "${{ vars.BASE_HREF || '/' }}"
+#       - name: Build
+#         run: bun run build -- --base-href "${{ vars.BASE_HREF || '/' }}"
 
-      - name: Add 404 redirect for SPA routing
-        run: cp dist/${{ github.event.repository.name }}/browser/index.html dist/${{ github.event.repository.name }}/browser/404.html
+#       - name: Add 404 redirect for SPA routing
+#         run: cp dist/${{ github.event.repository.name }}/browser/index.html dist/${{ github.event.repository.name }}/browser/404.html
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist/${{ github.event.repository.name }}/browser
+#       - name: Upload Pages artifact
+#         uses: actions/upload-pages-artifact@v3
+#         with:
+#           path: dist/${{ github.event.repository.name }}/browser
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v4
