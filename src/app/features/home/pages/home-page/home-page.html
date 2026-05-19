@@ -1,34 +1,30 @@
 <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
 <section id="hero" class="hero-section">
+  <div class="hero-bg" aria-hidden="true">
+    <canvas #neuralCanvas class="neural-canvas"></canvas>
+  </div>
   <div class="hero-inner">
-    <p class="hero-eyebrow mono">
-      <span class="col-label-comment">// </span>
-      <span class="col-label-tag">BONJOUR, JE SUIS</span>
-    </p>
     <h1 class="hero-name">Julien<br /><em class="hero-accent">Desrosiers</em></h1>
     <p class="hero-subtitle">
       {{
         lang.t(
-          'Full-stack developer · Angular · Spring Boot',
-          'Développeur full-stack · Angular · Spring Boot'
+          'I build intelligent systems to automate repetitive tasks.',
+          'Je construis des systèmes intelligents pour automatiser les tâches répétitives.'
         )
       }}
+      <em class="hero-accent">{{
+        lang.t("Currently pursuing a Master's in AI.", 'Actuellement à la maîtrise en IA.')
+      }}</em>
     </p>
-    <button class="hero-cta" (click)="(null)">
-      {{ lang.t('See my projects', 'Voir mes projets') }} →
-    </button>
   </div>
 </section>
 
 <!-- ── Education ──────────────────────────────────────────────────────────────── -->
 <section id="education" class="page-section page-section--alt">
   <div class="section-inner">
-    <p class="section-eyebrow mono">
-      <span class="col-label-comment">// </span>
-      <span class="section-eyebrow-num">01.</span>
-      <span class="col-label-tag">{{ lang.t('EDUCATION', 'FORMATION') }}</span>
-    </p>
-    <h2 class="section-title">{{ lang.t('Academic background', 'Parcours académique') }}</h2>
+    <h2 class="section-title">
+      {{ lang.t('Education & Certifications', 'Formation & Certifications') }}
+    </h2>
     <div class="placeholder-grid">
       <div class="placeholder-card">
         <p class="card-date mono">2021 — 2025</p>
@@ -78,12 +74,9 @@
 <!-- ── Projects ──────────────────────────────────────────────────────────────── -->
 <section id="projects" class="page-section">
   <div class="section-inner">
-    <p class="section-eyebrow mono">
-      <span class="col-label-comment">// </span>
-      <span class="section-eyebrow-num">02.</span>
-      <span class="col-label-tag">{{ lang.t('PROJECTS', 'PROJETS') }}</span>
-    </p>
-    <h2 class="section-title">{{ lang.t('Selected work', 'Travaux sélectionnés') }}</h2>
+    <h2 class="section-title">
+      {{ lang.t('Featured Projects', 'Mes projets') }}
+    </h2>
     <div class="placeholder-grid">
       <div class="placeholder-card">
         <p class="card-tags mono">Angular · Spring Boot · PostgreSQL</p>
@@ -139,16 +132,11 @@
   </div>
 </section>
 
-<!-- ── Atelier ──────────────────────────────────────────────────────────────── -->
+<!-- ── Skills ──────────────────────────────────────────────────────────────── -->
 <section id="skills" class="page-section page-section--alt">
   <div class="section-inner">
-    <p class="section-eyebrow mono">
-      <span class="col-label-comment">// </span>
-      <span class="section-eyebrow-num">03.</span>
-      <span class="col-label-tag">ATELIER</span>
-    </p>
     <h2 class="section-title">
-      {{ lang.t('Experiments & side projects', 'Expériences & projets parallèles') }}
+      {{ lang.t('Skills & Learnings', 'Compétences  & apprentissages') }}
     </h2>
     <div class="placeholder-grid">
       <div class="placeholder-card">
@@ -291,13 +279,6 @@
 <!-- ── Contact ───────────────────────────────────────────────────────────── -->
 <section id="contact" class="page-section contact-section">
   <div class="section-inner">
-    <!-- Eyebrow -->
-    <p class="contact-eyebrow mono">
-      <span class="col-label-comment">// </span>
-      <span class="contact-eyebrow-num">04.</span>
-      <span class="col-label-tag">CONTACT</span>
-    </p>
-
     <!-- CTA heading -->
     <div class="contact-center">
       <h2 class="contact-cta">
