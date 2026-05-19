@@ -1,0 +1,20 @@
+// =============================================================================
+// Spacing scale — single source of truth for layout spacing.
+//
+// Usage in component styles:
+//   @use 'styles/spacing' as sp;
+//   padding: sp.$md sp.$lg;
+//   gap: sp.$sm;
+//
+// These are SCSS variables only — not emitted as CSS custom properties.
+// This keeps spacing theme-controlled (change here, rebuild, done) without
+// polluting the runtime CSS var namespace with non-M3 tokens.
+// =============================================================================
+
+$xxs: 0.125rem; //  2px
+$xs: 0.25rem; //  4px
+$sm: 0.5rem; //  8px
+$md: 1rem; // 16px
+$lg: 1.5rem; // 24px
+$xl: 2rem; // 32px
+$xl-2: 3rem; // 48px

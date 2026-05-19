@@ -1,12 +1,33 @@
 <mat-toolbar class="navbar">
-  <span class="brand" routerLink="/">AppName</span>
+  <!-- Brand -->
+  <button class="brand" (click)="scrollTo('hero')">Julien Desrosiers</button>
 
-  <nav class="nav-links">
-    <a mat-button routerLink="/showcase" routerLinkActive="active">Showcase</a>
-    <a mat-button routerLink="/example" routerLinkActive="active">Example</a>
+  <!-- Desktop anchor nav -->
+  <nav class="nav-links" aria-label="Navigation principale">
+    @for (item of navItems; track item.fragment) {
+      <button
+        class="nav-link"
+        [class.active]="isActive(item.fragment)"
+        (click)="scrollTo(item.fragment)"
+      >
+        <span class="nav-index">{{ item.index }}</span>
+        <span class="nav-sep">.</span>
+        <span class="nav-label">{{ lang.t(item.labelEn, item.labelFr) }}</span>
+        <span class="nav-cursor" aria-hidden="true">_</span>
+      </button>
+    }
   </nav>
 
   <span class="spacer"></span>
+
+  <!-- Lang toggle -->
+  <button
+    class="lang-btn"
+    [matTooltip]="lang.t('Switch to French', 'Switch to English')"
+    (click)="lang.toggle()"
+  >
+    <span class="lang-label">{{ lang.t('FR', 'EN') }}</span>
+  </button>
 
   <!-- Palette picker -->
   <button mat-icon-button [matMenuTriggerFor]="paletteMenu" matTooltip="Change palette">
@@ -20,11 +41,6 @@
     (click)="theme.toggle()"
   >
     <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
-  </button>
-
-  <!-- Mobile hamburger -->
-  <button class="hamburger" mat-icon-button [matMenuTriggerFor]="mobileMenu">
-    <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
 
@@ -40,9 +56,4 @@
       ></button>
     }
   </div>
-</mat-menu>
-
-<mat-menu #mobileMenu="matMenu">
-  <a mat-menu-item routerLink="/showcase"> <mat-icon>grid_view</mat-icon> Showcase </a>
-  <a mat-menu-item routerLink="/example"> <mat-icon>view_list</mat-icon> Example </a>
 </mat-menu>
