@@ -1,6 +1,8 @@
 <mat-toolbar class="navbar">
   <!-- Brand -->
-  <button class="brand" (click)="scrollTo('hero')">Julien Desrosiers</button>
+  <div class="brand-wrap">
+    <button class="brand" (click)="scrollTo('hero')">Julien Desrosiers</button>
+  </div>
 
   <!-- Desktop anchor nav -->
   <nav class="nav-links" aria-label="Navigation principale">
@@ -10,38 +12,35 @@
         [class.active]="isActive(item.fragment)"
         (click)="scrollTo(item.fragment)"
       >
-        <span class="nav-index">{{ item.index }}</span>
-        <span class="nav-sep">.</span>
         <span class="nav-label">{{ lang.t(item.labelEn, item.labelFr) }}</span>
-        <span class="nav-cursor" aria-hidden="true">_</span>
       </button>
     }
   </nav>
 
-  <span class="spacer"></span>
+  <div class="nav-right">
+    <!-- Lang toggle -->
+    <button
+      class="lang-btn"
+      [matTooltip]="lang.t('Switch to French', 'Switch to English')"
+      (click)="lang.toggle()"
+    >
+      <span class="lang-label">{{ lang.t('FR', 'EN') }}</span>
+    </button>
 
-  <!-- Lang toggle -->
-  <button
-    class="lang-btn"
-    [matTooltip]="lang.t('Switch to French', 'Switch to English')"
-    (click)="lang.toggle()"
-  >
-    <span class="lang-label">{{ lang.t('FR', 'EN') }}</span>
-  </button>
+    <!-- Palette picker -->
+    <button mat-icon-button [matMenuTriggerFor]="paletteMenu" matTooltip="Change palette">
+      <mat-icon>palette</mat-icon>
+    </button>
 
-  <!-- Palette picker -->
-  <button mat-icon-button [matMenuTriggerFor]="paletteMenu" matTooltip="Change palette">
-    <mat-icon>palette</mat-icon>
-  </button>
-
-  <!-- Theme toggle -->
-  <button
-    mat-icon-button
-    [matTooltip]="theme.isDark() ? 'Switch to light' : 'Switch to dark'"
-    (click)="theme.toggle()"
-  >
-    <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
-  </button>
+    <!-- Theme toggle -->
+    <button
+      mat-icon-button
+      [matTooltip]="theme.isDark() ? 'Switch to light' : 'Switch to dark'"
+      (click)="theme.toggle()"
+    >
+      <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>
 
 <mat-menu #paletteMenu="matMenu">

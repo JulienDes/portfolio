@@ -13,6 +13,12 @@
 }
 
 // ── Brand ─────────────────────────────────────────────────────────────────────
+.brand-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -27,7 +33,6 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   color: sys.$on-surface;
-  flex-shrink: 0;
   transition:
     color 200ms ease,
     background 200ms ease;
@@ -48,8 +53,7 @@
 .nav-links {
   display: flex;
   align-items: center;
-  margin-left: sp.$sm;
-  gap: 0;
+  gap: sp.$xs;
 }
 
 .nav-link {
@@ -139,8 +143,11 @@
   }
 }
 
-.spacer {
+.nav-right {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 // ── Right-side controls ───────────────────────────────────────────────────────
