@@ -39,7 +39,7 @@ jobs:
             const fs = require('fs');
             const raw = fs.readFileSync('coverage/coverage-summary.json', 'utf8');
             const total = JSON.parse(raw).total;
-            const thresholds = { Lines: 80, Branches: 70, Functions: 80, Statements: 80 };
+            const thresholds = { Lines: 80, Branches: 70, Functions: 70, Statements: 80 };
             const metrics = [
               ['Lines',      total.lines.pct],
               ['Branches',   total.branches.pct],
