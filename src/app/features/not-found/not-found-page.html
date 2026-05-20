@@ -1,0 +1,27 @@
+<div class="not-found">
+  <div class="not-found-code" aria-hidden="true">
+    <span>4</span><span class="not-found-code-zero">0</span><span>4</span>
+  </div>
+
+  <p class="not-found-eyebrow">
+    {{ lang.t('Hallucination detected.', 'Hallucination détectée.') }}
+  </p>
+
+  <h1 class="not-found-title">
+    {{ lang.t('The AI', "L'IA a") }}
+    <span class="not-found-accent">
+      {{ lang.t('hallucinated', 'halluciné') }}
+    </span>
+    {{ lang.t('the page you were looking for.', 'la page que vous cherchiez.') }}
+  </h1>
+
+  <p class="not-found-message">
+    {{ lang.t('No sources match.', 'Aucune source ne correspond.') }}
+  </p>
+
+  <div class="not-found-actions">
+    <a mat-flat-button routerLink="/">
+      <span>→</span> {{ lang.t('Back to reality', 'Retour au réel') }}
+    </a>
+  </div>
+</div>
