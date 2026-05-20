@@ -12,7 +12,7 @@ export interface Formation {
   institution: string;
   date: string;
   duration?: { en: string; fr: string };
-  description: { en: string; fr: string };
+  description: { en: string[]; fr: string[] };
   skills: string[];
   referenceUrl?: string | null;
   credentialUrl?: string | null;

@@ -10,7 +10,9 @@
         <!-- RÉSUMÉ -->
         <section class="panel-section">
           <h3 class="panel-section-label">{{ lang.t('SUMMARY', 'RÉSUMÉ') }}</h3>
-          <p class="panel-section-text">{{ lang.t(f.description.en, f.description.fr) }}</p>
+          @for (para of lang.t(f.description.en, f.description.fr); track $index) {
+            <p class="panel-section-text">{{ para }}</p>
+          }
         </section>
 
         <!-- COMPÉTENCES ACQUISES -->
