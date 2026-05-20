@@ -1,0 +1,270 @@
+[
+  {
+    "id": "bac-informatique-science-donnees-uqtr",
+    "type": "degree",
+    "title": {
+      "en": "Bachelor's Degree in Computer Science : Data Science Concentration",
+      "fr": "Baccalauréat en informatique : Cheminement science des données"
+    },
+    "institution": "Université du Québec à Trois-Rivières (UQTR)",
+    "date": "2022-2026",
+    "duration": {
+      "en": "4 years (90 credits)",
+      "fr": "4 ans (90 crédits)"
+    },
+    "description": {
+      "en": "Bachelor's degree program combining a strong foundation in computer science (algorithms, data structures, software engineering, databases, operating systems) with a specialized concentration in data science covering statistics, probability, machine learning, data mining, and big data processing. Final session in progress.",
+      "fr": "Programme de baccalauréat combinant une solide formation en informatique (algorithmes, structures de données, génie logiciel, bases de données, systèmes d'exploitation) avec une spécialisation en science des données couvrant les statistiques, les probabilités, l'apprentissage automatique, la fouille de données et le traitement de données massives. Dernière session en cours."
+    },
+    "skills": [
+      "Python",
+      "Java",
+      "C++",
+      "SQL",
+      "R",
+      "Machine Learning",
+      "Data Mining",
+      "Statistics",
+      "Probability",
+      "Big Data",
+      "Algorithms",
+      "Data Structures",
+      "Software Engineering",
+      "Database Design",
+      "Linear Algebra"
+    ],
+    "referenceUrl": "https://oraprdnt.uqtr.uquebec.ca/portail/triw082.afficher?owa_cd_pgm=7833#topCheminement",
+    "formateur": null,
+    "diplome": {
+      "en": "Bachelor's Degree",
+      "fr": "Baccalauréat"
+    },
+    "statut": {
+      "en": "In Progress",
+      "fr": "En cours"
+    }
+  },
+  {
+    "id": "mongodb-associate-dba",
+    "type": "certification",
+    "title": {
+      "en": "MongoDB Associate Database Administrator",
+      "fr": "MongoDB Associate Database Administrator (DBA)"
+    },
+    "institution": "MongoDB, Inc.",
+    "date": "2026",
+    "duration": {
+      "en": "MongoDB official training (~25 hours) + proctored online exam (ProctorU)",
+      "fr": "Formation officielle MongoDB (~25 heures) + examen en ligne surveillé (ProctorU)"
+    },
+    "description": {
+      "en": "Official MongoDB certification validating the knowledge and skills required to implement, configure, and manage a MongoDB database in production. MongoDB recommends candidates have at least 2 months of consistent hands-on experience as a MongoDB DBA and have successfully completed MongoDB's official database training (or equivalent) prior to attempting the exam. The certification assesses day-to-day operational expertise including cluster deployment, replication, sharding, security, backup and recovery, performance tuning, indexing strategies, and monitoring. Earned by passing the proctored online exam administered through ProctorU.",
+      "fr": "Certification officielle MongoDB validant les connaissances et compétences requises pour implémenter, configurer et administrer une base de données MongoDB en production. MongoDB recommande aux candidats de posséder au minimum 2 mois d'expérience pratique soutenue en tant que DBA MongoDB et d'avoir complété avec succès la formation officielle MongoDB sur les bases de données (ou l'équivalent) avant de tenter l'examen. La certification évalue la maîtrise des tâches opérationnelles quotidiennes, incluant le déploiement de clusters, la réplication, le sharding, la sécurité, la sauvegarde et la restauration, l'optimisation des performances, les stratégies d'indexation et la surveillance. Obtenue en réussissant l'examen en ligne surveillé via ProctorU."
+    },
+    "skills": [
+      "MongoDB",
+      "NoSQL",
+      "Database Administration",
+      "Replication",
+      "Sharding",
+      "Indexing",
+      "Backup & Recovery",
+      "Performance Tuning",
+      "Database Security",
+      "Monitoring",
+      "MongoDB Atlas",
+      "Aggregation Framework"
+    ],
+    "credentialUrl": "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/6366f08b-ce35-475c-840c-07d57bf97bce-julien-d-fba0120c-2d7c-4bf4-b557-efc9e04df953-certificate.pdf",
+    "referenceUrl": "https://learn.mongodb.com/learning-paths/mongodb-database-admin-self-managed-path",
+    "formateur": null,
+    "diplome": {
+      "en": "Professional Certification",
+      "fr": "Certification professionnelle"
+    },
+    "statut": {
+      "en": "Certified",
+      "fr": "Certifié"
+    }
+  },
+  {
+    "id": "ibm-applied-devops-engineering-coursera",
+    "type": "certification",
+    "title": {
+      "en": "IBM Applied DevOps Engineering Professional Certificate",
+      "fr": "Certificat professionnel IBM en ingénierie DevOps appliquée"
+    },
+    "institution": "IBM via Coursera",
+    "date": "2025",
+    "duration": {
+      "en": "~3 months at 10 hours/week (9-course specialization)",
+      "fr": "~3 mois à 10 heures/semaine (spécialisation de 9 cours)"
+    },
+    "description": {
+      "en": "IBM professional certificate covering the full DevOps lifecycle and modern software delivery practices. Completed nine courses: Introduction to DevOps, Agile Development and Scrum, Containers with Docker/Kubernetes/OpenShift, Microservices and Serverless Application Development, Test and Behavior Driven Development, Continuous Integration and Continuous Delivery (CI/CD), Application Security for Developers and DevOps Professionals, Monitoring and Observability, and a hands-on DevOps Capstone Project.",
+      "fr": "Certificat professionnel IBM couvrant l'ensemble du cycle de vie DevOps et les pratiques modernes de livraison logicielle. Neuf cours complétés : Introduction au DevOps, Développement Agile et Scrum, Conteneurs avec Docker/Kubernetes/OpenShift, Développement d'applications avec microservices et serverless, Test et Behavior Driven Development, Intégration et livraison continues (CI/CD), Sécurité applicative pour développeurs et professionnels DevOps, Monitoring et observabilité, et un projet final pratique DevOps Capstone."
+    },
+    "skills": [
+      "DevOps",
+      "CI/CD",
+      "Docker",
+      "Kubernetes",
+      "OpenShift",
+      "Microservices",
+      "Serverless",
+      "Agile",
+      "Scrum",
+      "Test-Driven Development",
+      "Behavior-Driven Development",
+      "Application Security",
+      "Monitoring",
+      "Observability",
+      "Python",
+      "Linux",
+      "Git"
+    ],
+    "credentialUrl": "https://coursera.org/share/40d30629209f1a2ba89089b12883e70d",
+    "referenceUrl": "https://www.coursera.org/professional-certificates/ibm-applied-devops-engineering",
+    "formateur": null,
+    "diplome": {
+      "en": "Professional Certificate",
+      "fr": "Certificat professionnel"
+    },
+    "statut": {
+      "en": "Certified",
+      "fr": "Certifié"
+    }
+  },
+  {
+    "id": "google-cybersecurity-coursera",
+    "type": "certification",
+    "title": {
+      "en": "Google Cybersecurity Professional Certificate",
+      "fr": "Certificat professionnel Google en cybersécurité"
+    },
+    "institution": "Google via Coursera",
+    "date": "2025",
+    "duration": {
+      "en": "~6 months at 7 hours/week (8-course specialization)",
+      "fr": "~6 mois à 7 heures/semaine (spécialisation de 8 cours)"
+    },
+    "description": {
+      "en": "Google professional certificate preparing for entry-level cybersecurity roles. Completed eight courses: Foundations of Cybersecurity, Play It Safe (security risk management), Connect and Protect (networks and network security), Tools of the Trade (Linux and SQL), Assets, Threats and Vulnerabilities, Sound the Alarm (detection and response), Automate Cybersecurity Tasks with Python, and Put It to Work (job-readiness). Hands-on practice with SIEM tools, IDS, packet analysis, and Python scripting for security automation.",
+      "fr": "Certificat professionnel Google préparant aux rôles d'entrée en cybersécurité. Huit cours complétés : Fondements de la cybersécurité, Play It Safe (gestion des risques de sécurité), Connect and Protect (réseaux et sécurité réseau), Tools of the Trade (Linux et SQL), Actifs, menaces et vulnérabilités, Sound the Alarm (détection et réponse), Automatisation des tâches de cybersécurité avec Python, et Put It to Work (préparation à l'emploi). Pratique concrète avec outils SIEM, IDS, analyse de paquets et scripts Python pour l'automatisation de la sécurité."
+    },
+    "skills": [
+      "Cybersecurity",
+      "Network Security",
+      "Linux",
+      "SQL",
+      "Python",
+      "SIEM",
+      "Splunk",
+      "Chronicle",
+      "Incident Response",
+      "Threat Detection",
+      "Risk Management",
+      "NIST CSF",
+      "IDS/IPS",
+      "Wireshark",
+      "tcpdump",
+      "Vulnerability Assessment"
+    ],
+    "credentialUrl": "https://coursera.org/share/a89f064c977022aa3a03a06623b154b2",
+    "referenceUrl": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+    "formateur": null,
+    "diplome": {
+      "en": "Professional Certificate",
+      "fr": "Certificat professionnel"
+    },
+    "statut": {
+      "en": "Certified",
+      "fr": "Certifié"
+    }
+  },
+  {
+    "id": "google-data-analytics-coursera",
+    "type": "certification",
+    "title": {
+      "en": "Google Data Analytics Professional Certificate",
+      "fr": "Certificat professionnel Google en analyse de données"
+    },
+    "institution": "Google via Coursera",
+    "date": "2025",
+    "duration": {
+      "en": "~6 months at 10 hours/week (7-course specialization)",
+      "fr": "~6 mois à 10 heures/semaine (spécialisation de 7 cours)"
+    },
+    "description": {
+      "en": "Google professional certificate covering the full data analytics workflow. Completed seven courses: Foundations (Data, Data, Everywhere), Ask Questions to Make Data-Driven Decisions, Prepare Data for Exploration, Process Data from Dirty to Clean, Analyze Data to Answer Questions, Share Data Through the Art of Visualization, and the Google Data Analytics Capstone case study. Hands-on practice with spreadsheets, SQL, R, Tableau, and structured data storytelling.",
+      "fr": "Certificat professionnel Google couvrant l'ensemble du flux de travail en analyse de données. Sept cours complétés : Fondements (Data, Data, Everywhere), Poser les bonnes questions pour des décisions fondées sur les données, Préparer les données pour l'exploration, Nettoyage et traitement des données, Analyser les données pour répondre aux questions, Visualisation et communication des données, et le projet final Capstone. Pratique concrète avec tableurs, SQL, R, Tableau et narration structurée à partir de données."
+    },
+    "skills": [
+      "Data Analysis",
+      "SQL",
+      "R Programming",
+      "Tableau",
+      "Spreadsheets",
+      "Data Visualization",
+      "Data Cleaning",
+      "Statistical Analysis",
+      "BigQuery",
+      "Data Storytelling",
+      "ggplot2",
+      "R Markdown",
+      "Presentation"
+    ],
+    "credentialUrl": "https://coursera.org/share/2fbd19920be848e96ff88cde55ebb330",
+    "referenceUrl": "https://www.coursera.org/professional-certificates/google-data-analytics",
+    "formateur": null,
+    "diplome": {
+      "en": "Professional Certificate",
+      "fr": "Certificat professionnel"
+    },
+    "statut": {
+      "en": "Certified",
+      "fr": "Certifié"
+    }
+  },
+  {
+    "id": "dec-sciences-nature-lafleche",
+    "type": "diploma",
+    "title": {
+      "en": "Diploma of College Studies (DCS) in Natural Sciences : Pure and Applied Sciences Profile",
+      "fr": "Diplôme d'études collégiales (DEC) en Sciences de la nature : Profil sciences pures et appliquées"
+    },
+    "institution": "Collège Laflèche, Trois-Rivières",
+    "date": "2020-2022",
+    "duration": {
+      "en": "2 years (pre-university program)",
+      "fr": "2 ans (programme pré-universitaire)"
+    },
+    "description": {
+      "en": "Pre-university college program providing the scientific and mathematical foundation required for admission to university engineering, computer science, and pure science programs. Curriculum included calculus (differential, integral, multivariable), linear algebra, mechanics, electricity and magnetism, waves and optics, general and solution chemistry, biology, and applied scientific methodology.",
+      "fr": "Programme collégial pré-universitaire offrant la formation scientifique et mathématique requise pour l'admission aux programmes universitaires en génie, en informatique et en sciences pures. Cursus incluant le calcul différentiel et intégral, le calcul à plusieurs variables, l'algèbre linéaire, la mécanique, l'électricité et le magnétisme, les ondes et l'optique, la chimie générale et des solutions, la biologie et la méthodologie scientifique appliquée."
+    },
+    "skills": [
+      "Calculus",
+      "Linear Algebra",
+      "Mechanics",
+      "Electricity & Magnetism",
+      "Waves & Optics",
+      "General Chemistry",
+      "Solution Chemistry",
+      "Biology",
+      "Scientific Method",
+      "Mathematical Modeling",
+      "Lab Techniques"
+    ],
+    "referenceUrl": "https://oraprdnt.uqtr.uquebec.ca/portail/triw082.afficher?owa_cd_pgm=7833#topCheminement",
+    "formateur": null,
+    "diplome": {
+      "en": "DCS (Diploma of College Studies)",
+      "fr": "DEC (Diplôme d'études collégiales)"
+    },
+    "statut": {
+      "en": "Completed",
+      "fr": "Complété"
+    }
+  }
+]

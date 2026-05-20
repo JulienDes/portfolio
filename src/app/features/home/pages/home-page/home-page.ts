@@ -4,14 +4,18 @@ import {
   ElementRef,
   inject,
   OnDestroy,
+  signal,
   viewChild,
 } from '@angular/core';
-
 import { LangService } from '../../../../core/lang/lang';
+import { FormationPanelComponent } from '../../components/formation-panel/formation-panel';
+import { FormationsTableComponent } from '../../components/formations-table/formations-table';
+import { Formation } from '../../models/formation';
+import formationsData from '../../data/formations.json';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [FormationPanelComponent, FormationsTableComponent],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
@@ -29,6 +33,10 @@ export class HomePageComponent implements OnDestroy {
   // ── Public fields ─────────────────────────────────────────────────────────
   readonly lang = inject(LangService);
 
+  // ── Education ─────────────────────────────────────────────────────────────
+  readonly formations = formationsData as Formation[];
+  readonly selectedFormation = signal<Formation | null>(null);
+
   // ── Contact ───────────────────────────────────────────────────────────────
   emailCopied = false;
 
@@ -37,6 +45,14 @@ export class HomePageComponent implements OnDestroy {
   }
 
   // ── Methods ────────────────────────────────────────────────────────────────
+
+  onSelect(formation: Formation): void {
+    this.selectedFormation.set(formation);
+  }
+
+  onPanelClose(): void {
+    this.selectedFormation.set(null);
+  }
 
   copyEmail(): void {
     // Copy to clipboard — fire and forget, don't gate the UI on the promise
