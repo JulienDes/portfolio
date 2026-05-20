@@ -162,6 +162,14 @@
   color: sys.$on-surface;
 }
 
+.section-subtitle {
+  margin: 0 0 sp.$lg;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: sys.$on-surface-variant;
+}
+
 // ── Placeholder cards ──────────────────────────────────────────────────────────
 
 .placeholder-grid {

@@ -1,0 +1,81 @@
+@use 'styles/sys' as sys;
+@use 'styles/spacing' as sp;
+
+:host {
+  --mat-table-row-item-container-height: auto;
+  display: block;
+  max-height: 600px;
+  overflow-y: auto;
+  border-radius: sys.$corner-medium;
+}
+
+.journal-table {
+  width: 100%;
+  background: transparent;
+
+  thead tr {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: sys.$surface-container-low;
+  }
+}
+
+.journal-row {
+  transition: background 150ms ease;
+
+  &:nth-child(even) {
+    background: color-mix(in oklab, sys.$surface-container 50%, transparent);
+  }
+
+  &:hover {
+    background: sys.$surface-container-highest;
+  }
+}
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px sp.$sm;
+  border-radius: sys.$corner-full;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+
+  &--primary {
+    background: color-mix(in oklab, sys.$primary 15%, transparent);
+    color: sys.$primary;
+  }
+
+  &--secondary {
+    background: color-mix(in oklab, sys.$secondary 15%, transparent);
+    color: sys.$secondary;
+  }
+
+  &--tertiary {
+    background: color-mix(in oklab, sys.$tertiary 15%, transparent);
+    color: sys.$tertiary;
+  }
+
+  &--error {
+    background: color-mix(in oklab, sys.$error 15%, transparent);
+    color: sys.$error;
+  }
+}
+
+.col-date {
+  color: sys.$on-surface-variant;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
+.col-description {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-block: 14px;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}

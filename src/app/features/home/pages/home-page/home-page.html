@@ -96,6 +96,8 @@
     <h2 class="section-title">
       {{ lang.t('Skills & Learnings', 'Compétences  & apprentissages') }}
     </h2>
+
+    <!-- ── Competences ── -->
     <div class="placeholder-grid">
       <div class="placeholder-card">
         <p class="card-tags mono">Angular · SCSS</p>
@@ -109,6 +111,7 @@
           }}
         </p>
       </div>
+
       <div class="placeholder-card">
         <p class="card-tags mono">Three.js · WebGL</p>
         <h3 class="card-title">{{ lang.t('3D Scene Explorer', 'Explorateur de scènes 3D') }}</h3>
@@ -231,6 +234,9 @@
         </p>
       </div>
     </div>
+    <!-- ── Journal ── -->
+    <h3 class="section-subtitle">{{ lang.t('Journal', 'Journal') }}</h3>
+    <app-journal-table [entries]="journalEntries" />
   </div>
 </section>
 
