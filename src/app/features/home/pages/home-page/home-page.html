@@ -25,49 +25,7 @@
     <h2 class="section-title">
       {{ lang.t('Education & Certifications', 'Formation & Certifications') }}
     </h2>
-    <div class="placeholder-grid">
-      <div class="placeholder-card">
-        <p class="card-date mono">2021 — 2025</p>
-        <h3 class="card-title">{{ lang.t('B.Sc. Computer Science', 'B.Sc. Informatique') }}</h3>
-        <p class="card-sub">Université du Québec à Trois-Rivières</p>
-        <p class="card-body">
-          {{
-            lang.t(
-              'Specialization in software engineering and distributed systems.',
-              'Spécialisation en génie logiciel et systèmes distribués.'
-            )
-          }}
-        </p>
-      </div>
-      <div class="placeholder-card">
-        <p class="card-date mono">2019 — 2021</p>
-        <h3 class="card-title">{{ lang.t('D.E.C. Computer Science', 'D.E.C. Informatique') }}</h3>
-        <p class="card-sub">Cégep de Trois-Rivières</p>
-        <p class="card-body">
-          {{
-            lang.t(
-              'Focus on object-oriented programming and database design.',
-              'Programmation orientée objet et conception de bases de données.'
-            )
-          }}
-        </p>
-      </div>
-      <div class="placeholder-card">
-        <p class="card-date mono">2018 — 2019</p>
-        <h3 class="card-title">
-          {{ lang.t('Web Development Certificate', 'Certificat Développement Web') }}
-        </h3>
-        <p class="card-sub">Formation continue</p>
-        <p class="card-body">
-          {{
-            lang.t(
-              'HTML, CSS, JavaScript fundamentals and responsive design.',
-              'Fondamentaux HTML, CSS, JavaScript et design adaptatif.'
-            )
-          }}
-        </p>
-      </div>
-    </div>
+    <app-formations-table [formations]="formations" (selected)="onSelect($event)" />
   </div>
 </section>
 
@@ -311,3 +269,6 @@
     </div>
   </div>
 </section>
+
+<!-- ── Formation detail panel (position: fixed overlay) ──────────────────── -->
+<app-formation-panel [formation]="selectedFormation()" (closed)="onPanelClose()" />
