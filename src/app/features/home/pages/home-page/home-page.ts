@@ -10,12 +10,15 @@ import {
 import { LangService } from '../../../../core/lang/lang';
 import { FormationPanelComponent } from '../../components/formation-panel/formation-panel';
 import { FormationsTableComponent } from '../../components/formations-table/formations-table';
+import { JournalTableComponent } from '../../components/journal-table/journal-table';
 import { Formation } from '../../models/formation';
+import { JournalEntry } from '../../models/journal-entry';
 import formationsData from '../../data/formations.json';
+import journalData from '../../data/journal.json';
 
 @Component({
   selector: 'app-home-page',
-  imports: [FormationPanelComponent, FormationsTableComponent],
+  imports: [FormationPanelComponent, FormationsTableComponent, JournalTableComponent],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
@@ -36,6 +39,9 @@ export class HomePageComponent implements OnDestroy {
   // ── Education ─────────────────────────────────────────────────────────────
   readonly formations = formationsData as Formation[];
   readonly selectedFormation = signal<Formation | null>(null);
+
+  // ── Journal ───────────────────────────────────────────────────────────────
+  readonly journalEntries = journalData as JournalEntry[];
 
   // ── Contact ───────────────────────────────────────────────────────────────
   emailCopied = false;

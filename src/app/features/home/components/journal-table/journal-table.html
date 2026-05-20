@@ -1,0 +1,28 @@
+<table mat-table [dataSource]="dataSource" matSort class="journal-table">
+  <!-- Date column -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ lang.t('Date', 'Date') }}</th>
+    <td mat-cell *matCellDef="let row" class="col-date mono">{{ row.date }}</td>
+  </ng-container>
+
+  <!-- Category column -->
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ lang.t('Category', 'Catégorie') }}</th>
+    <td mat-cell *matCellDef="let row">
+      <span [class]="'category-badge category-badge--' + categoryColor(row.category)">
+        {{ lang.t(row.category.en, row.category.fr) }}
+      </span>
+    </td>
+  </ng-container>
+
+  <!-- Description column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>{{ lang.t('Description', 'Description') }}</th>
+    <td mat-cell *matCellDef="let row" class="col-description">
+      {{ lang.t(row.description.en, row.description.fr) }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns" class="journal-row"></tr>
+</table>

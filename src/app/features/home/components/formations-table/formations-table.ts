@@ -12,9 +12,11 @@ import { Formation } from '../../models/formation';
   styleUrl: './formations-table.scss',
 })
 export class FormationsTableComponent {
+  // ── Public injectables ──
   readonly lang = inject(LangService);
+
+  // ── Public fields ──
   readonly formations = input<Formation[]>([]);
   readonly selected = output<Formation>();
-
   readonly displayedColumns = ['type', 'title', 'institution', 'date'];
 }

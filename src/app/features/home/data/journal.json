@@ -1,0 +1,146 @@
+[
+  {
+    "id": "2024-ami-secretaire",
+    "date": "2024-09",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Joined the Association des étudiants en mathématique et informatique (AMI) as Secretary.",
+      "fr": "Adhésion à l'Association des étudiants en mathématique et informatique (AMI) à titre de secrétaire."
+    }
+  },
+  {
+    "id": "2024-conference-siti",
+    "date": "2024-11",
+    "category": { "en": "Conferences", "fr": "Conférences" },
+    "description": {
+      "en": "Attended SITI (Summit of IT Experts), an annual vendor-agnostic IT event hosted by ITI in Montreal, featuring conferences and technical workshops.",
+      "fr": "Participation au SITI (Sommet des experts en TI), un événement TI annuel et agnostique organisé par ITI à Montréal, offrant conférences et ateliers techniques."
+    }
+  },
+  {
+    "id": "2024-conference-js-algorithmes-genetiques",
+    "date": "2024-11",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an AMI guest talk on optimization using genetic algorithms.",
+      "fr": "Organisation d'une conférence-invité de l'AMI portant sur l'optimisation par algorithmes génétiques."
+    }
+  },
+  {
+    "id": "2025-conference-fadel-ml-qa",
+    "date": "2025-03",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an AMI guest talk on machine learning and software quality assurance.",
+      "fr": "Organisation d'une conférence-invité de l'AMI, sur l'apprentissage automatique et l'assurance qualité logicielle."
+    }
+  },
+  {
+    "id": "2025-conference-francis-architecte-logiciel",
+    "date": "2025-11",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an AMI guest talk on the role of a software architect.",
+      "fr": "Organisation d'une conférence-invité de l'AMI, sur le rôle de l'architecte logiciel."
+    }
+  },
+  {
+    "id": "2025-hackathon-acfas",
+    "date": "2025-05",
+    "category": { "en": "Hackathon", "fr": "Hackathon" },
+    "description": {
+      "en": "Participated in a hackathon at the ACFAS congress, collaborating with postdoctoral researchers in criminology. The project extracted textual cues from interrogation transcripts to flag possible signs of deception.",
+      "fr": "Participation à un hackathon lors du congrès de l'ACFAS, en collaboration avec des chercheurs au postdoctorat en criminologie. Le projet visait à extraire, de transcriptions d'interrogatoires, des indices textuels pouvant révéler un mensonge."
+    }
+  },
+  {
+    "id": "2025-stage-v3r-approvisionnement",
+    "date": "2025-06 – 2025-08",
+    "category": { "en": "Professional", "fr": "Professionnel" },
+    "description": {
+      "en": "Internship at the City of Trois-Rivières (Procurement): business process analysis and integration of AI.",
+      "fr": "Stage à la Ville de Trois-Rivières (Approvisionnement) : analyse des processus d'affaires et intégration de l'IA."
+    }
+  },
+  {
+    "id": "2025-ami-vp-externe",
+    "date": "2025-09",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Began a second term with AMI as Vice-President, External Affairs.",
+      "fr": "Début d'un deuxième mandat au sein de l'AMI à titre de vice-président aux affaires externes."
+    }
+  },
+  {
+    "id": "2025-gala-ami",
+    "date": "2025-04",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Led the organization of the 2025 AMI gala.",
+      "fr": "Gestion de l'organisation du gala 2025 de l'AMI."
+    }
+  },
+  {
+    "id": "2025-devopsdays-mtl",
+    "date": "2025-10",
+    "category": { "en": "Conferences", "fr": "Conférences" },
+    "description": {
+      "en": "Attended DevOpsDays Montreal (October 14–15).",
+      "fr": "Participation à DevOpsDays Montréal (14–15 octobre)."
+    }
+  },
+  {
+    "id": "2026-conference-instinct",
+    "date": "2026-02",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an outreach activity, in collaboration with the Instinct laboratory, inviting students to come and discover the research projects of master's students.",
+      "fr": "Organisation d'une activité d'invitation, en collaboration avec le laboratoire Instinct, permettant aux étudiants de venir découvrir les projets de recherche des étudiants à la maîtrise."
+    }
+  },
+  {
+    "id": "2026-livre-phoenix-project",
+    "date": "2026-02",
+    "category": { "en": "Books", "fr": "Livres" },
+    "description": {
+      "en": "Read \"The Phoenix Project\" by Gene Kim, Kevin Behr and George Spafford.",
+      "fr": "Lecture de « The Phoenix Project » de Gene Kim, Kevin Behr et George Spafford."
+    }
+  },
+  {
+    "id": "2026-conference-pierre-olivier-fractales",
+    "date": "2026-03",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an AMI guest talk on fractals.",
+      "fr": "Organisation d'une conférence-invité de l'AMI, sur les fractales."
+    }
+  },
+  {
+    "id": "2026-conference-francis-donnee",
+    "date": "2026-04",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an AMI guest talk on the field of data.",
+      "fr": "Organisation d'une conférence-invité de l'AMI, sur le domaine de la donnée."
+    }
+  },
+  {
+    "id": "2026-livre-devops-handbook",
+    "date": "2026-05",
+    "category": { "en": "Books", "fr": "Livres" },
+    "description": {
+      "en": "Read \"The DevOps Handbook\" by Gene Kim, Jez Humble, Patrick Debois and John Willis.",
+      "fr": "Lecture de « The DevOps Handbook » de Gene Kim, Jez Humble, Patrick Debois et John Willis."
+    }
+  },
+  {
+    "id": "2026-livre-build",
+    "date": "2026-06",
+    "category": { "en": "Books", "fr": "Livres" },
+    "description": {
+      "en": "Reading \"Build: An Unorthodox Guide to Making Things Worth Making\" by Tony Fadell.",
+      "fr": "Lecture de « Build: An Unorthodox Guide to Making Things Worth Making » de Tony Fadell."
+    }
+  }
+]
