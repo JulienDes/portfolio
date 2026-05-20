@@ -15,4 +15,10 @@ export const routes: Routes = [
         (m) => m.ShowcasePageComponent,
       ),
   },
+  {
+    path: '**',
+    title: '404 — Page introuvable',
+    loadComponent: () =>
+      import('./features/not-found/not-found-page').then((m) => m.NotFoundPageComponent),
+  },
 ];

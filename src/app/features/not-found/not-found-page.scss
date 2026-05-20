@@ -1,0 +1,60 @@
+@use 'styles/sys' as sys;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.not-found-code {
+  display: flex;
+  align-items: baseline;
+  font-size: clamp(6rem, 20vw, 12rem);
+  font-weight: 700;
+  line-height: 1;
+  color: sys.$on-surface;
+}
+
+.not-found-code-zero {
+  font-style: italic;
+  font-weight: 300;
+  color: sys.$primary;
+  font-size: 1.15em;
+}
+
+.not-found-eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: sys.$on-surface-variant;
+}
+
+.not-found-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: sys.$on-surface;
+}
+
+.not-found-accent {
+  font-style: italic;
+  font-weight: 400;
+  color: sys.$primary;
+}
+
+.not-found-message {
+  margin: 0;
+  color: sys.$on-surface-variant;
+  max-width: 36ch;
+}
+
+.not-found-actions {
+  margin-top: 0.5rem;
+}
