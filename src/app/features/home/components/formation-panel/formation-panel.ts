@@ -10,18 +10,22 @@ import { Formation } from '../../models/formation';
   styleUrl: './formation-panel.scss',
 })
 export class FormationPanelComponent {
+  // ── Public injectables ──
   readonly lang = inject(LangService);
+
+  // ── Public fields ──
   readonly formation = input<Formation | null>(null);
   readonly closed = output<void>();
-
   readonly isOpen = computed(() => this.formation() !== null);
 
+  // ── Constructor ──
   constructor() {
     effect(() => {
       document.body.style.overflow = this.isOpen() ? 'hidden' : '';
     });
   }
 
+  // ── Public methods ──
   @HostListener('document:keydown.escape')
   onEsc(): void {
     if (this.isOpen()) this.closed.emit();

@@ -7,7 +7,7 @@
 
         <div class="panel-divider"></div>
 
-        <!-- RÉSUMÉ -->
+        <!-- SUMMARY -->
         <section class="panel-section">
           <h3 class="panel-section-label">{{ lang.t('SUMMARY', 'RÉSUMÉ') }}</h3>
           @for (para of lang.t(f.description.en, f.description.fr); track $index) {
@@ -15,7 +15,7 @@
           }
         </section>
 
-        <!-- COMPÉTENCES ACQUISES -->
+        <!-- SKILLS  -->
         @if (f.skills.length > 0) {
           <div class="panel-divider"></div>
           <section class="panel-section">
@@ -30,7 +30,7 @@
           </section>
         }
 
-        <!-- DÉTAILS -->
+        <!-- DETAILS -->
         <div class="panel-divider"></div>
         <section class="panel-section">
           <h3 class="panel-section-label">{{ lang.t('DETAILS', 'DÉTAILS') }}</h3>
@@ -64,7 +64,7 @@
           </dl>
         </section>
 
-        <!-- LIEN -->
+        <!-- LINK -->
         @if (f.credentialUrl || f.referenceUrl) {
           <div class="panel-divider"></div>
           <section class="panel-section">

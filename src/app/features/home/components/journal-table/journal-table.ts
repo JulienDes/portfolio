@@ -12,15 +12,19 @@ import { JournalEntry } from '../../models/journal-entry';
   styleUrl: './journal-table.scss',
 })
 export class JournalTableComponent {
+  // ── Private injectables (must precede public fields per member-ordering) ──
   private readonly sort = viewChild<MatSort>(MatSort);
   private readonly COLORS = ['primary', 'secondary', 'tertiary', 'error'];
 
+  // ── Public injectables ──
   readonly lang = inject(LangService);
   readonly entries = input<JournalEntry[]>([]);
 
+  // ── Public fields ──
   readonly displayedColumns = ['date', 'category', 'description'];
   readonly dataSource = new MatTableDataSource<JournalEntry>([]);
 
+  // ── Constructor ──
   constructor() {
     effect(() => {
       this.dataSource.data = this.entries();
@@ -39,6 +43,7 @@ export class JournalTableComponent {
     });
   }
 
+  // ── Public methods ──
   categoryColor(category: { en: string; fr: string }): string {
     let hash = 0;
     for (const c of category.en) hash = (hash * 31 + c.charCodeAt(0)) & 0xffffff;
