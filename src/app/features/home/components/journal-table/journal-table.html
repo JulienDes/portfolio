@@ -1,28 +1,70 @@
-<table mat-table [dataSource]="dataSource" matSort class="journal-table">
-  <!-- Date column -->
-  <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ lang.t('Date', 'Date') }}</th>
-    <td mat-cell *matCellDef="let row" class="col-date mono">{{ row.date }}</td>
-  </ng-container>
+<!-- ── Desktop table ──────────────────────────────────────────────────────── -->
+@if (!isMobile()) {
+  <table mat-table [dataSource]="dataSource" matSort class="journal-table">
+    <!-- Date column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ lang.t('Date', 'Date') }}</th>
+      <td mat-cell *matCellDef="let row" class="col-date mono">{{ row.date }}</td>
+    </ng-container>
 
-  <!-- Category column -->
-  <ng-container matColumnDef="category">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ lang.t('Category', 'Catégorie') }}</th>
-    <td mat-cell *matCellDef="let row">
-      <span [class]="'category-badge category-badge--' + categoryColor(row.category)">
-        {{ lang.t(row.category.en, row.category.fr) }}
-      </span>
-    </td>
-  </ng-container>
+    <!-- Category column -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ lang.t('Category', 'Catégorie') }}
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <span [class]="'category-badge category-badge--' + categoryColor(row.category)">
+          {{ lang.t(row.category.en, row.category.fr) }}
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Description column -->
-  <ng-container matColumnDef="description">
-    <th mat-header-cell *matHeaderCellDef>{{ lang.t('Description', 'Description') }}</th>
-    <td mat-cell *matCellDef="let row" class="col-description">
-      {{ lang.t(row.description.en, row.description.fr) }}
-    </td>
-  </ng-container>
+    <!-- Description column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.t('Description', 'Description') }}</th>
+      <td mat-cell *matCellDef="let row" class="col-description">
+        {{ lang.t(row.description.en, row.description.fr) }}
+      </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns" class="journal-row"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" class="journal-row"></tr>
+  </table>
+} @else {
+  <!-- ── Mobile sort bar ────────────────────────────────────────────────────── -->
+  <div class="journal-sort-bar" role="group" [attr.aria-label]="lang.t('Sort by', 'Trier par')">
+    <button
+      class="journal-sort-btn"
+      [class.journal-sort-btn--active]="sortBy() === 'date'"
+      (click)="sortBy.set('date')"
+    >
+      <mat-icon>calendar_today</mat-icon>
+      <span>{{ lang.t('Date', 'Date') }}</span>
+    </button>
+    <button
+      class="journal-sort-btn"
+      [class.journal-sort-btn--active]="sortBy() === 'category'"
+      (click)="sortBy.set('category')"
+    >
+      <mat-icon>label</mat-icon>
+      <span>{{ lang.t('Category', 'Catégorie') }}</span>
+    </button>
+  </div>
+
+  <!-- ── Mobile card list ───────────────────────────────────────────────────── -->
+  <ul class="journal-cards" role="list">
+    @for (entry of sortedEntries(); track entry.id) {
+      <li class="journal-card">
+        <span class="card-badge-area">
+          <span [class]="'category-badge category-badge--' + categoryColor(entry.category)">
+            {{ lang.t(entry.category.en, entry.category.fr) }}
+          </span>
+        </span>
+        <span class="card-date mono">{{ entry.date }}</span>
+        <span class="card-description">{{
+          lang.t(entry.description.en, entry.description.fr)
+        }}</span>
+      </li>
+    }
+  </ul>
+}
