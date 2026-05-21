@@ -1,11 +1,13 @@
 import { Component, computed, effect, HostListener, inject, input, output } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { LangService } from '../../../../core/lang/lang';
 import { Project } from '../../models/project';
 
 @Component({
   selector: 'app-project-panel',
-  imports: [],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './project-panel.html',
   styleUrl: './project-panel.scss',
 })
