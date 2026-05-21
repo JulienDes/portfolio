@@ -1,23 +1,23 @@
-import { Component, computed, effect, inject, input, signal, viewChild } from '@angular/core';
+import { Component, computed, effect, ElementRef, inject, input, viewChild } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatIconModule } from '@angular/material/icon';
 
 import { LangService } from '../../../../core/lang/lang';
 import { JournalEntry } from '../../models/journal-entry';
 
 @Component({
   selector: 'app-journal-table',
-  imports: [MatTableModule, MatSortModule, MatIconModule],
+  imports: [MatTableModule, MatSortModule],
   templateUrl: './journal-table.html',
   styleUrl: './journal-table.scss',
 })
 export class JournalTableComponent {
   // ── Private injectables (must precede public fields per member-ordering) ──
   private readonly sort = viewChild<MatSort>(MatSort);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly COLORS = ['primary', 'secondary', 'tertiary', 'error'];
 
   // ── Public injectables ──
@@ -31,8 +31,8 @@ export class JournalTableComponent {
     { initialValue: false },
   );
 
-  // ── Mobile sort ──
-  readonly sortBy = signal<'date' | 'category'>('date');
+  // ── Sort (driven by the sort bar in the parent page) ──
+  readonly sortBy = input<'date' | 'category'>('date');
 
   readonly sortedEntries = computed(() => {
     const entries = this.entries();
@@ -57,6 +57,12 @@ export class JournalTableComponent {
   constructor() {
     effect(() => {
       this.dataSource.data = this.entries();
+    });
+
+    // Reset the scroll position to the top whenever the sort changes.
+    effect(() => {
+      this.sortBy();
+      this.host.nativeElement.scrollTop = 0;
     });
 
     effect(() => {

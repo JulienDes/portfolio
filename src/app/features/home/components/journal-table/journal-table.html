@@ -31,26 +31,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns" class="journal-row"></tr>
   </table>
 } @else {
-  <!-- ── Mobile sort bar ────────────────────────────────────────────────────── -->
-  <div class="journal-sort-bar" role="group" [attr.aria-label]="lang.t('Sort by', 'Trier par')">
-    <button
-      class="journal-sort-btn"
-      [class.journal-sort-btn--active]="sortBy() === 'date'"
-      (click)="sortBy.set('date')"
-    >
-      <mat-icon>calendar_today</mat-icon>
-      <span>{{ lang.t('Date', 'Date') }}</span>
-    </button>
-    <button
-      class="journal-sort-btn"
-      [class.journal-sort-btn--active]="sortBy() === 'category'"
-      (click)="sortBy.set('category')"
-    >
-      <mat-icon>label</mat-icon>
-      <span>{{ lang.t('Category', 'Catégorie') }}</span>
-    </button>
-  </div>
-
   <!-- ── Mobile card list ───────────────────────────────────────────────────── -->
   <ul class="journal-cards" role="list">
     @for (entry of sortedEntries(); track entry.id) {

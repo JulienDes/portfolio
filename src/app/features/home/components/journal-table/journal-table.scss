@@ -80,45 +80,6 @@
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 }
 
-// ── Mobile sort bar ─────────────────────────────────────────────────────────────
-
-.journal-sort-bar {
-  display: flex;
-  gap: sp.$sm;
-  margin-bottom: sp.$sm;
-}
-
-.journal-sort-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 12px;
-  border: 1px solid sys.$outline-variant;
-  border-radius: sys.$corner-full;
-  background: transparent;
-  color: sys.$on-surface-variant;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transition:
-    background 150ms ease,
-    color 150ms ease,
-    border-color 150ms ease;
-
-  mat-icon {
-    font-size: 0.875rem;
-    width: 0.875rem;
-    height: 0.875rem;
-  }
-
-  &--active {
-    background: color-mix(in oklab, sys.$primary 12%, transparent);
-    color: sys.$primary;
-    border-color: color-mix(in oklab, sys.$primary 50%, transparent);
-  }
-}
-
 // ── Mobile card list ─────────────────────────────────────────────────────────────
 
 .journal-cards {

@@ -7,6 +7,7 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { LangService } from '../../../../core/lang/lang';
 import { FormationPanelComponent } from '../../components/formation-panel/formation-panel';
 import { FormationsTableComponent } from '../../components/formations-table/formations-table';
@@ -26,6 +27,7 @@ import projectsData from '../../data/projects.json';
     FormationPanelComponent,
     FormationsTableComponent,
     JournalTableComponent,
+    MatIconModule,
     ProjectPanelComponent,
     ProjectsGridComponent,
   ],
@@ -56,6 +58,7 @@ export class HomePageComponent implements OnDestroy {
 
   // ── Journal ───────────────────────────────────────────────────────────────
   readonly journalEntries = journalData as JournalEntry[];
+  readonly journalSort = signal<'date' | 'category'>('date');
 
   // ── Contact ───────────────────────────────────────────────────────────────
   emailCopied = false;
