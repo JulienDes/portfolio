@@ -1,0 +1,230 @@
+@use 'styles/sys' as sys;
+@use 'styles/spacing' as sp;
+
+// ── Full-viewport overlay ──────────────────────────────────────────────────────
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: color-mix(in oklab, sys.$scrim 55%, transparent);
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 260ms ease,
+    visibility 0s 260ms;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 260ms ease,
+      visibility 0s 0s;
+  }
+}
+
+// ── Side panel ─────────────────────────────────────────────────────────────────
+
+.panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: clamp(500px, 50vw, 1000px);
+  background: sys.$surface-container-low;
+  border-left: 1px solid sys.$outline-variant;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  transform: translateX(100%);
+  transition: transform 340ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .overlay--open & {
+    transform: translateX(0);
+  }
+}
+
+// ── Cover image ────────────────────────────────────────────────────────────────
+
+.panel-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid sys.$outline-variant;
+  flex-shrink: 0;
+}
+
+.panel-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+// ── Content ────────────────────────────────────────────────────────────────────
+
+.panel-content {
+  flex: 1;
+  padding: sp.$xl sp.$xl;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  margin: 0 0 sp.$sm;
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: sys.$on-surface;
+  line-height: 1.15;
+}
+
+.panel-meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: sys.$on-surface-variant;
+}
+
+.panel-divider {
+  height: 1px;
+  background: sys.$outline-variant;
+  margin: sp.$xl 0;
+  flex-shrink: 0;
+}
+
+// ── Sections ───────────────────────────────────────────────────────────────────
+
+.panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: sp.$md;
+}
+
+.panel-section-label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: color-mix(in oklab, sys.$on-surface-variant 60%, transparent);
+}
+
+.panel-section-text {
+  margin: 0;
+  font-size: 1.1875rem;
+  color: sys.$on-surface-variant;
+  line-height: 1.75;
+}
+
+// ── Tech chips ─────────────────────────────────────────────────────────────────
+
+.panel-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: sp.$xs;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: sys.$corner-full;
+  border: 1px solid sys.$outline-variant;
+  background: sys.$surface-container;
+  font-size: 0.71875rem;
+  font-weight: 500;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+  color: sys.$on-surface-variant;
+  cursor: default;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+
+  &:hover {
+    background: color-mix(in oklab, sys.$primary 12%, sys.$surface-container);
+    border-color: color-mix(in oklab, sys.$primary 40%, transparent);
+    color: sys.$primary;
+    transform: translateY(-1px);
+  }
+}
+
+// ── Free sections ──────────────────────────────────────────────────────────────
+
+.panel-section-title {
+  margin: 0 0 sp.$sm;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: sys.$on-surface;
+  line-height: 1.4;
+}
+
+// ── Details grid ───────────────────────────────────────────────────────────────
+
+.panel-details {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: sp.$sm;
+}
+
+.panel-detail-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: sp.$md;
+  align-items: start;
+
+  dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, sys.$on-surface-variant 55%, transparent);
+    padding-top: 0.2em;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 1.0625rem;
+    color: sys.$on-surface;
+  }
+}
+
+// ── Links ──────────────────────────────────────────────────────────────────────
+
+.panel-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: sp.$sm;
+}
+
+.panel-link-btn {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: sp.$sm sp.$lg;
+  border: 1px solid sys.$outline;
+  border-radius: sys.$corner-extra-small;
+  color: sys.$primary;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease,
+    background 150ms ease;
+
+  &:hover {
+    color: sys.$on-primary-container;
+    border-color: sys.$primary;
+    background: color-mix(in oklab, sys.$primary 8%, transparent);
+  }
+}

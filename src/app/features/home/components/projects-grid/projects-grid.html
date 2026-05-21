@@ -1,0 +1,41 @@
+<div class="projects-grid">
+  @for (project of projects(); track project.id) {
+    <article
+      class="proj-card"
+      tabindex="0"
+      role="button"
+      [attr.aria-label]="lang.t(project.title.en, project.title.fr)"
+      (click)="selected.emit(project)"
+      (keydown.enter)="selected.emit(project)"
+      (keydown.space)="$event.preventDefault(); selected.emit(project)"
+    >
+      <!-- Cover image -->
+      <div class="proj-cover">
+        <img
+          [src]="project.image"
+          [alt]="lang.t(project.title.en, project.title.fr)"
+          class="proj-cover-img"
+          loading="lazy"
+        />
+        <span class="proj-cover-date">{{ project.date }}</span>
+      </div>
+
+      <!-- Body -->
+      <div class="proj-body">
+        <div class="proj-tags">
+          @for (tag of project.tags; track $index) {
+            <span class="proj-tag" [class.proj-tag--muted]="$index > 0">
+              {{ lang.t(tag.en, tag.fr) }}
+            </span>
+          }
+        </div>
+
+        <h3 class="proj-title">{{ lang.t(project.title.en, project.title.fr) }}</h3>
+
+        <p class="proj-subtitle">{{ lang.t(project.subtitle.en, project.subtitle.fr) }}</p>
+
+        <p class="proj-desc">{{ lang.t(project.summary.en, project.summary.fr) }}</p>
+      </div>
+    </article>
+  }
+</div>

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "homelab-staging-devops",
+    "title": {
+      "en": "Homelab : Staging Server & Azure DevOps Agent",
+      "fr": "Homelab : Serveur de staging & Agent Azure DevOps"
+    },
+    "subtitle": {
+      "en": "Proxmox · OpenTofu · Ansible · Azure DevOps",
+      "fr": "Proxmox · OpenTofu · Ansible · Azure DevOps"
+    },
+    "summary": {
+      "en": "Set up a self-hosted staging environment and Azure DevOps agent on a personal homelab to eliminate the team's dependency on free pipeline minutes and enable reliable pre-production validation before deployments to Azure Container Apps.",
+      "fr": "Mise en place d'un environnement de staging auto-hébergé et d'un agent Azure DevOps sur un homelab personnel pour éliminer la dépendance de l'équipe aux minutes d'agent gratuites et permettre une validation pré-production fiable avant les déploiements sur Azure Container Apps."
+    },
+    "date": "2026",
+    "stack": ["Proxmox", "OpenTofu", "Ansible", "Azure DevOps", "Docker", "Azure Container Apps"],
+    "sections": [
+      {
+        "title": { "en": "Context", "fr": "Contexte" },
+        "paragraphs": {
+          "en": [
+            "Our team of 4 developers had no staging or production environment in place. We were relying on the 1,800 free Azure DevOps agent minutes per month, which posed a real risk of pipeline outages mid-sprint, especially with several pull requests per week. The production environment was hosted on Azure Container Apps."
+          ],
+          "fr": [
+            "L'équipe de 4 développeurs n'avait aucun environnement de staging ni de production en place. Nous utilisions les 1 800 minutes gratuites d'agent Azure DevOps par mois, ce qui représentait un risque réel de panne de pipeline en cours de sprint, surtout avec plusieurs pull requests par semaine. L'environnement de production est hébergé sur Azure Container Apps."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Approach", "fr": "Approche" },
+        "paragraphs": {
+          "en": [
+            "The goal was twofold: set up a functional staging environment, and eliminate our dependency on Azure agent minutes before running out. All while minimizing manual steps to keep the process reproducible and reliable.",
+            "I used my homelab as the foundation. Proxmox handles virtual machine creation, OpenTofu takes care of their configuration, and Ansible handles the installation and startup of both the Azure DevOps agent and the project via Docker. Each layer has a clear responsibility, making the whole setup easy to modify or recreate."
+          ],
+          "fr": [
+            "L'objectif était double : mettre en place un environnement de staging fonctionnel, et éliminer notre dépendance aux minutes d'agent Azure avant d'en manquer. Le tout en réduisant au maximum les étapes manuelles pour que le processus soit reproductible et fiable.",
+            "J'ai utilisé mon homelab comme base. Proxmox gère la création des machines virtuelles, OpenTofu s'occupe de les configurer, et Ansible prend en charge l'installation et le démarrage de l'agent Azure DevOps ainsi que du projet via Docker. Chaque couche a un rôle précis, ce qui rend l'ensemble facile à modifier ou recréer."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Results", "fr": "Résultats" },
+        "paragraphs": {
+          "en": [
+            "CI pipelines now run entirely on my homelab. There is no longer any risk of running out of agent minutes, regardless of how many PRs are open simultaneously.",
+            "The staging environment is accessible and ready to validate changes before they reach production on Azure Container Apps."
+          ],
+          "fr": [
+            "Les pipelines CI tournent maintenant entièrement sur mon homelab. On ne risque plus de tomber à court de minutes d'agent, peu importe le nombre de PR ouvertes simultanément.",
+            "L'environnement de staging est accessible et prêt à valider les changements avant qu'ils n'atteignent la production sur Azure Container Apps."
+          ]
+        }
+      }
+    ],
+    "duration": {
+      "en": "~2 weeks",
+      "fr": "~2 semaines"
+    },
+    "role": {
+      "en": "DevOps engineer",
+      "fr": "Ingénieur DevOps"
+    },
+    "team": {
+      "en": "Team of 4 — solo dev",
+      "fr": "Équipe de 4 — dev solo"
+    },
+    "image": "/assets/homelab.webp",
+    "tags": [
+      { "en": "DevOps", "fr": "DevOps" },
+      { "en": "Infrastructure", "fr": "Infrastructure" },
+      { "en": "Self-hosted", "fr": "Auto-hébergé" }
+    ],
+    "links": [
+      {
+        "name": { "en": "DevOps", "fr": "DevOps" },
+        "url": "https://devops.example.com"
+      }
+    ]
+  },
+  {
+    "id": "nyc-real-estate-app",
+    "title": {
+      "en": "NYC Real Estate Sales Management App",
+      "fr": "Application de gestion de ventes immobilières — New York"
+    },
+    "subtitle": {
+      "en": "MongoDB Atlas · FastAPI · OpenAI",
+      "fr": "MongoDB Atlas · FastAPI · OpenAI"
+    },
+    "summary": {
+      "en": "Built a real estate property search and management app connected to a MongoDB Atlas database, fed by a Kaggle dataset of New York properties. Extended standard vector search with a post-processing re-ranking pipeline using three ML models to return results that match both semantic intent and numerical criteria.",
+      "fr": "Développement d'une application de recherche et de gestion de propriétés immobilières connectée à MongoDB Atlas, alimentée par un dataset Kaggle de propriétés new-yorkaises. La recherche vectorielle classique a été enrichie d'un pipeline de re-classement post-traitement utilisant trois modèles ML pour retourner des résultats pertinents à la fois sémantiquement et numériquement."
+    },
+    "date": "2025",
+    "stack": ["MongoDB Atlas", "FastAPI", "OpenAI API", "Pydantic", "Python", "scikit-learn"],
+    "sections": [
+      {
+        "title": { "en": "Context", "fr": "Contexte" },
+        "paragraphs": {
+          "en": [
+            "As part of a course final project, we had to build a web application connected to a MongoDB Atlas database, populated from a Kaggle dataset. I chose to work with a New York real estate properties dataset, building a property search and sales management application."
+          ],
+          "fr": [
+            "Dans le cadre du projet final du cours, nous devions créer une application web connectée à une base de données MongoDB Atlas, alimentée par un dataset Kaggle. J'ai choisi de travailler sur un dataset de propriétés immobilières situées à New York, en construisant une application de gestion et de recherche de ventes de propriétés."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Approach", "fr": "Approche" },
+        "paragraphs": {
+          "en": [
+            "The application supports property search with auto-completion and full CRUD operations directly on MongoDB documents.",
+            "Each property has a textual description combining location, housing features, and a usage profile such as \"ideal for families\" or \"perfect for a couple\". I used OpenAI to generate embeddings, stored directly in MongoDB for similarity search.",
+            "Beyond the baseline, I pushed vector search further: after the initial semantic retrieval, a re-ranking workflow extracts numerical fields from each result — price, number of bedrooms, square footage — and reorders them based on what the user was actually looking for. Three ML models are applied in post-processing: Linear Regression, K-Nearest Neighbors, and Random Forest."
+          ],
+          "fr": [
+            "L'application permet de rechercher des propriétés avec auto-complétion et d'effectuer toutes les opérations CRUD directement sur les documents MongoDB.",
+            "Chaque propriété possède une description textuelle combinant l'emplacement, les caractéristiques du logement et un profil d'usage comme « idéal pour les familles » ou « parfait pour un couple ». J'ai utilisé OpenAI pour générer les embeddings, stockés directement dans MongoDB pour la recherche par similarité.",
+            "Là où j'ai poussé plus loin : après la recherche vectorielle, j'ai mis en place un workflow de re-classement qui extrait les champs numériques de chaque résultat — prix, nombre de chambres, superficie — pour réordonner les résultats en fonction de ce que l'utilisateur recherchait réellement. Trois modèles ML sont appliqués en post-traitement : Régression linéaire, K-Nearest Neighbors et Random Forest."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Results", "fr": "Résultats" },
+        "paragraphs": {
+          "en": [
+            "I received the highest grade on this project. What I'm most proud of is the hybrid search approach: combining semantic similarity with numerical re-ranking produces far more relevant results in a real-world real estate search context."
+          ],
+          "fr": [
+            "J'ai obtenu la note maximale sur ce projet. Ce dont je suis le plus fier est l'approche hybride de la recherche vectorielle : combiner la similarité sémantique avec un re-classement basé sur les critères numériques donne des résultats beaucoup plus pertinents dans un contexte de recherche immobilière réelle."
+          ]
+        }
+      }
+    ],
+    "duration": {
+      "en": "2 weeks",
+      "fr": "2 semaines"
+    },
+    "role": {
+      "en": "Full-stack developer",
+      "fr": "Développeur full-stack"
+    },
+    "team": {
+      "en": "Solo project",
+      "fr": "Projet solo"
+    },
+    "image": "/assets/NY_estate.webp",
+    "tags": [
+      { "en": "Web App", "fr": "Application Web" },
+      { "en": "Machine Learning", "fr": "Apprentissage automatique" },
+      { "en": "Academic", "fr": "Académique" }
+    ],
+    "links": [
+      {
+        "name": { "en": "DevOps", "fr": "DevOps" },
+        "url": "https://devops.example.com"
+      }
+    ]
+  }
+]

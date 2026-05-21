@@ -1,0 +1,146 @@
+@use 'styles/sys' as sys;
+@use 'styles/spacing' as sp;
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: sp.$lg;
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Card ───────────────────────────────────────────────────────────────────────
+
+.proj-card {
+  background: sys.$surface-container;
+  border: 1px solid sys.$outline-variant;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition:
+    border-color 260ms ease,
+    transform 260ms ease,
+    box-shadow 260ms ease;
+
+  &:hover {
+    border-color: color-mix(in oklab, sys.$primary 55%, sys.$outline-variant);
+    transform: translateY(-3px);
+    box-shadow: 0 22px 44px color-mix(in oklab, sys.$shadow 10%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid sys.$primary;
+    outline-offset: 3px;
+  }
+}
+
+// ── Cover ──────────────────────────────────────────────────────────────────────
+
+.proj-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: sys.$surface-container-high;
+  overflow: hidden;
+  border-bottom: 1px solid sys.$outline-variant;
+}
+
+.proj-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.proj-cover-date {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 4px 10px;
+  border-radius: sys.$corner-full;
+  background: color-mix(in oklab, sys.$surface-container 72%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in oklab, sys.$outline-variant 50%, transparent);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: sys.$on-surface;
+  z-index: 2;
+}
+
+// ── Body ───────────────────────────────────────────────────────────────────────
+
+.proj-body {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: sp.$sm;
+  flex: 1;
+}
+
+// ── Tags ───────────────────────────────────────────────────────────────────────
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: sp.$xs;
+}
+
+.proj-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: sys.$corner-full;
+  font-size: 0.71875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: color-mix(in oklab, sys.$primary 14%, sys.$surface-container-high);
+  color: sys.$primary;
+  border: 1px solid color-mix(in oklab, sys.$primary 22%, transparent);
+
+  &--muted {
+    background: sys.$surface-container-high;
+    color: sys.$on-surface-variant;
+    border-color: sys.$outline-variant;
+  }
+}
+
+// ── Text ───────────────────────────────────────────────────────────────────────
+
+.proj-title {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 1.15;
+  color: sys.$on-surface;
+}
+
+.proj-subtitle {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: sys.$primary;
+  letter-spacing: -0.005em;
+}
+
+.proj-desc {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: sys.$on-surface-variant;
+
+  // Clamp to 3 lines on the card
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
