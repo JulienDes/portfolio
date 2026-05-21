@@ -96,8 +96,7 @@
 .hero-inner {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 1180px;
+  width: min(100%, 1180px);
   padding: sp.$xl-2 sp.$xl-2;
   text-align: left;
 }
@@ -160,60 +159,6 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: sys.$on-surface;
-}
-
-.section-subtitle {
-  margin: 0 0 sp.$lg;
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: sys.$on-surface-variant;
-}
-
-// ── Placeholder cards ──────────────────────────────────────────────────────────
-
-.placeholder-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: sp.$lg;
-}
-
-.placeholder-card {
-  background: sys.$surface-container;
-  border-radius: sys.$corner-medium;
-  padding: sp.$lg;
-  display: flex;
-  flex-direction: column;
-  gap: sp.$sm;
-}
-
-.card-date,
-.card-tags {
-  font-size: 0.75rem;
-  color: sys.$primary;
-  margin: 0;
-  letter-spacing: 0.04em;
-}
-
-.card-title {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: sys.$on-surface;
-}
-
-.card-sub {
-  margin: 0;
-  font-size: 0.875rem;
-  color: sys.$primary;
-  font-weight: 500;
-}
-
-.card-body {
-  margin: 0;
-  font-size: 0.875rem;
-  color: sys.$on-surface-variant;
-  line-height: 1.6;
 }
 
 // ── Contact section ───────────────────────────────────────────────────────────
