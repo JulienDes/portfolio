@@ -13,6 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { ThemeService, PALETTES } from '../../theme/theme';
 import { LangService } from '../../lang/lang';
+import { MobileNavComponent } from '../mobile-nav/mobile-nav';
 
 interface NavItem {
   index: string;
@@ -23,7 +24,14 @@ interface NavItem {
 
 @Component({
   selector: 'app-navbar',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule, MatMenuModule],
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatMenuModule,
+    MobileNavComponent,
+  ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
@@ -39,13 +47,15 @@ export class NavbarComponent implements OnInit {
   readonly palettes = PALETTES;
 
   // ── Public fields ─────────────────────────────────────────────────────────
+  readonly mobileNavOpen = signal(false);
+
   /** Active section fragment, updated by scroll-spy */
   readonly activeFragment = signal<string>('');
 
   readonly navItems: NavItem[] = [
     { index: '01', labelEn: 'Qualifications', labelFr: 'Diplômes', fragment: 'education' },
     { index: '02', labelEn: 'Projects', labelFr: 'Projets', fragment: 'projects' },
-    { index: '03', labelEn: 'Skills', labelFr: 'Compétences', fragment: 'skills' },
+    { index: '03', labelEn: 'Journal', labelFr: 'Journal', fragment: 'journal' },
     { index: '04', labelEn: 'Contact', labelFr: 'Contact', fragment: 'contact' },
   ];
 
@@ -75,8 +85,12 @@ export class NavbarComponent implements OnInit {
     return this.activeFragment() === fragment;
   }
 
-  paletteName(name: string): string {
-    return name.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  openMobileNav(): void {
+    this.mobileNavOpen.set(true);
+  }
+
+  closeMobileNav(): void {
+    this.mobileNavOpen.set(false);
   }
 
   // ── Private methods ───────────────────────────────────────────────────────

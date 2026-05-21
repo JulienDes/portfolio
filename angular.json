@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-21-standalone-template": {
+    "portefolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -68,10 +68,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-21-standalone-template:build:production"
+              "buildTarget": "portefolio:build:production"
             },
             "development": {
-              "buildTarget": "angular-21-standalone-template:build:development"
+              "buildTarget": "portefolio:build:development"
             }
           },
           "defaultConfiguration": "development",

@@ -196,32 +196,3 @@
     display: inline-flex;
   }
 }
-
-// Palette picker menu
-.palette-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  padding: 0.75rem;
-}
-
-.swatch {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition:
-    transform 150ms ease,
-    border-color 150ms ease;
-  background: var(--palette-preview);
-
-  &:hover {
-    transform: scale(1.15);
-  }
-
-  &.active {
-    border-color: sys.$on-surface;
-    transform: scale(1.1);
-  }
-}

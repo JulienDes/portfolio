@@ -26,6 +26,7 @@ body {
   font-size: var(--font-size-base);
   background-color: var(--mat-sys-background);
   color: var(--mat-sys-on-background);
+  overflow-x: clip;
 }
 
 html {
@@ -34,5 +35,4 @@ html {
 
 body {
   min-height: 100%;
-  overflow-x: hidden;
 }
