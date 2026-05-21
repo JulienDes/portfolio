@@ -202,8 +202,8 @@
 
 .panel-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: sp.$sm;
+  flex-direction: column;
+  gap: sp.$md;
 }
 
 .panel-link-btn {
@@ -213,10 +213,11 @@
   padding: sp.$sm sp.$lg;
   border: 1px solid sys.$outline;
   border-radius: sys.$corner-extra-small;
-  color: sys.$primary;
+  gap: 5px;
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
+  color: sys.$primary;
   transition:
     color 150ms ease,
     border-color 150ms ease,
@@ -226,5 +227,14 @@
     color: sys.$on-primary-container;
     border-color: sys.$primary;
     background: color-mix(in oklab, sys.$primary 8%, transparent);
+  }
+}
+
+.panel-link-arr {
+  font-size: 0.75rem;
+  transition: transform 200ms ease;
+
+  .panel-link-btn:hover & {
+    transform: translate(2px, -2px);
   }
 }
