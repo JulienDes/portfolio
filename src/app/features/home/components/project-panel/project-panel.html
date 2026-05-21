@@ -1,0 +1,82 @@
+<div class="overlay" [class.overlay--open]="isOpen()" (click)="closed.emit()">
+  <aside class="panel" (click)="$event.stopPropagation()">
+    @if (project(); as p) {
+      <div class="panel-cover">
+        <img [src]="p.image" [alt]="lang.t(p.title.en, p.title.fr)" class="panel-cover-img" />
+      </div>
+
+      <div class="panel-content">
+        <h2 class="panel-title">{{ lang.t(p.title.en, p.title.fr) }}</h2>
+        <p class="panel-meta">
+          {{ p.date }}&nbsp;·&nbsp;{{ lang.t(p.duration.en, p.duration.fr) }}
+        </p>
+
+        <!-- DETAILS -->
+        <div class="panel-divider"></div>
+        <section class="panel-section">
+          <h3 class="panel-section-label">{{ lang.t('DETAILS', 'DÉTAILS') }}</h3>
+          <dl class="panel-details">
+            <div class="panel-detail-row">
+              <dt>{{ lang.t('Date', 'Date') }}</dt>
+              <dd>{{ p.date }}</dd>
+            </div>
+            <div class="panel-detail-row">
+              <dt>{{ lang.t('Duration', 'Durée') }}</dt>
+              <dd>{{ lang.t(p.duration.en, p.duration.fr) }}</dd>
+            </div>
+            <div class="panel-detail-row">
+              <dt>{{ lang.t('Role', 'Rôle') }}</dt>
+              <dd>{{ lang.t(p.role.en, p.role.fr) }}</dd>
+            </div>
+            <div class="panel-detail-row">
+              <dt>{{ lang.t('Team', 'Équipe') }}</dt>
+              <dd>{{ lang.t(p.team.en, p.team.fr) }}</dd>
+            </div>
+            <div class="panel-detail-row">
+              <dt>{{ lang.t('Stack', 'Stack') }}</dt>
+              <dd>
+                <div class="panel-chips">
+                  @for (tech of p.stack; track tech) {
+                    <span class="tech-chip">{{ tech }}</span>
+                  }
+                </div>
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- SECTIONS -->
+        @for (section of p.sections; track $index) {
+          <div class="panel-divider"></div>
+          <section class="panel-section">
+            <h4 class="panel-section-title">{{ lang.t(section.title.en, section.title.fr) }}</h4>
+            @for (para of lang.t(section.paragraphs.en, section.paragraphs.fr); track $index) {
+              <p class="panel-section-text">{{ para }}</p>
+            }
+          </section>
+        }
+
+        <!-- LINKS -->
+        @if (p.links.length > 0) {
+          <div class="panel-divider"></div>
+          <section class="panel-section">
+            <h3 class="panel-section-label">{{ lang.t('LINKS', 'LIENS') }}</h3>
+            <div class="panel-links">
+              @for (link of p.links; track $index) {
+                <a
+                  class="panel-link-btn"
+                  [href]="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="lang.t(link.name.en, link.name.fr)"
+                >
+                  {{ lang.t(link.name.en, link.name.fr) }}<span class="panel-link-arr">↗</span>
+                </a>
+              }
+            </div>
+          </section>
+        }
+      </div>
+    }
+  </aside>
+</div>

@@ -1,0 +1,171 @@
+[
+  {
+    "id": "homelab-staging-devops",
+    "title": {
+      "en": "Homelab : Staging Server & Azure DevOps Agent",
+      "fr": "Homelab : Serveur de staging & Agent Azure DevOps"
+    },
+    "subtitle": {
+      "en": "Proxmox · OpenTofu · Ansible · Azure DevOps",
+      "fr": "Proxmox · OpenTofu · Ansible · Azure DevOps"
+    },
+    "summary": {
+      "en": "Set up a self-hosted staging environment and Azure DevOps agent on a personal homelab to eliminate the team's dependency on free pipeline minutes and enable reliable pre-production validation before deployments to Azure Container Apps.",
+      "fr": "Mise en place d'un environnement de staging auto-hébergé et d'un agent Azure DevOps sur un homelab personnel pour éliminer la dépendance de l'équipe aux minutes d'agent gratuites et permettre une validation pré-production fiable avant les déploiements sur Azure Container Apps."
+    },
+    "date": "2026",
+    "stack": ["Proxmox", "OpenTofu", "Ansible", "Azure DevOps", "Docker", "Azure Container Apps"],
+    "sections": [
+      {
+        "title": { "en": "Context", "fr": "Contexte" },
+        "paragraphs": {
+          "en": [
+            "For my capstone project, I had to design an AI-powered task-automation platform while coordinating a small team of second-year students.",
+            "The project is planned to run over two and a half years, so I wanted solid foundations from the start: a staging environment and reliable pipelines covering the whole cycle, from development to production. The problem was that Azure DevOps' free agents come with a limited monthly allowance. Rather than ration our pipelines — which would have pushed the team toward large pull requests that are harder to review and riskier — I chose to host staging and run the pipelines on my homelab.",
+            "It was also a chance to put into practice the principles from The DevOps Handbook, which I was reading at the time, and to finally give a real purpose to my homelab, which had been gathering dust."
+          ],
+          "fr": [
+            "Dans le cadre d'un projet de synthèse, je devais concevoir une plateforme d'automatisation de tâches par l'IA tout en coordonnant une petite équipe d'étudiants de 2ᵉ année.",
+            "Le projet est prévu de s'étaler sur deux ans et demi, alors je voulais des fondations solides dès le départ : un environnement de staging et des pipelines fiables couvrant tout le cycle, du développement jusqu'à la production. Sauf que les agents gratuits d'Azure DevOps ont une utilisation limitée par mois. Plutôt que de rationner nos pipelines — ce qui aurait poussé l'équipe vers de grosses pull requests difficiles à relire et plus risquées — j'ai préféré héberger le staging et faire tourner les pipelines sur mon homelab.",
+            "C'était aussi l'occasion de mettre en pratique les principes du DevOps Handbook que je lisais à ce moment-là, et de donner enfin un usage concret à mon homelab qui prenait la poussière."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Approach", "fr": "Approche" },
+        "paragraphs": {
+          "en": [
+            "The goal was to automate every step and version everything in a repo.",
+            "Proxmox handles creating the virtual machines. OpenTofu, an open source alternative to Terraform, configures them declaratively. Ansible then takes care of installing and starting the DevOps agent, along with the project itself, via Docker. Each layer has a clear role, which makes the whole setup easy to modify or rebuild at will."
+          ],
+          "fr": [
+            "L'objectif était d'automatiser chaque étape et de tout versionner dans un repo.",
+            "Proxmox s'occupe de créer les machines virtuelles. OpenTofu, une alternative open source à Terraform, les configure de façon déclarative. Ansible prend ensuite en charge l'installation et le démarrage de l'agent DevOps ainsi que du projet via Docker. Chaque couche a un rôle précis, ce qui rend l'ensemble facile à modifier ou recréer à volonté."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Results", "fr": "Résultats" },
+        "paragraphs": {
+          "en": [
+            "The CI pipelines now run entirely on my homelab.",
+            "The staging environment is up and ready to validate changes before they reach production on Azure Container Apps."
+          ],
+          "fr": [
+            "Les pipelines CI tournent maintenant entièrement sur mon homelab.",
+            "L'environnement de staging est accessible et prêt à valider les changements avant qu'ils n'atteignent la production sur Azure Container Apps."
+          ]
+        }
+      }
+    ],
+    "duration": {
+      "en": "~2 weeks",
+      "fr": "~2 semaines"
+    },
+    "role": {
+      "en": "DevOps engineer",
+      "fr": "Ingénieur DevOps"
+    },
+    "team": {
+      "en": "Team of 4 — solo on the DevOps part",
+      "fr": "Équipe de 4 — seul sur la partie DevOps"
+    },
+    "image": "/assets/homelab.webp",
+    "tags": [
+      { "en": "DevOps", "fr": "DevOps" },
+      { "en": "Infrastructure", "fr": "Infrastructure" },
+      { "en": "Self-hosted", "fr": "Auto-hébergé" }
+    ],
+    "links": []
+  },
+  {
+    "id": "nyc-real-estate-app",
+    "title": {
+      "en": "NYC Real Estate Sales Management App",
+      "fr": "Application de gestion de ventes immobilières à New York"
+    },
+    "subtitle": {
+      "en": "MongoDB Atlas · FastAPI · OpenAI",
+      "fr": "MongoDB Atlas · FastAPI · OpenAI"
+    },
+    "summary": {
+      "en": "Built a real estate property search and management app connected to a MongoDB Atlas database, fed by a Kaggle dataset of New York properties. Extended standard vector search with a post-processing re-ranking pipeline using three ML models to return results that match both semantic intent and numerical criteria.",
+      "fr": "Développement d'une application de recherche et de gestion de propriétés immobilières connectée à MongoDB Atlas, alimentée par un dataset Kaggle de propriétés new-yorkaises. La recherche vectorielle classique a été enrichie d'un pipeline de re-classement post-traitement utilisant trois modèles ML pour retourner des résultats pertinents à la fois sémantiquement et numériquement."
+    },
+    "date": "2025",
+    "stack": ["MongoDB Atlas", "FastAPI", "OpenAI API", "Pydantic", "Python", "scikit-learn"],
+    "sections": [
+      {
+        "title": { "en": "Context", "fr": "Contexte" },
+        "paragraphs": {
+          "en": [
+            "As part of the course's final project, we had to build a web application connected to a MongoDB Atlas database and powered by a Kaggle dataset. I chose to work with a dataset of real estate properties in New York, building an application to manage and search property sales."
+          ],
+          "fr": [
+            "Dans le cadre du projet final du cours, nous devions créer une application web connectée à une base de données MongoDB Atlas et alimentée par un dataset Kaggle. J'ai choisi de travailler sur un dataset de propriétés immobilières situées à New York, en construisant une application de gestion et de recherche de ventes de propriétés."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Approach", "fr": "Approche" },
+        "paragraphs": {
+          "en": [
+            "The application lets users search for properties with auto-completion and perform all CRUD operations directly on MongoDB documents.",
+            "Each property has a text description combining its location, housing characteristics, and a usage profile such as \"ideal for families\" or \"perfect for a couple.\" I used OpenAI to generate the embeddings, which are stored directly in MongoDB to enable similarity search.",
+            "That is where I wanted to go further. After the vector search, I built a re-ranking workflow that extracts numerical fields from each result, namely price, number of bedrooms, and square footage, to reorder results based on what the user was actually looking for.",
+            "Three machine learning models are applied in post-processing to estimate prices, namely linear regression, K-Nearest Neighbors (KNN), and Random Forest.",
+            "Before training these models, I had to clean the data thoroughly. The dataset contained outliers that skewed the estimates, such as a property listed at 200 million dollars or vacant lots sold as if they were residential units. I removed these extreme cases to get a more representative dataset."
+          ],
+          "fr": [
+            "L'application permet de rechercher des propriétés avec auto-complétion et d'effectuer toutes les opérations CRUD directement sur les documents MongoDB.",
+            "Chaque propriété possède une description textuelle qui combine l'emplacement, les caractéristiques du logement et un profil d'usage comme « idéal pour les familles » ou « parfait pour un couple ». J'ai utilisé OpenAI pour générer les embeddings, qui sont stockés directement dans MongoDB pour permettre la recherche par similarité.",
+            "C'est ensuite que j'ai voulu pousser plus loin. Après la recherche vectorielle, j'ai mis en place un workflow de re-classement qui extrait les champs numériques de chaque résultat, soit le prix, le nombre de chambres et la superficie, afin de réordonner les résultats en fonction de ce que l'utilisateur recherchait réellement.",
+            "Trois modèles d'apprentissage automatique sont appliqués en post-traitement pour estimer les prix, soit la régression linéaire, les K plus proches voisins (KNN) et la forêt aléatoire (Random Forest).",
+            "Avant d'entraîner ces modèles, j'ai dû nettoyer les données en profondeur. Le dataset contenait des valeurs aberrantes qui faussaient les estimations, comme une propriété affichée à 200 millions de dollars ou des terrains vacants vendus comme s'il s'agissait de logements. J'ai retiré ces cas extrêmes pour obtenir un jeu de données plus représentatif."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Results", "fr": "Résultats" },
+        "paragraphs": {
+          "en": [
+            "I received the highest grade on this project. What I am most proud of is the hybrid approach to vector search. Combining semantic similarity with a re-ranking based on numerical criteria produces much more relevant results in a real estate search context.",
+            "Price estimation, on the other hand, yielded less satisfying results. The main limitation came from the available data, as I only had access to the neighborhood to represent location. Geospatial data would likely have captured the effect of location on price much more precisely."
+          ],
+          "fr": [
+            "J'ai obtenu la note maximale sur ce projet. Ce dont je suis le plus fier, c'est l'approche hybride de la recherche vectorielle. Combiner la similarité sémantique avec un re-classement basé sur les critères numériques donne des résultats beaucoup plus pertinents dans un contexte de recherche immobilière réelle.",
+            "L'estimation des prix, en revanche, a donné des résultats moins satisfaisants. La principale limite venait des données disponibles, puisque je n'avais accès qu'au quartier pour représenter la localisation. Des données géospatiales auraient sans doute capturé bien plus finement l'effet de l'emplacement sur le prix."
+          ]
+        }
+      }
+    ],
+    "duration": {
+      "en": "2 weeks",
+      "fr": "2 semaines"
+    },
+    "role": {
+      "en": "Full-stack developer",
+      "fr": "Développeur full-stack"
+    },
+    "team": {
+      "en": "Solo project",
+      "fr": "Projet solo"
+    },
+    "image": "/assets/NY_estate.webp",
+    "tags": [
+      { "en": "Web App", "fr": "Application Web" },
+      { "en": "Machine Learning", "fr": "Apprentissage automatique" },
+      { "en": "Academic", "fr": "Académique" }
+    ],
+    "links": [
+      {
+        "name": { "en": "Backend", "fr": "Backend" },
+        "url": "https://github.com/JulienDes/SDD1003-Backend"
+      },
+      {
+        "name": { "en": "Frontend", "fr": "Frontend" },
+        "url": "https://github.com/JulienDes/SDD1003---Frontend"
+      }
+    ]
+  }
+]

@@ -11,14 +11,24 @@ import { LangService } from '../../../../core/lang/lang';
 import { FormationPanelComponent } from '../../components/formation-panel/formation-panel';
 import { FormationsTableComponent } from '../../components/formations-table/formations-table';
 import { JournalTableComponent } from '../../components/journal-table/journal-table';
+import { ProjectPanelComponent } from '../../components/project-panel/project-panel';
+import { ProjectsGridComponent } from '../../components/projects-grid/projects-grid';
 import { Formation } from '../../models/formation';
 import { JournalEntry } from '../../models/journal-entry';
+import { Project } from '../../models/project';
 import formationsData from '../../data/formations.json';
 import journalData from '../../data/journal.json';
+import projectsData from '../../data/projects.json';
 
 @Component({
   selector: 'app-home-page',
-  imports: [FormationPanelComponent, FormationsTableComponent, JournalTableComponent],
+  imports: [
+    FormationPanelComponent,
+    FormationsTableComponent,
+    JournalTableComponent,
+    ProjectPanelComponent,
+    ProjectsGridComponent,
+  ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
@@ -33,12 +43,16 @@ export class HomePageComponent implements OnDestroy {
   private ro?: ResizeObserver;
   private io?: IntersectionObserver;
 
-  // ── Public fields ─────────────────────────────────────────────────────────
+  // ── Public injectables ─────────────────────────────────────────────────────────
   readonly lang = inject(LangService);
 
   // ── Education ─────────────────────────────────────────────────────────────
   readonly formations = formationsData as Formation[];
   readonly selectedFormation = signal<Formation | null>(null);
+
+  // ── Projects ──────────────────────────────────────────────────────────────
+  readonly projects = projectsData as Project[];
+  readonly selectedProject = signal<Project | null>(null);
 
   // ── Journal ───────────────────────────────────────────────────────────────
   readonly journalEntries = journalData as JournalEntry[];
@@ -58,6 +72,14 @@ export class HomePageComponent implements OnDestroy {
 
   onPanelClose(): void {
     this.selectedFormation.set(null);
+  }
+
+  onProjectSelect(project: Project): void {
+    this.selectedProject.set(project);
+  }
+
+  onProjectPanelClose(): void {
+    this.selectedProject.set(null);
   }
 
   copyEmail(): void {

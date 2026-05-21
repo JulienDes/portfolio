@@ -35,58 +35,7 @@
     <h2 class="section-title">
       {{ lang.t('Featured Projects', 'Mes projets') }}
     </h2>
-    <div class="placeholder-grid">
-      <div class="placeholder-card">
-        <p class="card-tags mono">Angular · Spring Boot · PostgreSQL</p>
-        <h3 class="card-title">Portfolio</h3>
-        <p class="card-body">
-          {{
-            lang.t(
-              'Personal portfolio built with Angular 21 standalone, Material 3, and GitHub Pages.',
-              'Portfolio personnel construit avec Angular 21 standalone, Material 3 et GitHub Pages.'
-            )
-          }}
-        </p>
-      </div>
-      <div class="placeholder-card">
-        <p class="card-tags mono">React · Node.js · MongoDB</p>
-        <h3 class="card-title">{{ lang.t('E-Commerce Platform', 'Plateforme E-Commerce') }}</h3>
-        <p class="card-body">
-          {{
-            lang.t(
-              'Full-stack marketplace with real-time inventory and Stripe payments.',
-              'Marketplace full-stack avec inventaire temps réel et paiements Stripe.'
-            )
-          }}
-        </p>
-      </div>
-      <div class="placeholder-card">
-        <p class="card-tags mono">Python · FastAPI · Docker</p>
-        <h3 class="card-title">{{ lang.t('Data Pipeline', 'Pipeline de données') }}</h3>
-        <p class="card-body">
-          {{
-            lang.t(
-              'ETL pipeline for processing 1M+ records daily with automated reporting.',
-              'Pipeline ETL pour traiter 1M+ enregistrements par jour avec rapports automatisés.'
-            )
-          }}
-        </p>
-      </div>
-      <div class="placeholder-card">
-        <p class="card-tags mono">Flutter · Firebase</p>
-        <h3 class="card-title">
-          {{ lang.t('Task Manager App', 'Application de gestion de tâches') }}
-        </h3>
-        <p class="card-body">
-          {{
-            lang.t(
-              'Cross-platform mobile app with offline-first sync and push notifications.',
-              'Application mobile multiplateforme avec synchronisation hors ligne et notifications push.'
-            )
-          }}
-        </p>
-      </div>
-    </div>
+    <app-projects-grid [projects]="projects" (selected)="onProjectSelect($event)" />
   </div>
 </section>
 
@@ -278,3 +227,6 @@
 
 <!-- ── Formation detail panel (position: fixed overlay) ──────────────────── -->
 <app-formation-panel [formation]="selectedFormation()" (closed)="onPanelClose()" />
+
+<!-- ── Project detail panel (position: fixed overlay) ────────────────────── -->
+<app-project-panel [project]="selectedProject()" (closed)="onProjectPanelClose()" />
