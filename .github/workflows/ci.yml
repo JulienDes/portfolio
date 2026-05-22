@@ -31,15 +31,15 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: davelosert/vitest-coverage-report-action@v2
         with:
-          json-summary-path: coverage/portefolio/coverage-summary.json
-          json-final-path: coverage/portefolio/coverage-final.json
+          json-summary-path: coverage/portfolio/coverage-summary.json
+          json-final-path: coverage/portfolio/coverage-final.json
 
       - name: Coverage summary
         if: always()
         run: |
           node -e "
             const fs = require('fs');
-            const raw = fs.readFileSync('coverage/portefolio/coverage-summary.json', 'utf8');
+            const raw = fs.readFileSync('coverage/portfolio/coverage-summary.json', 'utf8');
             const total = JSON.parse(raw).total;
             const metrics = [
               ['Lines',      total.lines.pct],
