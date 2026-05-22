@@ -70,7 +70,7 @@
       "en": "Team of 4 — solo on the DevOps part",
       "fr": "Équipe de 4 — seul sur la partie DevOps"
     },
-    "image": "/assets/homelab.webp",
+    "image": "assets/homelab.webp",
     "tags": [
       { "en": "DevOps", "fr": "DevOps" },
       { "en": "Infrastructure", "fr": "Infrastructure" },
@@ -151,7 +151,7 @@
       "en": "Solo project",
       "fr": "Projet solo"
     },
-    "image": "/assets/NY_estate.webp",
+    "image": "assets/NY_estate.webp",
     "tags": [
       { "en": "Web App", "fr": "Application Web" },
       { "en": "Machine Learning", "fr": "Apprentissage automatique" },
