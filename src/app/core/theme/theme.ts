@@ -32,7 +32,7 @@ export const PALETTES: PaletteName[] = [
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  private readonly _theme = signal<Theme>((this.readStored('theme') as Theme) ?? 'system');
+  private readonly _theme = signal<Theme>((this.readStored('theme') as Theme) ?? 'dark');
   private readonly _palette = signal<PaletteName>(
     (this.readStored('palette') as PaletteName) ?? 'violet',
   );
