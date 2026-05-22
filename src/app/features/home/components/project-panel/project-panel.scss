@@ -33,7 +33,7 @@
   right: 0;
   top: 0;
   height: 100%;
-  width: clamp(500px, 50vw, 1000px);
+  width: clamp(440px, 44vw, 860px);
   background: sys.$surface-container-low;
   border-left: 1px solid sys.$outline-variant;
   overflow-y: auto;
@@ -46,6 +46,24 @@
   .overlay--open & {
     transform: translateX(0);
   }
+}
+
+// ── Panel header ────────────────────────────────────────────────────────────────
+
+.panel-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: sp.$xs sp.$md;
+  flex-shrink: 0;
+  background: sys.$surface-container-low;
+}
+
+.panel-close {
+  color: sys.$on-surface-variant;
 }
 
 // ── Cover image ────────────────────────────────────────────────────────────────
@@ -195,6 +213,25 @@
     margin: 0;
     font-size: 1.0625rem;
     color: sys.$on-surface;
+  }
+}
+
+// ── Mobile: full-screen panel ───────────────────────────────────────────────────
+
+@media (max-width: 599px) {
+  .panel {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid sys.$outline-variant;
+    transform: translateY(100%);
+
+    .overlay--open & {
+      transform: translateY(0);
+    }
+  }
+
+  .panel-head {
+    border-bottom: 1px solid sys.$outline-variant;
   }
 }
 

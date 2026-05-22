@@ -4,7 +4,7 @@
 :host {
   --mat-table-row-item-container-height: auto;
   display: block;
-  max-height: 600px;
+  max-height: 720px;
   overflow-y: auto;
   border-radius: sys.$corner-medium;
 }
@@ -78,4 +78,57 @@
 
 .mono {
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+// ── Mobile card list ─────────────────────────────────────────────────────────────
+
+.journal-cards {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.journal-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'badge date'
+    'desc  desc';
+  column-gap: sp.$md;
+  row-gap: sp.$xs;
+  padding: 14px sp.$md;
+  background: sys.$surface-container;
+  border: 1px solid sys.$outline-variant;
+  border-radius: 14px;
+}
+
+.card-badge-area {
+  grid-area: badge;
+  align-self: center;
+}
+
+.card-date {
+  grid-area: date;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  color: sys.$on-surface-variant;
+  white-space: nowrap;
+  text-align: right;
+  align-self: center;
+}
+
+.card-description {
+  grid-area: desc;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: sys.$on-surface;
+  align-self: start;
+  min-width: 0;
 }

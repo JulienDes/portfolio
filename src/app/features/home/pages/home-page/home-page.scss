@@ -96,8 +96,7 @@
 .hero-inner {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 1180px;
+  width: min(100%, 1180px);
   padding: sp.$xl-2 sp.$xl-2;
   text-align: left;
 }
@@ -162,58 +161,48 @@
   color: sys.$on-surface;
 }
 
-.section-subtitle {
-  margin: 0 0 sp.$lg;
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: sys.$on-surface-variant;
-}
+// ── Journal sort bar ──────────────────────────────────────────────────────────
+// Mobile-only: desktop sorts via the table column headers.
 
-// ── Placeholder cards ──────────────────────────────────────────────────────────
-
-.placeholder-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: sp.$lg;
-}
-
-.placeholder-card {
-  background: sys.$surface-container;
-  border-radius: sys.$corner-medium;
-  padding: sp.$lg;
+.journal-sort-bar {
   display: flex;
-  flex-direction: column;
   gap: sp.$sm;
+  margin-bottom: sp.$md;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 }
 
-.card-date,
-.card-tags {
-  font-size: 0.75rem;
-  color: sys.$primary;
-  margin: 0;
-  letter-spacing: 0.04em;
-}
-
-.card-title {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: sys.$on-surface;
-}
-
-.card-sub {
-  margin: 0;
-  font-size: 0.875rem;
-  color: sys.$primary;
-  font-weight: 500;
-}
-
-.card-body {
-  margin: 0;
-  font-size: 0.875rem;
+.journal-sort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid sys.$outline-variant;
+  border-radius: sys.$corner-full;
+  background: transparent;
   color: sys.$on-surface-variant;
-  line-height: 1.6;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+
+  mat-icon {
+    font-size: 0.875rem;
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  &--active {
+    background: color-mix(in oklab, sys.$primary 12%, transparent);
+    color: sys.$primary;
+    border-color: color-mix(in oklab, sys.$primary 50%, transparent);
+  }
 }
 
 // ── Contact section ───────────────────────────────────────────────────────────

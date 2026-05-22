@@ -1,54 +1,94 @@
-<table mat-table [dataSource]="formations()" class="formations-table">
-  <!-- Type column -->
-  <ng-container matColumnDef="type">
-    <th mat-header-cell *matHeaderCellDef>{{ lang.t('Type', 'Type') }}</th>
-    <td mat-cell *matCellDef="let row">
-      <span
-        class="type-badge"
-        [class.type-badge--certification]="row.type === 'certification'"
-        [class.type-badge--degree]="row.type === 'degree'"
-        [class.type-badge--diploma]="row.type === 'diploma'"
+<!-- ── Desktop table ──────────────────────────────────────────────────────── -->
+@if (!isMobile()) {
+  <table mat-table [dataSource]="formations()" class="formations-table">
+    <!-- Type column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.t('Type', 'Type') }}</th>
+      <td mat-cell *matCellDef="let row">
+        <span
+          class="type-badge"
+          [class.type-badge--certification]="row.type === 'certification'"
+          [class.type-badge--degree]="row.type === 'degree'"
+          [class.type-badge--diploma]="row.type === 'diploma'"
+        >
+          @switch (row.type) {
+            @case ('certification') {
+              {{ lang.t('Certification', 'Certification') }}
+            }
+            @case ('degree') {
+              {{ lang.t('Degree', 'Diplôme universitaire') }}
+            }
+            @case ('diploma') {
+              {{ lang.t('Diploma', 'Diplôme collégial') }}
+            }
+          }
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Title column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.t('Title', 'Titre') }}</th>
+      <td mat-cell *matCellDef="let row" class="col-title">
+        {{ lang.t(row.title.en, row.title.fr) }}
+      </td>
+    </ng-container>
+
+    <!-- Institution column -->
+    <ng-container matColumnDef="institution">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.t('Institution', 'Établissement') }}</th>
+      <td mat-cell *matCellDef="let row" class="col-institution">{{ row.institution }}</td>
+    </ng-container>
+
+    <!-- Date column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>{{ lang.t('Date', 'Date') }}</th>
+      <td mat-cell *matCellDef="let row" class="col-date mono">{{ row.date }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      class="formation-row"
+      (click)="selected.emit(row)"
+    ></tr>
+  </table>
+} @else {
+  <!-- ── Mobile card list ───────────────────────────────────────────────────── -->
+  <ul class="formation-cards" role="list">
+    @for (f of formations(); track f.id) {
+      <li
+        class="formation-card"
+        role="button"
+        tabindex="0"
+        (click)="selected.emit(f)"
+        (keydown.enter)="selected.emit(f)"
       >
-        @switch (row.type) {
-          @case ('certification') {
-            {{ lang.t('Certification', 'Certification') }}
-          }
-          @case ('degree') {
-            {{ lang.t('Degree', 'Diplôme universitaire') }}
-          }
-          @case ('diploma') {
-            {{ lang.t('Diploma', 'Diplôme collégial') }}
-          }
-        }
-      </span>
-    </td>
-  </ng-container>
-
-  <!-- Title column -->
-  <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef>{{ lang.t('Title', 'Titre') }}</th>
-    <td mat-cell *matCellDef="let row" class="col-title">
-      {{ lang.t(row.title.en, row.title.fr) }}
-    </td>
-  </ng-container>
-
-  <!-- Institution column -->
-  <ng-container matColumnDef="institution">
-    <th mat-header-cell *matHeaderCellDef>{{ lang.t('Institution', 'Établissement') }}</th>
-    <td mat-cell *matCellDef="let row" class="col-institution">{{ row.institution }}</td>
-  </ng-container>
-
-  <!-- Date column -->
-  <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef>{{ lang.t('Date', 'Date') }}</th>
-    <td mat-cell *matCellDef="let row" class="col-date mono">{{ row.date }}</td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr
-    mat-row
-    *matRowDef="let row; columns: displayedColumns"
-    class="formation-row"
-    (click)="selected.emit(row)"
-  ></tr>
-</table>
+        <span class="card-badge-area">
+          <span
+            class="type-badge"
+            [class.type-badge--certification]="f.type === 'certification'"
+            [class.type-badge--degree]="f.type === 'degree'"
+            [class.type-badge--diploma]="f.type === 'diploma'"
+          >
+            @switch (f.type) {
+              @case ('certification') {
+                {{ lang.t('Cert.', 'Cert.') }}
+              }
+              @case ('degree') {
+                {{ lang.t('Degree', 'Université') }}
+              }
+              @case ('diploma') {
+                {{ lang.t('Diploma', 'Collégial') }}
+              }
+            }
+          </span>
+        </span>
+        <span class="card-year">{{ f.date }}</span>
+        <span class="card-title">{{ lang.t(f.title.en, f.title.fr) }}</span>
+        <span class="card-btn" aria-hidden="true">→</span>
+      </li>
+    }
+  </ul>
+}

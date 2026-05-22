@@ -1,11 +1,13 @@
 import { Component, computed, effect, HostListener, inject, input, output } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { LangService } from '../../../../core/lang/lang';
 import { Formation } from '../../models/formation';
 
 @Component({
   selector: 'app-formation-panel',
-  imports: [],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './formation-panel.html',
   styleUrl: './formation-panel.scss',
 })

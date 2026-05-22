@@ -1,5 +1,15 @@
 <div class="overlay" [class.overlay--open]="isOpen()" (click)="closed.emit()">
   <aside class="panel" (click)="$event.stopPropagation()">
+    <div class="panel-head">
+      <button
+        class="panel-close"
+        mat-icon-button
+        (click)="closed.emit()"
+        [attr.aria-label]="lang.t('Close', 'Fermer')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
     @if (project(); as p) {
       <div class="panel-cover">
         <img [src]="p.image" [alt]="lang.t(p.title.en, p.title.fr)" class="panel-cover-img" />

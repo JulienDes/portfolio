@@ -1,0 +1,173 @@
+@use 'styles/sys' as sys;
+@use 'styles/spacing' as sp;
+
+// Full-screen overlay — header + nav packed top, footer pinned bottom
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: sys.$surface;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  // Subtle radial glow top-right
+  &::before {
+    content: '';
+    position: fixed;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--mat-sys-primary) 8%, transparent),
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
+
+.ov-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: sp.$md sp.$lg;
+}
+
+.brand {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: sys.$on-surface;
+  letter-spacing: 0.02em;
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.close-btn {
+  color: sys.$on-surface-variant;
+}
+
+// ── Section label ─────────────────────────────────────────────────────────────
+
+.menu-label {
+  display: none; // removed — header brand is enough
+}
+
+// ── Nav items ─────────────────────────────────────────────────────────────────
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: sp.$sm sp.$lg 0;
+  gap: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: baseline;
+  gap: sp.$sm;
+  padding: sp.$sm 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid sys.$outline-variant;
+  transition: padding-left 250ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  &:first-child {
+    border-top: 1px solid sys.$outline-variant;
+  }
+
+  &:hover,
+  &:focus-visible {
+    padding-left: sp.$sm;
+    outline: none;
+
+    .nav-prefix {
+      color: sys.$primary;
+    }
+
+    .nav-text {
+      color: sys.$primary;
+    }
+  }
+}
+
+.nav-prefix {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: sys.$primary;
+  opacity: 0.7;
+  transition: opacity 200ms ease;
+  flex-shrink: 0;
+  padding-top: 0.35em; // optical alignment to cap-height of large text
+}
+
+.nav-text {
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: sys.$on-surface;
+  transition: color 200ms ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ── Footer ────────────────────────────────────────────────────────────────────
+
+.ov-foot {
+  margin-top: auto; // pins footer to bottom
+  padding: sp.$lg;
+  border-top: 1px solid sys.$outline-variant;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: sp.$md;
+}
+
+.foot-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.socials {
+  display: flex;
+  gap: sp.$lg;
+  justify-content: center;
+}
+
+.social-link {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: sys.$on-surface-variant;
+  text-decoration: none;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: sys.$primary;
+  }
+}
+
+.mono {
+  font-family: var(--font-mono);
+}

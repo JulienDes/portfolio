@@ -1,0 +1,50 @@
+<div class="overlay" @overlay>
+  <!-- Header -->
+  <div class="ov-head">
+    <span class="brand mono">Julien Desrosiers<span class="cursor" aria-hidden="true"></span></span>
+    <button
+      class="close-btn"
+      mat-icon-button
+      (click)="close()"
+      [attr.aria-label]="lang.t('Close menu', 'Fermer le menu')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <!-- Section label -->
+  <p class="menu-label mono" aria-hidden="true">// menu</p>
+
+  <!-- Nav items -->
+  <nav class="nav" [attr.aria-label]="lang.t('Main navigation', 'Navigation principale')">
+    @for (item of navItems; track item.fragment) {
+      <button class="nav-item" (click)="navigate(item.fragment)">
+        <span class="nav-text">{{ lang.t(item.labelEn, item.labelFr) }}</span>
+      </button>
+    }
+  </nav>
+
+  <!-- Footer -->
+  <footer class="ov-foot">
+    <div class="foot-row">
+      <div class="socials">
+        <a
+          class="social-link mono"
+          href="https://github.com/JulienDes"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub ↗
+        </a>
+        <a
+          class="social-link mono"
+          href="https://www.linkedin.com/in/JulienDes/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn ↗
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>

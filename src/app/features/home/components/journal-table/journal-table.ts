@@ -1,4 +1,7 @@
-import { Component, effect, inject, input, viewChild } from '@angular/core';
+import { Component, computed, effect, ElementRef, inject, input, viewChild } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { map } from 'rxjs';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
@@ -14,11 +17,37 @@ import { JournalEntry } from '../../models/journal-entry';
 export class JournalTableComponent {
   // ── Private injectables (must precede public fields per member-ordering) ──
   private readonly sort = viewChild<MatSort>(MatSort);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly COLORS = ['primary', 'secondary', 'tertiary', 'error'];
 
   // ── Public injectables ──
   readonly lang = inject(LangService);
   readonly entries = input<JournalEntry[]>([]);
+
+  readonly isMobile = toSignal(
+    inject(BreakpointObserver)
+      .observe('(max-width: 599px)')
+      .pipe(map((r) => r.matches)),
+    { initialValue: false },
+  );
+
+  // ── Sort (driven by the sort bar in the parent page) ──
+  readonly sortBy = input<'date' | 'category'>('date');
+
+  readonly sortedEntries = computed(() => {
+    const entries = this.entries();
+    const sort = this.sortBy();
+    return [...entries].sort((a, b) => {
+      if (sort === 'date') {
+        if (a.date === 'TBD') return 1;
+        if (b.date === 'TBD') return -1;
+        return b.date.localeCompare(a.date);
+      }
+      return this.lang
+        .t(a.category.en, a.category.fr)
+        .localeCompare(this.lang.t(b.category.en, b.category.fr));
+    });
+  });
 
   // ── Public fields ──
   readonly displayedColumns = ['date', 'category', 'description'];
@@ -28,6 +57,12 @@ export class JournalTableComponent {
   constructor() {
     effect(() => {
       this.dataSource.data = this.entries();
+    });
+
+    // Reset the scroll position to the top whenever the sort changes.
+    effect(() => {
+      this.sortBy();
+      this.host.nativeElement.scrollTop = 0;
     });
 
     effect(() => {
