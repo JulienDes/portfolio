@@ -14,11 +14,33 @@
     },
     "description": {
       "en": [
-        "Bachelor's degree program combining a strong foundation in computer science (algorithms, data structures, software engineering, databases, operating systems) with a specialized concentration in data science covering statistics, probability, machine learning, data mining, and big data processing.",
+        "Bachelor's degree program combining a strong foundation in computer science with a specialized concentration in data science.",
+        "Coursework covers:",
+        {
+          "list": [
+            "Algorithms & data structures",
+            "Software engineering",
+            "Databases & operating systems",
+            "Statistics & probability",
+            "Machine learning",
+            "Data preprocessing"
+          ]
+        },
         "Final session in progress."
       ],
       "fr": [
-        "Programme de baccalauréat combinant une solide formation en informatique (algorithmes, structures de données, génie logiciel, bases de données, systèmes d'exploitation) avec une spécialisation en science des données couvrant les statistiques, les probabilités, l'apprentissage automatique, la fouille de données et le traitement de données massives.",
+        "Programme de baccalauréat combinant une solide formation en informatique avec une spécialisation en science des données.",
+        "Les cours couvrent:",
+        {
+          "list": [
+            "Algorithmes et structures de données",
+            "Génie logiciel",
+            "Bases de données et systèmes d'exploitation",
+            "Statistiques et probabilités",
+            "Apprentissage automatique",
+            "Prétraitement des données"
+          ]
+        },
         "Dernière session en cours."
       ]
     },
@@ -67,13 +89,37 @@
       "en": [
         "Official MongoDB certification validating the knowledge and skills required to implement, configure, and manage a MongoDB database in production.",
         "MongoDB recommends candidates have at least 2 months of consistent hands-on experience as a MongoDB DBA and have successfully completed MongoDB's official database training (or equivalent) prior to attempting the exam.",
-        "The certification assesses day-to-day operational expertise including cluster deployment, replication, sharding, security, backup and recovery, performance tuning, indexing strategies, and monitoring.",
+        "The certification assesses day-to-day operational expertise across the following domains:",
+        {
+          "list": [
+            "Cluster deployment",
+            "Replication",
+            "Sharding",
+            "Security",
+            "Backup and recovery",
+            "Performance tuning",
+            "Indexing strategies",
+            "Monitoring"
+          ]
+        },
         "Earned by passing the proctored online exam administered through ProctorU."
       ],
       "fr": [
         "Certification officielle MongoDB validant les connaissances et compétences requises pour implémenter, configurer et administrer une base de données MongoDB en production.",
         "MongoDB recommande aux candidats de posséder au minimum 2 mois d'expérience pratique soutenue en tant que DBA MongoDB et d'avoir complété avec succès la formation officielle MongoDB sur les bases de données (ou l'équivalent) avant de tenter l'examen.",
-        "La certification évalue la maîtrise des tâches opérationnelles quotidiennes, incluant le déploiement de clusters, la réplication, le sharding, la sécurité, la sauvegarde et la restauration, l'optimisation des performances, les stratégies d'indexation et la surveillance.",
+        "La certification évalue la maîtrise des tâches opérationnelles quotidiennes dans les domaines suivants :",
+        {
+          "list": [
+            "Déploiement de clusters",
+            "Réplication",
+            "Sharding",
+            "Sécurité",
+            "Sauvegarde et restauration",
+            "Optimisation des performances",
+            "Stratégies d'indexation",
+            "Surveillance"
+          ]
+        },
         "Obtenue en réussissant l'examen en ligne surveillé via ProctorU."
       ]
     },
@@ -119,11 +165,37 @@
     "description": {
       "en": [
         "IBM professional certificate covering the full DevOps lifecycle and modern software delivery practices.",
-        "Completed nine courses: Introduction to DevOps, Agile Development and Scrum, Containers with Docker/Kubernetes/OpenShift, Microservices and Serverless Application Development, Test and Behavior Driven Development, Continuous Integration and Continuous Delivery (CI/CD), Application Security for Developers and DevOps Professionals, Monitoring and Observability, and a hands-on DevOps Capstone Project."
+        "Completed nine courses:",
+        {
+          "list": [
+            "Introduction to DevOps",
+            "Agile Development and Scrum",
+            "Containers with Docker, Kubernetes & OpenShift",
+            "Microservices and Serverless Application Development",
+            "Test and Behavior Driven Development",
+            "Continuous Integration and Continuous Delivery (CI/CD)",
+            "Application Security for Developers and DevOps Professionals",
+            "Monitoring and Observability",
+            "DevOps Capstone Project"
+          ]
+        }
       ],
       "fr": [
         "Certificat professionnel IBM couvrant l'ensemble du cycle de vie DevOps et les pratiques modernes de livraison logicielle.",
-        "Neuf cours complétés : Introduction au DevOps, Développement Agile et Scrum, Conteneurs avec Docker/Kubernetes/OpenShift, Développement d'applications avec microservices et serverless, Test et Behavior Driven Development, Intégration et livraison continues (CI/CD), Sécurité applicative pour développeurs et professionnels DevOps, Monitoring et observabilité, et un projet final pratique DevOps Capstone."
+        "Neuf cours complétés:",
+        {
+          "list": [
+            "Introduction au DevOps",
+            "Développement Agile et Scrum",
+            "Conteneurs avec Docker, Kubernetes et OpenShift",
+            "Développement d'applications avec microservices et serverless",
+            "Test et Behavior Driven Development",
+            "Intégration et livraison continues (CI/CD)",
+            "Sécurité applicative pour développeurs et professionnels DevOps",
+            "Monitoring et observabilité",
+            "Projet final DevOps Capstone"
+          ]
+        }
       ]
     },
     "skills": [
@@ -173,11 +245,35 @@
     "description": {
       "en": [
         "Google professional certificate preparing for entry-level cybersecurity roles.",
-        "Completed eight courses: Foundations of Cybersecurity, Play It Safe (security risk management), Connect and Protect (networks and network security), Tools of the Trade (Linux and SQL), Assets, Threats and Vulnerabilities, Sound the Alarm (detection and response), Automate Cybersecurity Tasks with Python, and Put It to Work (job-readiness). Hands-on practice with SIEM tools, IDS, packet analysis, and Python scripting for security automation."
+        "Completed eight courses:",
+        {
+          "list": [
+            "Foundations of Cybersecurity",
+            "Play It Safe — Security risk management",
+            "Connect and Protect — Networks and network security",
+            "Tools of the Trade — Linux and SQL",
+            "Assets, Threats and Vulnerabilities",
+            "Sound the Alarm — Detection and response",
+            "Automate Cybersecurity Tasks with Python",
+            "Put It to Work — Job readiness"
+          ]
+        }
       ],
       "fr": [
         "Certificat professionnel Google préparant aux rôles d'entrée en cybersécurité.",
-        "Huit cours complétés : Fondements de la cybersécurité, Play It Safe (gestion des risques de sécurité), Connect and Protect (réseaux et sécurité réseau), Tools of the Trade (Linux et SQL), Actifs, menaces et vulnérabilités, Sound the Alarm (détection et réponse), Automatisation des tâches de cybersécurité avec Python, et Put It to Work (préparation à l'emploi). Pratique concrète avec outils SIEM, IDS, analyse de paquets et scripts Python pour l'automatisation de la sécurité."
+        "Huit cours complétés:",
+        {
+          "list": [
+            "Fondements de la cybersécurité",
+            "Play It Safe — Gestion des risques de sécurité",
+            "Connect and Protect — Réseaux et sécurité réseau",
+            "Tools of the Trade — Linux et SQL",
+            "Actifs, menaces et vulnérabilités",
+            "Sound the Alarm — Détection et réponse",
+            "Automatisation des tâches de cybersécurité avec Python",
+            "Put It to Work — Préparation à l'emploi"
+          ]
+        }
       ]
     },
     "skills": [
@@ -226,11 +322,33 @@
     "description": {
       "en": [
         "Google professional certificate covering the full data analytics workflow.",
-        "Completed seven courses: Foundations (Data, Data, Everywhere), Ask Questions to Make Data-Driven Decisions, Prepare Data for Exploration, Process Data from Dirty to Clean, Analyze Data to Answer Questions, Share Data Through the Art of Visualization, and the Google Data Analytics Capstone case study. Hands-on practice with spreadsheets, SQL, R, Tableau, and structured data storytelling."
+        "Completed seven courses:",
+        {
+          "list": [
+            "Foundations: Data, Data, Everywhere",
+            "Ask Questions to Make Data-Driven Decisions",
+            "Prepare Data for Exploration",
+            "Process Data from Dirty to Clean",
+            "Analyze Data to Answer Questions",
+            "Share Data Through the Art of Visualization",
+            "Google Data Analytics Capstone"
+          ]
+        }
       ],
       "fr": [
         "Certificat professionnel Google couvrant l'ensemble du flux de travail en analyse de données.",
-        "Sept cours complétés : Fondements (Data, Data, Everywhere), Poser les bonnes questions pour des décisions fondées sur les données, Préparer les données pour l'exploration, Nettoyage et traitement des données, Analyser les données pour répondre aux questions, Visualisation et communication des données, et le projet final Capstone. Pratique concrète avec tableurs, SQL, R, Tableau et narration structurée à partir de données."
+        "Sept cours complétés:",
+        {
+          "list": [
+            "Fondements : Data, Data, Everywhere",
+            "Poser les bonnes questions pour des décisions fondées sur les données",
+            "Préparer les données pour l'exploration",
+            "Nettoyage et traitement des données",
+            "Analyser les données pour répondre aux questions",
+            "Visualisation et communication des données",
+            "Projet final Capstone Google Data Analytics"
+          ]
+        }
       ]
     },
     "skills": [
@@ -275,10 +393,36 @@
     },
     "description": {
       "en": [
-        "Pre-university college program providing the scientific and mathematical foundation required for admission to university engineering, computer science, and pure science programs. Curriculum included calculus (differential, integral, multivariable), linear algebra, mechanics, electricity and magnetism, waves and optics, general and solution chemistry, biology, and applied scientific methodology."
+        "Pre-university college program providing the scientific and mathematical foundation required for admission to university engineering, computer science, and pure science programs.",
+        "Curriculum included the following courses:",
+        {
+          "list": [
+            "Calculus — differential, integral, and multivariable",
+            "Linear algebra",
+            "Mechanics",
+            "Electricity and magnetism",
+            "Waves and optics",
+            "General and solution chemistry",
+            "Biology",
+            "Applied scientific methodology"
+          ]
+        }
       ],
       "fr": [
-        "Programme collégial pré-universitaire offrant la formation scientifique et mathématique requise pour l'admission aux programmes universitaires en génie, en informatique et en sciences pures. Cursus incluant le calcul différentiel et intégral, le calcul à plusieurs variables, l'algèbre linéaire, la mécanique, l'électricité et le magnétisme, les ondes et l'optique, la chimie générale et des solutions, la biologie et la méthodologie scientifique appliquée."
+        "Programme collégial pré-universitaire offrant la formation scientifique et mathématique requise pour l'admission aux programmes universitaires en génie, en informatique et en sciences pures.",
+        "Cursus comprenait les cours suivants :",
+        {
+          "list": [
+            "Calcul différentiel, intégral et à plusieurs variables",
+            "Algèbre linéaire",
+            "Mécanique",
+            "Électricité et magnétisme",
+            "Ondes et optique",
+            "Chimie générale et des solutions",
+            "Biologie",
+            "Méthodologie scientifique appliquée"
+          ]
+        }
       ]
     },
     "skills": [

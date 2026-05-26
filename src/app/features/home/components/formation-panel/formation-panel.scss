@@ -124,6 +124,20 @@
   text-align: justify;
 }
 
+.panel-section-list {
+  margin: 0;
+  padding-left: sp.$lg;
+  display: flex;
+  flex-direction: column;
+  gap: sp.$xs;
+}
+
+.panel-section-list-item {
+  font-size: 1.0625rem;
+  color: sys.$on-surface-variant;
+  line-height: 1.75;
+}
+
 // ── Skills tags ────────────────────────────────────────────────────────────────
 
 .panel-skills {

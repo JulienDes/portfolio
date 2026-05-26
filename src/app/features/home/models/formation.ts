@@ -5,6 +5,12 @@ export type FormationStatus =
   | { en: 'Completed'; fr: 'Complété' }
   | { en: 'In Progress'; fr: 'En cours' };
 
+export interface FormationDescriptionList {
+  list: string[];
+}
+
+export type FormationDescriptionBlock = string | FormationDescriptionList;
+
 export interface Formation {
   id: string;
   type: FormationType;
@@ -12,7 +18,7 @@ export interface Formation {
   institution: string;
   date: string;
   duration?: { en: string; fr: string };
-  description: { en: string[]; fr: string[] };
+  description: { en: FormationDescriptionBlock[]; fr: FormationDescriptionBlock[] };
   skills: string[];
   referenceUrl?: string | null;
   credentialUrl?: string | null;
