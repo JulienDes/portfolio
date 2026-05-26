@@ -3,7 +3,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { LangService } from '../../../../core/lang/lang';
-import { Formation } from '../../models/formation';
+import {
+  Formation,
+  FormationDescriptionBlock,
+  FormationDescriptionList,
+} from '../../models/formation';
 
 @Component({
   selector: 'app-formation-panel',
@@ -31,5 +35,13 @@ export class FormationPanelComponent {
   @HostListener('document:keydown.escape')
   onEsc(): void {
     if (this.isOpen()) this.closed.emit();
+  }
+
+  isDescriptionList(block: unknown): block is FormationDescriptionList {
+    return typeof block === 'object' && block !== null && 'list' in block;
+  }
+
+  descriptionItems(block: FormationDescriptionBlock): string[] {
+    return (block as FormationDescriptionList).list;
   }
 }

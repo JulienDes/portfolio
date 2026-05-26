@@ -20,8 +20,16 @@
         <!-- SUMMARY -->
         <section class="panel-section">
           <h3 class="panel-section-label">{{ lang.t('SUMMARY', 'RÉSUMÉ') }}</h3>
-          @for (para of lang.t(f.description.en, f.description.fr); track $index) {
-            <p class="panel-section-text">{{ para }}</p>
+          @for (block of lang.t(f.description.en, f.description.fr); track $index) {
+            @if (isDescriptionList(block)) {
+              <ul class="panel-section-list">
+                @for (item of descriptionItems(block); track $index) {
+                  <li class="panel-section-list-item">{{ item }}</li>
+                }
+              </ul>
+            } @else {
+              <p class="panel-section-text">{{ block }}</p>
+            }
           }
         </section>
 
