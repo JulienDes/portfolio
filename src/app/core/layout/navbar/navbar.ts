@@ -53,7 +53,7 @@ export class NavbarComponent implements OnInit {
   readonly activeFragment = signal<string>('');
 
   readonly navItems: NavItem[] = [
-    { index: '01', labelEn: 'Qualifications', labelFr: 'Diplômes', fragment: 'education' },
+    { index: '01', labelEn: 'Educations', labelFr: 'Formations', fragment: 'education' },
     { index: '02', labelEn: 'Projects', labelFr: 'Projets', fragment: 'projects' },
     { index: '03', labelEn: 'Journal', labelFr: 'Journal', fragment: 'journal' },
     { index: '04', labelEn: 'Contact', labelFr: 'Contact', fragment: 'contact' },

@@ -21,12 +21,12 @@
         "paragraphs": {
           "en": [
             "For my capstone project, I had to design an AI-powered task-automation platform while coordinating a small team of second-year students.",
-            "The project is planned to run over two and a half years, so I wanted solid foundations from the start: a staging environment and reliable pipelines covering the whole cycle, from development to production. The problem was that Azure DevOps' free agents come with a limited monthly allowance. Rather than ration our pipelines — which would have pushed the team toward large pull requests that are harder to review and riskier — I chose to host staging and run the pipelines on my homelab.",
+            "The project is planned to run over two and a half years, so I wanted solid foundations from the start: a staging environment and reliable pipelines covering the whole cycle, from development to production. The problem was that Azure DevOps' free agents come with a limited monthly allowance. Rather than ration our pipelines, which would have pushed the team toward large pull requests that are harder to review and riskier, I chose to host staging and run the pipelines on my homelab.",
             "It was also a chance to put into practice the principles from The DevOps Handbook, which I was reading at the time, and to finally give a real purpose to my homelab, which had been gathering dust."
           ],
           "fr": [
             "Dans le cadre d'un projet de synthèse, je devais concevoir une plateforme d'automatisation de tâches par l'IA tout en coordonnant une petite équipe d'étudiants de 2ᵉ année.",
-            "Le projet est prévu de s'étaler sur deux ans et demi, alors je voulais des fondations solides dès le départ : un environnement de staging et des pipelines fiables couvrant tout le cycle, du développement jusqu'à la production. Sauf que les agents gratuits d'Azure DevOps ont une utilisation limitée par mois. Plutôt que de rationner nos pipelines — ce qui aurait poussé l'équipe vers de grosses pull requests difficiles à relire et plus risquées — j'ai préféré héberger le staging et faire tourner les pipelines sur mon homelab.",
+            "Le projet est prévu de s'étaler sur deux ans et demi, alors je voulais des fondations solides dès le départ : un environnement de staging et des pipelines fiables couvrant tout le cycle, du développement jusqu'à la production. Sauf que les agents gratuits d'Azure DevOps ont une utilisation limitée par mois. Plutôt que de rationner nos pipelines, ce qui aurait poussé l'équipe vers de grosses pull requests difficiles à relire et plus risquées, j'ai préféré héberger le staging et faire tourner les pipelines sur mon homelab.",
             "C'était aussi l'occasion de mettre en pratique les principes du DevOps Handbook que je lisais à ce moment-là, et de donner enfin un usage concret à mon homelab qui prenait la poussière."
           ]
         }

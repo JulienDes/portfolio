@@ -126,21 +126,30 @@
     }
   },
   {
-    "id": "2026-livre-devops-handbook",
-    "date": "2026-05",
-    "category": { "en": "Books", "fr": "Livres" },
-    "description": {
-      "en": "Read \"The DevOps Handbook\" by Gene Kim, Jez Humble, Patrick Debois and John Willis.",
-      "fr": "Lecture de « The DevOps Handbook » de Gene Kim, Jez Humble, Patrick Debois et John Willis."
-    }
-  },
-  {
     "id": "2026-livre-build",
     "date": "2026-05",
     "category": { "en": "Books", "fr": "Livres" },
     "description": {
       "en": "Reading \"Build: An Unorthodox Guide to Making Things Worth Making\" by Tony Fadell.",
       "fr": "Lecture de « Build: An Unorthodox Guide to Making Things Worth Making » de Tony Fadell."
+    }
+  },
+  {
+    "id": "2026-cert-claude-code-101",
+    "date": "2026-05",
+    "category": { "en": "Certifications", "fr": "Certifications" },
+    "description": {
+      "en": "Completed the Claude Code 101 certification by Anthropic.",
+      "fr": "Complétion de la certification Claude Code 101 par Anthropic."
+    }
+  },
+  {
+    "id": "2026-livre-devops-handbook",
+    "date": "2026-05",
+    "category": { "en": "Books", "fr": "Livres" },
+    "description": {
+      "en": "Read \"The DevOps Handbook\" by Gene Kim, Jez Humble, Patrick Debois and John Willis.",
+      "fr": "Lecture de « The DevOps Handbook » de Gene Kim, Jez Humble, Patrick Debois et John Willis."
     }
   }
 ]
