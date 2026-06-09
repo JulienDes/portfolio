@@ -126,15 +126,6 @@
     }
   },
   {
-    "id": "2026-livre-build",
-    "date": "2026-05",
-    "category": { "en": "Books", "fr": "Livres" },
-    "description": {
-      "en": "Reading \"Build: An Unorthodox Guide to Making Things Worth Making\" by Tony Fadell.",
-      "fr": "Lecture de « Build: An Unorthodox Guide to Making Things Worth Making » de Tony Fadell."
-    }
-  },
-  {
     "id": "2026-cert-claude-code-101",
     "date": "2026-05",
     "category": { "en": "Certifications", "fr": "Certifications" },
@@ -150,6 +141,24 @@
     "description": {
       "en": "Read \"The DevOps Handbook\" by Gene Kim, Jez Humble, Patrick Debois and John Willis.",
       "fr": "Lecture de « The DevOps Handbook » de Gene Kim, Jez Humble, Patrick Debois et John Willis."
+    }
+  },
+  {
+    "id": "2026-livre-build",
+    "date": "2026-05",
+    "category": { "en": "Books", "fr": "Livres" },
+    "description": {
+      "en": "Reading \"Build: An Unorthodox Guide to Making Things Worth Making\" by Tony Fadell.",
+      "fr": "Lecture de « Build: An Unorthodox Guide to Making Things Worth Making » de Tony Fadell."
+    }
+  },
+  {
+    "id": "2026-evenement-p3rspectives",
+    "date": "2026-06",
+    "category": { "en": "Events", "fr": "Événements" },
+    "description": {
+      "en": "Attended P3RSPECTIVES, the first edition of an economic summit bringing together over 400 entrepreneurs, experts, partners and economic development stakeholders to discuss and shape the economic future of Trois-Rivières.",
+      "fr": "Participation à P3RSPECTIVES, la toute première édition d'un sommet économique rassemblant plus de 400 entrepreneurs, experts, partenaires et acteurs du développement économique pour imaginer et construire l'avenir économique de Trois-Rivières."
     }
   }
 ]
