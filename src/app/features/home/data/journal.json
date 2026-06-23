@@ -1,5 +1,17 @@
 [
   {
+    "id": "2024-conference-mila-voice-agent",
+    "date": "2024-05",
+    "category": {
+      "en": "Conferences",
+      "fr": "Conférences"
+    },
+    "description": {
+      "en": "Attended a conference at Mila - Quebec AI Institute focusing on \"AI Voice Agent and Smart Contracts: Transforming Business Interactions\".",
+      "fr": "Participation à une conférence donnée à Mila - Institut québécois d'intelligence artificielle portant sur le thème « AI Voice Agent and Smart Contracts: Transforming Business Interactions »."
+    }
+  },
+  {
     "id": "2024-ami-secretaire",
     "date": "2024-09",
     "category": { "en": "Student Association", "fr": "Vie associative" },
@@ -36,12 +48,12 @@
     }
   },
   {
-    "id": "2025-conference-francis-architecte-logiciel",
-    "date": "2025-11",
+    "id": "2025-gala-ami",
+    "date": "2025-04",
     "category": { "en": "Student Association", "fr": "Vie associative" },
     "description": {
-      "en": "Organized an AMI guest talk on the role of a software architect.",
-      "fr": "Organisation d'une conférence-invité de l'AMI, sur le rôle de l'architecte logiciel."
+      "en": "Led the organization of the 2025 AMI gala.",
+      "fr": "Gestion de l'organisation du gala 2025 de l'AMI."
     }
   },
   {
@@ -72,12 +84,15 @@
     }
   },
   {
-    "id": "2025-gala-ami",
-    "date": "2025-04",
-    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "id": "2025-conference-agi-digihub",
+    "date": "2025-10",
+    "category": {
+      "en": "Conferences",
+      "fr": "Conférences"
+    },
     "description": {
-      "en": "Led the organization of the 2025 AMI gala.",
-      "fr": "Gestion de l'organisation du gala 2025 de l'AMI."
+      "en": "Attended the \"Artificial General Intelligence and Superintelligence: Promises and Perils\" conference hosted at DigiHub Shawinigan, a prominent technology and innovation incubator.",
+      "fr": "Assistance à la conférence « IA générale et superintelligence - Promesses et périls » présentée au DigiHub Shawinigan, un important incubateur technologique et pôle d'innovation."
     }
   },
   {
@@ -87,6 +102,27 @@
     "description": {
       "en": "Attended DevOpsDays Montreal (October 14–15).",
       "fr": "Participation à DevOpsDays Montréal (14–15 octobre)."
+    }
+  },
+  {
+    "id": "2025-conference-francis-architecte-logiciel",
+    "date": "2025-11",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an AMI guest talk on the role of a software architect.",
+      "fr": "Organisation d'une conférence-invité de l'AMI, sur le rôle de l'architecte logiciel."
+    }
+  },
+  {
+    "id": "2026-reading-why-nations-fail",
+    "date": "2026-01",
+    "category": {
+      "en": "Books",
+      "fr": "Livres"
+    },
+    "description": {
+      "en": "Read \"Why Nations Fail: The Origins of Power, Prosperity, and Poverty\" by economists Daron Acemoglu and James A. Robinson, whose groundbreaking research on institutional economics earned them the 2024 Nobel Memorial Prize in Economic Sciences.",
+      "fr": "Lecture de l'ouvrage « Why Nations Fail: The Origins of Power, Prosperity, and Poverty » des économistes Daron Acemoglu et James A. Robinson. Leurs recherches fondamentales sur le rôle des institutions dans le développement économique leur ont valu le prix Nobel d'économie en 2024."
     }
   },
   {
@@ -126,11 +162,23 @@
     }
   },
   {
+    "id": "2026-conseil-jeunesse-mauricie",
+    "date": "2026-05",
+    "category": {
+      "en": "Involvement",
+      "fr": "Implication"
+    },
+    "description": {
+      "en": "Joined the Conseil Jeunesse de la Mauricie, a non-partisan youth group focused on politics. Participated in regular meetings and expert-led presentations on current geopolitical affairs, such as the CUSMA (Canada-United States-Mexico Agreement).",
+      "fr": "Intégration du Conseil Jeunesse de la Mauricie, un regroupement non partisan pour les jeunes s'intéressant à la politique. Participation à des rencontres et des présentations d'experts sur l'actualité et des enjeux géopolitiques, comme l'ACEUM (Accord Canada–États-Unis–Mexique)."
+    }
+  },
+  {
     "id": "2026-cert-claude-code-101",
     "date": "2026-05",
     "category": { "en": "Certifications", "fr": "Certifications" },
     "description": {
-      "en": "Completed the Claude 101 and Code 101 certification by Anthropic.",
+      "en": "Completed the Claude 101 and Claude Code 101 certification by Anthropic.",
       "fr": "Complétion de la certification Claude 101 et Claude Code 101 par Anthropic."
     }
   },
@@ -145,10 +193,10 @@
   },
   {
     "id": "2026-livre-build",
-    "date": "2026-05",
+    "date": "2026-06",
     "category": { "en": "Books", "fr": "Livres" },
     "description": {
-      "en": "Reading \"Build: An Unorthodox Guide to Making Things Worth Making\" by Tony Fadell.",
+      "en": "Read \"Build: An Unorthodox Guide to Making Things Worth Making\" by Tony Fadell.",
       "fr": "Lecture de « Build: An Unorthodox Guide to Making Things Worth Making » de Tony Fadell."
     }
   },
