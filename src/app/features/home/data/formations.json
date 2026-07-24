@@ -73,6 +73,91 @@
     }
   },
   {
+    "id": "ibm-systems-solutions-architect-coursera",
+    "type": "certification",
+    "title": {
+      "en": "IBM Systems and Solutions Architect Professional Certificate",
+      "fr": "Certificat professionnel IBM en architecture de systèmes et de solutions"
+    },
+    "institution": "IBM via Coursera",
+    "date": "2026",
+    "duration": {
+      "en": "~3 months at 10 hours/week (11-course specialization)",
+      "fr": "~3 mois à 10 heures/semaine (spécialisation de 11 cours)"
+    },
+    "description": {
+      "en": [
+        "IBM professional certificate covering the full systems and solutions architecture lifecycle.",
+        "Completed eleven courses:",
+        {
+          "list": [
+            "Introduction to Systems Architecture",
+            "IT Systems Design and Analysis",
+            "Project, Stakeholder, and Requirements Management Fundamentals",
+            "Business Process Modeling, Analysis, and Improvement",
+            "Cloud Native, Microservices, Containers, DevOps and Agile",
+            "Enterprise Data Architecture and Operations",
+            "Data Integration, Data Storage & Data Migration",
+            "Software Testing, Deployment, and Maintenance Strategies",
+            "Cybersecurity Architecture",
+            "Generative AI: Advancing Systems Analysis & Architecture",
+            "Systems and Solutions Architect Capstone Project"
+          ]
+        }
+      ],
+      "fr": [
+        "Certificat professionnel IBM couvrant l'ensemble du cycle de vie de l'architecture de systèmes et de solutions.",
+        "Onze cours complétés :",
+        {
+          "list": [
+            "Introduction à l'architecture des systèmes",
+            "Conception et analyse de systèmes informatiques",
+            "Fondamentaux de la gestion de projets, des parties prenantes et des exigences",
+            "Modélisation, analyse et amélioration des processus d'affaires",
+            "Cloud natif, microservices, conteneurs, DevOps et Agile",
+            "Architecture et opérations des données d'entreprise",
+            "Intégration, stockage et migration des données",
+            "Stratégies de test, déploiement et maintenance de logiciels",
+            "Architecture en cybersécurité",
+            "IA générative : avancées en analyse et architecture de systèmes",
+            "Projet final Capstone en architecture de systèmes et de solutions"
+          ]
+        }
+      ]
+    },
+    "skills": [
+      "Systems Architecture",
+      "Solution Architecture",
+      "Enterprise Architecture",
+      "IT Systems Design",
+      "Requirements Management",
+      "Business Process Modeling",
+      "Cloud Native",
+      "Microservices",
+      "Containers",
+      "DevOps",
+      "Agile",
+      "Data Architecture",
+      "Data Integration",
+      "Data Migration",
+      "Software Testing",
+      "Cybersecurity Architecture",
+      "Generative AI",
+      "Stakeholder Management"
+    ],
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/professional-cert/482FDGQIW8AQ",
+    "referenceUrl": "https://www.coursera.org/professional-certificates/ibm-systems-and-solutions-architect",
+    "formateur": null,
+    "diplome": {
+      "en": "Professional Certificate",
+      "fr": "Certificat professionnel"
+    },
+    "statut": {
+      "en": "Certified",
+      "fr": "Certifié"
+    }
+  },
+  {
     "id": "mongodb-associate-dba",
     "type": "certification",
     "title": {
