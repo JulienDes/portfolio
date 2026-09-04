@@ -208,5 +208,14 @@
       "en": "Attended P3RSPECTIVES, the first edition of an economic summit bringing together over 400 entrepreneurs, experts, partners and economic development stakeholders to discuss and shape the economic future of Trois-Rivières.",
       "fr": "Participation à P3RSPECTIVES, la toute première édition d'un sommet économique rassemblant plus de 400 entrepreneurs, experts, partenaires et acteurs du développement économique pour imaginer et construire l'avenir économique de Trois-Rivières."
     }
+  },
+  {
+    "id": "2026-livre-vous-netes-pas-une-famille",
+    "date": "2026-08",
+    "category": { "en": "Books", "fr": "Livres" },
+    "description": {
+      "en": "Read \"Vous n'êtes pas une famille\" by serial entrepreneur Dominic Gagnon and former Olympic coach Jean-Paul Richard, which draws on high-performance sport to offer a concrete framework for building a team culture that pairs respect, connection and accountability with high standards.",
+      "fr": "Lecture de « Vous n'êtes pas une famille » de Dominic Gagnon, entrepreneur en série, et Jean-Paul Richard, ancien entraîneur olympique. S'inspirant du sport de haut niveau, l'ouvrage propose un cadre concret pour bâtir une culture d'équipe qui allie respect, connexion, responsabilité et standards élevés."
+    }
   }
 ]
