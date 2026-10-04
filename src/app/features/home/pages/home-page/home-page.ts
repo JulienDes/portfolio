@@ -127,6 +127,7 @@ export class HomePageComponent implements OnDestroy {
     let nodes: Node[] = [];
     let pulses: Pulse[] = [];
     let lastPulseT = 0;
+    let lastT = 0;
 
     interface Node {
       x: number;
@@ -178,13 +179,42 @@ export class HomePageComponent implements OnDestroy {
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
-      DPR = Math.min(window.devicePixelRatio || 1, 2);
-      W = rect.width;
-      H = rect.height;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = rect.width;
+      const h = rect.height;
+
+      // A WebView that detaches and reattaches its frame can report a zero box for
+      // one frame. Bailing preserves the field — rescaling by zero would stack every
+      // node on (0,0) and force a re-seed on the way back.
+      if (w === 0 || h === 0) return;
+
+      // Nothing meaningful changed; reassigning canvas.width would clear the bitmap.
+      if (dpr === DPR && Math.abs(w - W) < 1 && Math.abs(h - H) < 1) return;
+
+      const prevW = W;
+      const prevH = H;
+      DPR = dpr;
+      W = w;
+      H = h;
       canvas.width = Math.max(1, Math.round(W * DPR));
       canvas.height = Math.max(1, Math.round(H * DPR));
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      seed();
+
+      // First measurement — build the field.
+      if (!nodes.length) {
+        seed();
+        return;
+      }
+
+      // Otherwise map the existing field onto the new box. An in-app WebView resizes
+      // its own frame when the host app animates its chrome on scroll; re-seeding
+      // here is what teleports the whole network mid-view.
+      const sx = W / prevW;
+      const sy = H / prevH;
+      for (const n of nodes) {
+        n.x *= sx;
+        n.y *= sy;
+      }
     };
 
     const seed = () => {
@@ -205,13 +235,19 @@ export class HomePageComponent implements OnDestroy {
       if (!this.running) return;
       this.raf = requestAnimationFrame(step);
 
+      // Everything below was tuned against a 16ms frame. Scale by the real delta so
+      // a 120Hz display does not run at double speed and a throttled WebView at half.
+      // Clamped so a long pause cannot teleport the field on the first frame back.
+      const dt = lastT ? Math.min(t - lastT, 50) / 16 : 1;
+      lastT = t;
+
       const pal = palette();
       ctx.clearRect(0, 0, W, H);
 
       // Drift nodes, wrap at edges
       for (const n of nodes) {
-        n.x += n.vx;
-        n.y += n.vy;
+        n.x += n.vx * dt;
+        n.y += n.vy * dt;
         if (n.x < -10) n.x = W + 10;
         if (n.x > W + 10) n.x = -10;
         if (n.y < -10) n.y = H + 10;
@@ -263,7 +299,7 @@ export class HomePageComponent implements OnDestroy {
       // Draw pulses
       for (let i = pulses.length - 1; i >= 0; i--) {
         const p = pulses[i];
-        p.t += 16;
+        p.t += 16 * dt;
         const u = p.t / p.dur;
         if (u >= 1) {
           pulses.splice(i, 1);
@@ -323,6 +359,7 @@ export class HomePageComponent implements OnDestroy {
         for (const e of entries) {
           if (e.isIntersecting && !this.running) {
             this.running = true;
+            lastT = 0;
             this.raf = requestAnimationFrame(step);
           } else if (!e.isIntersecting && this.running) {
             this.running = false;
@@ -340,6 +377,7 @@ export class HomePageComponent implements OnDestroy {
         cancelAnimationFrame(this.raf);
       } else if (!this.running) {
         this.running = true;
+        lastT = 0;
         this.raf = requestAnimationFrame(step);
       }
     });
