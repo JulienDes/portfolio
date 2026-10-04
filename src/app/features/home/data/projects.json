@@ -1,5 +1,267 @@
 [
   {
+    "id": "filon-website",
+    "title": {
+      "en": "Filon Showcase Website",
+      "fr": "Site vitrine de Filon"
+    },
+    "subtitle": {
+      "en": "Angular 21 · Signals · Vitest · Azure Static Web Apps",
+      "fr": "Angular 21 · Signals · Vitest · Azure Static Web Apps"
+    },
+    "summary": {
+      "en": "Designed and built the public website of Filon, a startup I co-founded. By translating my partner's business vision and relying on an architecture designed for AI agents, I was able to put the site online in just a few days of development.",
+      "fr": "Conception et développement du site public de Filon, une startup que j'ai cofondée. En traduisant la vision d'affaires de mon associé et en m'appuyant sur une architecture pensée pour les agents IA, j'ai pu mettre le site en ligne en quelques jours de développement."
+    },
+    "date": "2026",
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "Angular Material",
+      "Vitest",
+      "Playwright",
+      "ESLint",
+      "Azure DevOps",
+      "Azure Static Web Apps"
+    ],
+    "sections": [
+      {
+        "title": { "en": "Context", "fr": "Contexte" },
+        "paragraphs": {
+          "en": [
+            "Filon is a startup I co-founded with a colleague who holds a bachelor's degree in business administration. Our goal is to connect new business owners with insurance brokers. We spot newly registered businesses and deliver call-ready profiles to the broker, with only one broker per region.",
+            "My partner handled the business side, which meant defining the problem to solve and making the strategic decisions. On my side, I had to understand his needs and figure out how technology could bring his vision to life.",
+            "The showcase website was our first deliverable."
+          ],
+          "fr": [
+            "Filon est une startup que j'ai cofondée avec un collègue diplômé en administration des affaires. Notre but est de mettre en contact les nouveaux entrepreneurs et les courtiers d'assurance. On repère les nouvelles entreprises et on livre au courtier des fiches prêtes à l'appel, avec un seul courtier par région.",
+            "Mon associé s'occupait du volet affaires, soit cerner le problème à régler et prendre les décisions stratégiques. De mon côté, je devais comprendre ses besoins et trouver comment la technologie pouvait donner vie à sa vision.",
+            "Le site vitrine a été notre premier livrable."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Approach", "fr": "Approche" },
+        "paragraphs": {
+          "en": [
+            "I started by building solid foundations. The feature-first architecture is enforced automatically by the linter, and the project includes tests, pre-commit hooks, CI in Azure DevOps and 7 architecture decisions (ADRs) documented so the AI can consult them.",
+            "Once those guardrails were in place, we developed with AI agents through my Azure DevOps MCP server. Each user story was refined, planned, then implemented using TDD. My partner could also launch implementations himself, and I reviewed the code of every pull request.",
+            "The design came out of iterations between AI (Claude Design) and me."
+          ],
+          "fr": [
+            "J'ai commencé par bâtir des fondations solides. L'architecture « feature-first » est vérifiée automatiquement par le linter, et le projet compte des tests, des hooks de pré-commit, une CI dans Azure DevOps ainsi que 7 décisions d'architecture (ADR) documentées pour que l'IA puisse les consulter.",
+            "Une fois ces garde-fous en place, nous avons développé avec des agents IA grâce à mon serveur MCP Azure DevOps. Chaque user story était raffinée, planifiée, puis implémentée en TDD. Mon associé pouvait lui aussi lancer des implémentations, et je faisais la revue de code de chaque pull request.",
+            "Le design, lui, est né d'itérations entre l'IA (Claude Design) et moi."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Results", "fr": "Résultats" },
+        "paragraphs": {
+          "en": [
+            "The site was delivered in just a few days of development. It is live on Azure Static Web Apps at filonqc.ca, with a private development environment and a public production environment."
+          ],
+          "fr": [
+            "Le site a été livré en quelques jours de développement. Il est en production sur Azure Static Web Apps et accessible à filonqc.ca, avec un environnement de développement privé et un environnement de production public."
+          ]
+        }
+      }
+    ],
+    "duration": {
+      "en": "~5 days of development",
+      "fr": "~5 jours de développement"
+    },
+    "role": {
+      "en": "Co-founder, technical lead",
+      "fr": "Cofondateur, lead technique"
+    },
+    "team": {
+      "en": "2 co-founders, solo on the technical side",
+      "fr": "2 cofondateurs, seul sur la partie technique"
+    },
+    "image": "assets/filon-website.webp",
+    "tags": [
+      { "en": "Frontend", "fr": "Frontend" },
+      { "en": "Angular", "fr": "Angular" },
+      { "en": "AI-assisted development", "fr": "Développement assisté par l'IA" }
+    ],
+    "links": [
+      {
+        "name": { "en": "Website", "fr": "Site Web" },
+        "url": "https://filonqc.ca"
+      }
+    ]
+  },
+  {
+    "id": "filon-backend-etl",
+    "title": {
+      "en": "Filon Data Pipeline",
+      "fr": "Pipeline de données de Filon"
+    },
+    "subtitle": {
+      "en": "Python · Azure · MongoDB",
+      "fr": "Python · Azure · MongoDB"
+    },
+    "summary": {
+      "en": "Designed an ETL pipeline that analyzes millions of rows of public data to spot newly registered businesses. The challenge was to do it quickly and with very little memory.",
+      "fr": "Conception d'un pipeline ETL qui analyse des millions de lignes de données publiques pour repérer les nouvelles entreprises. Le défi était d'y arriver rapidement et avec très peu de mémoire."
+    },
+    "date": "2026",
+    "stack": ["Python", "MongoDB", "Azure Blob Storage", "Azure Pipelines"],
+    "sections": [
+      {
+        "title": { "en": "Context", "fr": "Contexte" },
+        "paragraphs": {
+          "en": [
+            "For Filon, a new business is a business opportunity, since it will soon need an insurance broker. We still had to know which businesses had just been created.",
+            "Our public data source offers no API. It periodically publishes a full snapshot of its database, millions of rows spread across several files. So we don't receive just the new registrations, but the entire database every time, with no indication of what changed. That is what makes the processing complex.",
+            "The data also has its traps, such as mixed date formats and free-text fields where the same value can be written dozens of different ways."
+          ],
+          "fr": [
+            "Pour Filon, une nouvelle entreprise est une occasion d'affaires, puisqu'elle aura bientôt besoin d'un courtier d'assurance. Encore fallait-il savoir quelles entreprises venaient de naître.",
+            "Notre source de données publique n'offre pas d'API. Elle publie périodiquement un instantané complet de sa base de données, soit des millions de lignes réparties dans plusieurs fichiers. On ne reçoit donc pas seulement les nouvelles inscriptions, mais toute la base à chaque fois, sans aucune indication de ce qui a changé. C'est ce qui rend le traitement complexe.",
+            "Les données ont aussi leurs pièges, comme des formats de date mélangés et des champs saisis en texte libre, où une même valeur peut s'écrire de dizaines de façons différentes."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Challenge", "fr": "Défi" },
+        "paragraphs": {
+          "en": [
+            "We therefore had to compare two full snapshots to isolate what was new. Loading everything into memory would have been far too heavy to run economically in the cloud.",
+            "I had to design a way to analyze these millions of rows quickly, with little memory, and reliably enough that an error in the data could never contaminate the database. The solution also had to be able to welcome other public sources later on."
+          ],
+          "fr": [
+            "Il fallait donc comparer deux instantanés complets pour isoler les nouveautés. Tout charger en mémoire aurait été beaucoup trop lourd pour tourner de façon économique dans le cloud.",
+            "J'ai dû concevoir une façon d'analyser ces millions de lignes rapidement, avec peu de mémoire, et assez fiable pour qu'une erreur dans les données ne contamine jamais la base de données. La solution devait aussi pouvoir accueillir d'autres sources publiques par la suite."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Results", "fr": "Résultats" },
+        "paragraphs": {
+          "en": [
+            "Analyzing all these millions of rows takes only a few minutes and requires very little memory, which keeps it cheap to run.",
+            "Only the new businesses in the target sector reach the database, and results are identical from one run to the next.",
+            "The MVP currently runs locally. The next step is to enrich the profiles with other data sources."
+          ],
+          "fr": [
+            "L'analyse complète des millions de lignes se fait en quelques minutes et demande très peu de mémoire, ce qui permet de la faire tourner à faible coût.",
+            "Seules les nouvelles entreprises du secteur visé atteignent la base de données, et les résultats sont identiques d'une exécution à l'autre.",
+            "Le MVP tourne présentement en local. La prochaine étape est d'enrichir les fiches avec d'autres sources de données."
+          ]
+        }
+      }
+    ],
+    "duration": {
+      "en": "~6 weeks",
+      "fr": "~6 semaines"
+    },
+    "role": {
+      "en": "Co-founder, backend developer",
+      "fr": "Cofondateur, développeur backend"
+    },
+    "team": {
+      "en": "2 co-founders, solo on the technical side",
+      "fr": "2 cofondateurs, seul sur la partie technique"
+    },
+    "image": "assets/filon-etl.webp",
+    "tags": [
+      { "en": "Data engineering", "fr": "Data engineering" },
+      { "en": "Backend", "fr": "Backend" },
+      { "en": "Performance", "fr": "Performance" }
+    ],
+    "links": []
+  },
+  {
+    "id": "mcp-azure-devops",
+    "title": {
+      "en": "Azure DevOps MCP Server for User Stories That Matter",
+      "fr": "Serveur MCP Azure DevOps pour des user stories utiles"
+    },
+    "subtitle": {
+      "en": "TypeScript · MCP · Azure DevOps · Claude Code",
+      "fr": "TypeScript · MCP · Azure DevOps · Claude Code"
+    },
+    "summary": {
+      "en": "Built an MCP server connected to Azure DevOps and a three-step Claude Code workflow covering refinement, planning and TDD execution. Each user story becomes a contract between the human who validates and the agent who executes, keeping a clear record of what was done and why.",
+      "fr": "Développement d'un serveur MCP relié à Azure DevOps et d'un workflow Claude Code en trois étapes, soit le refinement, le plan et l'exécution en TDD. Chaque user story devient un contrat entre l'humain qui valide et l'agent qui exécute, et garde une trace claire de ce qui a été fait et pourquoi."
+    },
+    "date": "2026",
+    "stack": [
+      "TypeScript",
+      "Node.js",
+      "Model Context Protocol",
+      "Azure DevOps REST API",
+      "Claude Code",
+      "Zod"
+    ],
+    "sections": [
+      {
+        "title": { "en": "Context", "fr": "Contexte" },
+        "paragraphs": {
+          "en": [
+            "As a solo developer, my user stories weren't much use to me. They stayed vague, and once the code was written, nothing explained the decisions behind it.",
+            "With AI agents, the user story could become something else, the contract between me, who validates, and the agent, who executes. To get there, the agent had to be able to read and write in Azure DevOps, but with guardrails."
+          ],
+          "fr": [
+            "En développement solo, mes user stories ne me servaient pas à grand-chose. Elles restaient vagues, et une fois le code écrit, rien n'expliquait les décisions prises.",
+            "Avec l'arrivée des agents IA, la user story pouvait devenir autre chose, soit le contrat entre moi, qui valide, et l'agent, qui exécute. Pour y arriver, l'agent devait pouvoir lire et écrire dans Azure DevOps, mais avec des garde-fous."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Approach", "fr": "Approche" },
+        "paragraphs": {
+          "en": [
+            "I wrote a TypeScript MCP server that gives Claude Code five tools. The agent can read a user story, search stories by tag, find the ones without a plan yet, write to a field and move the card on the Kanban board.",
+            "On top of it, Claude Code commands, skills and sub-agents organize the work in three steps. During refinement, the agent first asks about intent, then proposes the description, details, assumptions and Gherkin acceptance criteria. It then writes an implementation plan in a fixed format. Finally, it executes that plan using TDD on a dedicated branch and produces a summary versioned in the repo.",
+            "I approve each step before anything is written to Azure DevOps. The server only writes to a list of allowed fields, and the card only moves forward if every test passes."
+          ],
+          "fr": [
+            "J'ai écrit un serveur MCP en TypeScript qui donne cinq outils à Claude Code. L'agent peut lire une US, chercher des US par tag, trouver celles qui n'ont pas encore de plan, écrire dans un champ et déplacer la carte sur le tableau Kanban.",
+            "Par-dessus, des commandes, des skills et des sous-agents Claude Code organisent le travail en trois étapes. Au refinement, l'agent pose d'abord des questions sur l'intention, puis propose la description, les détails, les hypothèses et des critères d'acceptation en Gherkin. Il rédige ensuite un plan d'implémentation selon un format précis. Enfin, il exécute ce plan en TDD dans une branche dédiée et produit un résumé versionné dans le repo.",
+            "Je valide chaque étape avant que quoi que ce soit soit écrit dans Azure DevOps. Le serveur n'écrit que dans une liste de champs autorisés, et la carte n'avance que si tous les tests passent."
+          ]
+        }
+      },
+      {
+        "title": { "en": "Results", "fr": "Résultats" },
+        "paragraphs": {
+          "en": [
+            "I now use it across several projects. I launch user story execution in the evening and review it the next day, which lets me use 100% of the weekly limit of my Claude Pro plan.",
+            "Code review always calls for adjustments, but the workflow saves me about three quarters of the initial work.",
+            "Above all, each user story now keeps the what and the why, from the description to the summary of what was actually done."
+          ],
+          "fr": [
+            "Je l'utilise maintenant dans plusieurs projets. Je lance l'exécution des US le soir et je fais la revue le lendemain, ce qui me permet d'utiliser 100 % de la limite hebdomadaire de mon forfait Claude Pro.",
+            "La revue de code demande toujours des ajustements, mais le workflow me sauve environ les trois quarts du travail de départ.",
+            "Surtout, chaque US garde maintenant le quoi et le pourquoi, de la description jusqu'au résumé de ce qui a réellement été fait."
+          ]
+        }
+      }
+    ],
+    "duration": {
+      "en": "~1 day",
+      "fr": "~1 jour"
+    },
+    "role": {
+      "en": "Developer, tooling and AI",
+      "fr": "Développeur, outillage et IA"
+    },
+    "team": {
+      "en": "Personal project",
+      "fr": "Projet personnel"
+    },
+    "image": "assets/mcp-azure-devops.webp",
+    "tags": [
+      { "en": "AI", "fr": "IA" },
+      { "en": "Tooling", "fr": "Outillage" },
+      { "en": "Productivity", "fr": "Productivité" }
+    ],
+    "links": []
+  },
+  {
     "id": "homelab-staging-devops",
     "title": {
       "en": "Homelab : Staging Server & Azure DevOps Agent",
