@@ -39,6 +39,7 @@
 .hero-section {
   position: relative;
   isolation: isolate;
+  min-height: 100vh; // fallback: `svh` is dropped wholesale on Android WebView < 108
   min-height: 100svh;
   display: flex;
   align-items: center;
