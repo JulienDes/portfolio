@@ -1,5 +1,77 @@
 [
   {
+    "id": "maitrise-mathematiques-informatique-appliquees-uqtr",
+    "type": "degree",
+    "title": {
+      "en": "Master of Science in Applied Mathematics and Computer Science (Thesis)",
+      "fr": "Maîtrise en mathématiques et informatique appliquées (avec mémoire)"
+    },
+    "institution": "Université du Québec à Trois-Rivières (UQTR)",
+    "date": "2026-2028",
+    "duration": {
+      "en": "2 years (45 credits)",
+      "fr": "2 ans (45 crédits)"
+    },
+    "description": {
+      "en": [
+        "A research master's in applied mathematics and computer science, supervised by Jean-Sébastien Dessureault.",
+        "My thesis focuses on AI agents that collaborate with employees of the City of Trois-Rivières' Procurement department. This real-world setting lets me apply the scientific method to concrete problems, where mistakes have real consequences.",
+        "My research follows the contract lifecycle through four themes, from tracking tasks in contracts to analyzing bids. Each one approaches the same question from a different angle, namely how AI agents can work reliably and transparently alongside the people who make the decisions.",
+        "Skills developed throughout the master's:",
+        {
+          "list": [
+            "Design and evaluation of multi-agent systems",
+            "Experimental methodology and results analysis",
+            "Responsible AI, data sovereignty and energy efficiency",
+            "Literature review and scientific writing",
+            "Science communication and research presentations"
+          ]
+        }
+      ],
+      "fr": [
+        "Une maîtrise de recherche en mathématiques et informatique appliquées, réalisée sous la direction de Jean-Sébastien Dessureault.",
+        "Mon mémoire porte sur des agents IA qui collaborent avec les employés du service de l'Approvisionnement de la Ville de Trois-Rivières. Ce terrain réel me permet d'appliquer la démarche scientifique à des problèmes concrets, où les erreurs ont de vraies conséquences.",
+        "Ma recherche suit le cycle contractuel à travers quatre thèmes, du suivi des tâches dans les contrats jusqu'à l'analyse des soumissions. Chacun aborde sous un angle différent la même question, celle de savoir comment des agents IA peuvent travailler de façon fiable et transparente aux côtés des personnes qui prennent les décisions.",
+        "Compétences développées au fil de la maîtrise :",
+        {
+          "list": [
+            "Conception et évaluation de systèmes multi-agents",
+            "Méthodologie expérimentale et analyse de résultats",
+            "IA responsable, souveraineté des données et sobriété énergétique",
+            "Revue de littérature et rédaction scientifique",
+            "Vulgarisation et présentation des travaux"
+          ]
+        }
+      ]
+    },
+    "skills": [
+      "Agentic AI",
+      "Large Language Models",
+      "Multi-Agent Systems",
+      "Human-in-the-Loop",
+      "LLM Evaluation",
+      "Experimental Design",
+      "Explainable AI",
+      "Responsible AI",
+      "Python",
+      "Machine Learning",
+      "Research Methodology",
+      "Literature Review",
+      "Scientific Writing",
+      "Science Communication"
+    ],
+    "referenceUrl": "https://oraprdnt.uqtr.uquebec.ca/portail/triw082.afficher?owa_cd_pgm=3799",
+    "formateur": "Jean-Sébastien Dessureault",
+    "diplome": {
+      "en": "Master of Science (M.Sc.)",
+      "fr": "Maîtrise ès sciences (M. Sc.)"
+    },
+    "statut": {
+      "en": "In Progress",
+      "fr": "En cours"
+    }
+  },
+  {
     "id": "bac-informatique-science-donnees-uqtr",
     "type": "degree",
     "title": {
@@ -25,8 +97,7 @@
             "Machine learning",
             "Data preprocessing"
           ]
-        },
-        "Final session in progress."
+        }
       ],
       "fr": [
         "Programme de baccalauréat combinant une solide formation en informatique avec une spécialisation en science des données.",
@@ -40,8 +111,7 @@
             "Apprentissage automatique",
             "Prétraitement des données"
           ]
-        },
-        "Dernière session en cours."
+        }
       ]
     },
     "skills": [
@@ -68,8 +138,8 @@
       "fr": "Baccalauréat"
     },
     "statut": {
-      "en": "In Progress",
-      "fr": "En cours"
+      "en": "Completed",
+      "fr": "Complété"
     }
   },
   {
