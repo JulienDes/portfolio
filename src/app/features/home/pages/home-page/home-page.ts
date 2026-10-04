@@ -44,6 +44,9 @@ export class HomePageComponent implements OnDestroy {
   private running = false;
   private ro?: ResizeObserver;
   private io?: IntersectionObserver;
+  private releaseHeroHeight?: () => void;
+
+  private readonly hostEl = inject<ElementRef<HTMLElement>>(ElementRef);
 
   // ── Public injectables ─────────────────────────────────────────────────────────
   readonly lang = inject(LangService);
@@ -64,7 +67,10 @@ export class HomePageComponent implements OnDestroy {
   emailCopied = false;
 
   constructor() {
-    afterNextRender(() => this.initNeuralNetwork());
+    afterNextRender(() => {
+      this.freezeHeroHeight();
+      this.initNeuralNetwork();
+    });
   }
 
   // ── Methods ────────────────────────────────────────────────────────────────
@@ -108,6 +114,35 @@ export class HomePageComponent implements OnDestroy {
     cancelAnimationFrame(this.raf);
     this.ro?.disconnect();
     this.io?.disconnect();
+    this.releaseHeroHeight?.();
+  }
+
+  // ── Hero height ───────────────────────────────────────────────────────────
+
+  /**
+   * Pins the hero to the viewport height measured at startup.
+   *
+   * The hero centres its content in a viewport-tall box, so any change to that box's
+   * height moves the content by half the delta. An in-app browser resizes its own
+   * frame whenever the host app animates its native bar on scroll, which made the
+   * name drift up and down through every gesture.
+   */
+  private freezeHeroHeight(): void {
+    const host = this.hostEl.nativeElement;
+    let lastWidth = 0;
+
+    const apply = () => {
+      // Only re-measure when the WIDTH changes — an orientation change or a window
+      // resize. An animating native bar only ever changes the height, and that is
+      // exactly what has to be ignored.
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      host.style.setProperty('--hero-h', `${window.innerHeight}px`);
+    };
+
+    apply();
+    window.addEventListener('resize', apply);
+    this.releaseHeroHeight = () => window.removeEventListener('resize', apply);
   }
 
   // ── Neural network ────────────────────────────────────────────────────────
@@ -203,6 +238,7 @@ export class HomePageComponent implements OnDestroy {
       // First measurement — build the field.
       if (!nodes.length) {
         seed();
+        draw();
         return;
       }
 
@@ -215,6 +251,12 @@ export class HomePageComponent implements OnDestroy {
         n.x *= sx;
         n.y *= sy;
       }
+
+      // Assigning canvas.width just blanked the bitmap. Repaint now, inside this same
+      // callback: during a scroll gesture WKWebView suspends requestAnimationFrame while
+      // ResizeObserver keeps delivering, so waiting for the next frame would leave the
+      // canvas empty for the whole gesture.
+      draw();
     };
 
     const seed = () => {
@@ -231,31 +273,17 @@ export class HomePageComponent implements OnDestroy {
       lastPulseT = 0;
     };
 
-    const step = (t: number) => {
-      if (!this.running) return;
-      this.raf = requestAnimationFrame(step);
+    // Connection radius, shared by the renderer and the pulse spawner.
+    const maxDist = () => Math.min(180, Math.max(120, W * 0.13));
 
-      // Everything below was tuned against a 16ms frame. Scale by the real delta so
-      // a 120Hz display does not run at double speed and a throttled WebView at half.
-      // Clamped so a long pause cannot teleport the field on the first frame back.
-      const dt = lastT ? Math.min(t - lastT, 50) / 16 : 1;
-      lastT = t;
-
+    // Pure render of the current state. Split out of step() so a resize can repaint
+    // immediately instead of waiting for a frame a scrolling WebView will not run.
+    const draw = () => {
       const pal = palette();
       ctx.clearRect(0, 0, W, H);
 
-      // Drift nodes, wrap at edges
-      for (const n of nodes) {
-        n.x += n.vx * dt;
-        n.y += n.vy * dt;
-        if (n.x < -10) n.x = W + 10;
-        if (n.x > W + 10) n.x = -10;
-        if (n.y < -10) n.y = H + 10;
-        if (n.y > H + 10) n.y = -10;
-      }
-
       // Connections
-      const maxD = Math.min(180, Math.max(120, W * 0.13));
+      const maxD = maxDist();
       const maxD2 = maxD * maxD;
       ctx.lineWidth = 1;
       for (let i = 0; i < nodes.length; i++) {
@@ -276,35 +304,9 @@ export class HomePageComponent implements OnDestroy {
         }
       }
 
-      // Spawn pulses
-      if (!prefersReduce && t - lastPulseT > 700 && pulses.length < 4) {
-        const a = nodes[(Math.random() * nodes.length) | 0];
-        const candidates: Node[] = [];
-        for (const b of nodes) {
-          if (b === a) continue;
-          const dx = a.x - b.x,
-            dy = a.y - b.y;
-          const d2 = dx * dx + dy * dy;
-          if (d2 < maxD2 && d2 > 400) candidates.push(b);
-        }
-        if (candidates.length) {
-          const b = candidates[(Math.random() * candidates.length) | 0];
-          pulses.push({ a, b, t: 0, dur: 900 + Math.random() * 700 });
-          lastPulseT = t;
-        } else {
-          lastPulseT = t - 300;
-        }
-      }
-
       // Draw pulses
-      for (let i = pulses.length - 1; i >= 0; i--) {
-        const p = pulses[i];
-        p.t += 16 * dt;
+      for (const p of pulses) {
         const u = p.t / p.dur;
-        if (u >= 1) {
-          pulses.splice(i, 1);
-          continue;
-        }
         const x = p.a.x + (p.b.x - p.a.x) * u;
         const y = p.a.y + (p.b.y - p.a.y) * u;
         const grd = ctx.createRadialGradient(x, y, 0, x, y, 14);
@@ -347,6 +349,58 @@ export class HomePageComponent implements OnDestroy {
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fill();
       }
+    };
+
+    const step = (t: number) => {
+      if (!this.running) return;
+      this.raf = requestAnimationFrame(step);
+
+      // Everything below was tuned against a 16ms frame. Scale by the real delta so
+      // a 120Hz display does not run at double speed and a throttled WebView at half.
+      // Clamped so a long pause cannot teleport the field on the first frame back.
+      const dt = lastT ? Math.min(t - lastT, 50) / 16 : 1;
+      lastT = t;
+
+      // Drift nodes, wrap at edges
+      for (const n of nodes) {
+        n.x += n.vx * dt;
+        n.y += n.vy * dt;
+        if (n.x < -10) n.x = W + 10;
+        if (n.x > W + 10) n.x = -10;
+        if (n.y < -10) n.y = H + 10;
+        if (n.y > H + 10) n.y = -10;
+      }
+
+      // Spawn pulses
+      const maxD = maxDist();
+      const maxD2 = maxD * maxD;
+      if (!prefersReduce && t - lastPulseT > 700 && pulses.length < 4) {
+        const a = nodes[(Math.random() * nodes.length) | 0];
+        const candidates: Node[] = [];
+        for (const b of nodes) {
+          if (b === a) continue;
+          const dx = a.x - b.x,
+            dy = a.y - b.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < maxD2 && d2 > 400) candidates.push(b);
+        }
+        if (candidates.length) {
+          const b = candidates[(Math.random() * candidates.length) | 0];
+          pulses.push({ a, b, t: 0, dur: 900 + Math.random() * 700 });
+          lastPulseT = t;
+        } else {
+          lastPulseT = t - 300;
+        }
+      }
+
+      // Advance and expire pulses
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        const p = pulses[i];
+        p.t += 16 * dt;
+        if (p.t >= p.dur) pulses.splice(i, 1);
+      }
+
+      draw();
     };
 
     // Re-seed when the canvas is resized
