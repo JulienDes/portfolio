@@ -1,5 +1,23 @@
 [
   {
+    "id": "2026-benevolat-jeux-education",
+    "date": "2026-05",
+    "category": { "en": "Involvement", "fr": "Implication" },
+    "description": {
+      "en": "Volunteered at the Jeux de l'éducation, an inter-university competition bringing together education students from across Quebec.",
+      "fr": "Bénévolat aux Jeux de l'éducation, une compétition inter-universitaire réunissant les étudiants en enseignement du Québec."
+    }
+  },
+  {
+    "id": "2026-visionnement-all-in-uqtr",
+    "date": "2026-09",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized, with ALL IN's authorization, a screening at UQTR of talks from ALL IN, Canada's largest AI industry event (an initiative of Scale AI held annually in Montréal).",
+      "fr": "Organisation, avec l'autorisation de ALL IN, d'un visionnement à l'UQTR de conférences de ALL IN, le plus grand rassemblement de l'industrie de l'IA au Canada (une initiative de Scale AI tenue annuellement à Montréal)."
+    }
+  },
+  {
     "id": "2024-conference-mila-voice-agent",
     "date": "2024-05",
     "category": {
