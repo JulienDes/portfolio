@@ -235,5 +235,14 @@
       "en": "Read \"Vous n'êtes pas une famille\" by serial entrepreneur Dominic Gagnon and former Olympic coach Jean-Paul Richard, which draws on high-performance sport to offer a concrete framework for building a team culture that pairs respect, connection and accountability with high standards.",
       "fr": "Lecture de « Vous n'êtes pas une famille » de Dominic Gagnon, entrepreneur en série, et Jean-Paul Richard, ancien entraîneur olympique. S'inspirant du sport de haut niveau, l'ouvrage propose un cadre concret pour bâtir une culture d'équipe qui allie respect, connexion, responsabilité et standards élevés."
     }
+  },
+  {
+    "id": "2026-conference-usef-inference-causale",
+    "date": "2026-11",
+    "category": { "en": "Student Association", "fr": "Vie associative" },
+    "description": {
+      "en": "Organized an AMI guest talk on causal inference and artificial intelligence, given by Usef Faghihi, professor at the Université du Québec à Trois-Rivières (UQTR). The talk explored how understanding cause-and-effect relationships, beyond correlations observed in data, can help design better AI and deep learning algorithms.",
+      "fr": "Organisation d'une conférence-invité de l'AMI, sur l'inférence causale et l'intelligence artificielle, animée par Usef Faghihi, professeur à l'Université du Québec à Trois-Rivières (UQTR). La conférence a montré comment la compréhension des relations de cause à effet, au-delà des corrélations observées dans les données, peut aider à concevoir de meilleurs algorithmes d'IA et d'apprentissage profond."
+    }
   }
 ]
